@@ -1,0 +1,35 @@
+# 转账接口 YAML 模板
+# 对应接口: POST /api/v1/payment/transfer
+
+api_info:
+  path: "/api/v1/payment/transfer"
+  method: "POST"
+  description: "账户间转账"
+
+logic_rules:
+  - condition: "transfer_type == 'CROSS_BANK'"
+    required_fields: ["receiver_bank_code", "receiver_bank_name"]
+
+payload:
+  # 转出方
+  from_account_no: "$CONTEXT{account_no}"
+  from_cust_id: "$CONTEXT{cust_id}"
+
+  # 转入方
+  to_account_no: "${get_bank_card}"
+  to_account_name: "${get_name}"
+  to_bank_code: "${choice(['01040000', '01050000', '03080000'])}"
+
+  # 交易信息
+  amount: 1000.00
+  currency: "CNY"
+  transfer_type: "${choice(['INTRA_BANK', 'CROSS_BANK'])}"
+  purpose: "${choice(['PERSONAL', 'BUSINESS', 'INVESTMENT'])}"
+  remark: "${rand_str(chn, 6)}转账备注"
+
+  # 验证信息
+  sms_captcha: "123456"
+  ip_address: "192.168.1.100"
+  channel: "APP"
+  trace_id: "${uuid}"
+  request_time: "${timestamp}"

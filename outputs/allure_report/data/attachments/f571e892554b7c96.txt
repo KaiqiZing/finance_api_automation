@@ -1,0 +1,4 @@
+system_token (前30位): eyJhbGciOiJIUzUxMiJ9.eyJ1c2VyX...
+system_user_name: admin
+system_roles: ['admin']
+permissions_count: 1

@@ -1,0 +1,30 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "SystemLoginResponse",
+  "description": "系统登录接口响应结构契约（RuoYi 框架实际结构）",
+  "type": "object",
+  "required": ["code", "data"],
+  "properties": {
+    "code": {
+      "type": "integer",
+      "description": "200 表示成功"
+    },
+    "msg": {
+      "type": ["string", "null"]
+    },
+    "data": {
+      "type": "object",
+      "required": ["access_token", "expires_in"],
+      "properties": {
+        "access_token": {
+          "type": "string",
+          "description": "Bearer Token，后续请求在 Authorization 头中携带"
+        },
+        "expires_in": {
+          "type": "integer",
+          "description": "Token 有效期（分钟）"
+        }
+      }
+    }
+  }
+}

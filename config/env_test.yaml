@@ -1,0 +1,55 @@
+# 测试环境配置
+env: test
+
+api:
+  base_url: "http://localhost:1024/"
+  timeout: 30
+  max_retries: 3
+  verify_ssl: false
+  extra_headers:
+    X-Env: "test"
+    X-App-Id: "finance_auto"
+
+auth:
+  login_url: "/dev-api/auth/login"
+  default_user: "admin"
+  default_password: "admin123"
+
+# 系统管理服务（RuoYi 后端）
+system_api:
+  base_url: "http://127.0.0.1:1024/dev-api"
+  timeout: 15
+  verify_ssl: false
+  default_user: "admin"
+  default_password: "admin123"
+
+databases:
+  default:
+    host: "test-mysql.internal"
+    port: 3306
+    user: "test_user"
+    password: "test_password"
+    database: "finance_core"
+    charset: "utf8mb4"
+  dict_db:
+    host: "test-mysql.internal"
+    port: 3306
+    user: "test_user"
+    password: "test_password"
+    database: "finance_dict"
+    charset: "utf8mb4"
+  ry_cloud:
+    host: "115.190.2.96"
+    port: 3306
+    user: "root"
+    password: "myroot123"
+    database: "ry-cloud"
+    charset: "utf8mb4"
+
+poller:
+  timeout: 60
+  interval: 3.0
+
+allure:
+  epic: "金融系统接口自动化"
+  env_name: "测试环境(TEST)"

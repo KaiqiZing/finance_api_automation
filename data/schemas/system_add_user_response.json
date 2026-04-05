@@ -1,0 +1,17 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "SystemAddUserResponse",
+  "description": "新增用户接口响应结构契约",
+  "type": "object",
+  "required": ["code", "msg"],
+  "properties": {
+    "code": {
+      "type": "integer",
+      "description": "200 表示成功，500 表示业务失败"
+    },
+    "msg": {
+      "type": "string",
+      "description": "操作结果描述，成功为'操作成功'，失败含具体原因"
+    }
+  }
+}

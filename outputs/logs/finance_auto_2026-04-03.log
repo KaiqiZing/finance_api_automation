@@ -1,0 +1,227 @@
+2026-04-03 11:35:32.440 | DEBUG    | core.request_wrapper:123 - [HTTP] POST http://localhost:1024/dev-api/auth/login -> 200 (529ms)
+2026-04-03 11:35:32.476 | WARNING  | conftest:102 - [conftest] 用例失败: tests/test_system/test_user_login.py::TestUserLogin::test_login_success | Context: {}
+2026-04-03 11:35:33.331 | DEBUG    | core.request_wrapper:123 - [HTTP] POST http://localhost:1024/dev-api/auth/login -> 200 (846ms)
+2026-04-03 11:35:33.381 | WARNING  | conftest:102 - [conftest] 用例失败: tests/test_system/test_user_login.py::TestUserLogin::test_get_info_after_login | Context: {}
+2026-04-03 11:35:33.865 | DEBUG    | core.request_wrapper:123 - [HTTP] POST http://localhost:1024/dev-api/auth/login -> 200 (469ms)
+2026-04-03 11:35:33.894 | WARNING  | conftest:102 - [conftest] 用例失败: tests/test_system/test_user_login.py::TestUserLogin::test_full_login_get_info_flow | Context: {}
+2026-04-03 11:35:34.337 | DEBUG    | core.request_wrapper:123 - [HTTP] POST http://localhost:1024/dev-api/auth/login -> 200 (435ms)
+2026-04-03 11:35:34.343 | WARNING  | conftest:102 - [conftest] 用例失败: tests/test_system/test_user_login.py::TestUserLogin::test_login_with_wrong_password | Context: {}
+2026-04-03 11:35:34.519 | DEBUG    | core.request_wrapper:123 - [HTTP] GET http://localhost:1024/dev-api/system/user/getInfo -> 200 (173ms)
+2026-04-03 11:35:34.527 | WARNING  | conftest:102 - [conftest] 用例失败: tests/test_system/test_user_login.py::TestUserLogin::test_get_info_without_token | Context: {}
+2026-04-03 11:35:34.935 | DEBUG    | core.request_wrapper:123 - [HTTP] POST http://localhost:1024/dev-api/auth/login -> 200 (405ms)
+2026-04-03 11:35:34.948 | WARNING  | conftest:102 - [conftest] 用例失败: tests/test_system/test_user_login.py::TestUserLogin::test_login_parametrize[admin-admin123] | Context: {}
+2026-04-03 11:37:21.881 | DEBUG    | core.request_wrapper:123 - [HTTP] POST http://localhost:1024/dev-api/auth/login -> 200 (551ms)
+2026-04-03 11:37:22.311 | DEBUG    | core.request_wrapper:123 - [HTTP] POST http://localhost:1024/dev-api/auth/login -> 200 (418ms)
+2026-04-03 11:37:22.480 | DEBUG    | core.request_wrapper:123 - [HTTP] GET http://localhost:1024/dev-api/system/user/getInfo -> 200 (169ms)
+2026-04-03 11:37:22.904 | DEBUG    | core.request_wrapper:123 - [HTTP] POST http://localhost:1024/dev-api/auth/login -> 200 (406ms)
+2026-04-03 11:37:22.906 | INFO     | business.system_flows:80 - [SystemFlows] 登录成功，token 已注入。user=admin
+2026-04-03 11:37:23.075 | DEBUG    | core.request_wrapper:123 - [HTTP] GET http://localhost:1024/dev-api/system/user/getInfo -> 200 (168ms)
+2026-04-03 11:37:23.076 | INFO     | business.system_flows:125 - [SystemFlows] getInfo 成功: userId=1, roles=['admin'], permissions_count=1
+2026-04-03 11:37:23.530 | DEBUG    | core.request_wrapper:123 - [HTTP] POST http://localhost:1024/dev-api/auth/login -> 200 (444ms)
+2026-04-03 11:37:23.568 | WARNING  | conftest:102 - [conftest] 用例失败: tests/test_system/test_user_login.py::TestUserLogin::test_login_with_nonexistent_user | Context: {}
+2026-04-03 11:37:23.587 | DEBUG    | core.request_wrapper:123 - [HTTP] GET http://localhost:1024/dev-api/system/user/getInfo -> 200 (15ms)
+2026-04-03 11:37:24.004 | DEBUG    | core.request_wrapper:123 - [HTTP] POST http://localhost:1024/dev-api/auth/login -> 200 (413ms)
+2026-04-03 11:38:19.814 | DEBUG    | core.request_wrapper:123 - [HTTP] POST http://localhost:1024/dev-api/auth/login -> 200 (453ms)
+2026-04-03 11:38:20.237 | DEBUG    | core.request_wrapper:123 - [HTTP] POST http://localhost:1024/dev-api/auth/login -> 200 (415ms)
+2026-04-03 11:38:20.392 | DEBUG    | core.request_wrapper:123 - [HTTP] GET http://localhost:1024/dev-api/system/user/getInfo -> 200 (155ms)
+2026-04-03 11:38:20.839 | DEBUG    | core.request_wrapper:123 - [HTTP] POST http://localhost:1024/dev-api/auth/login -> 200 (432ms)
+2026-04-03 11:38:20.840 | INFO     | business.system_flows:80 - [SystemFlows] 登录成功，token 已注入。user=admin
+2026-04-03 11:38:20.980 | DEBUG    | core.request_wrapper:123 - [HTTP] GET http://localhost:1024/dev-api/system/user/getInfo -> 200 (139ms)
+2026-04-03 11:38:20.980 | INFO     | business.system_flows:125 - [SystemFlows] getInfo 成功: userId=1, roles=['admin'], permissions_count=1
+2026-04-03 11:38:21.422 | DEBUG    | core.request_wrapper:123 - [HTTP] POST http://localhost:1024/dev-api/auth/login -> 200 (430ms)
+2026-04-03 11:38:21.893 | DEBUG    | core.request_wrapper:123 - [HTTP] POST http://localhost:1024/dev-api/auth/login -> 200 (419ms)
+2026-04-03 11:38:22.052 | DEBUG    | core.request_wrapper:123 - [HTTP] GET http://localhost:1024/dev-api/system/user/getInfo -> 200 (159ms)
+2026-04-03 11:38:22.086 | DEBUG    | core.request_wrapper:123 - [HTTP] GET http://localhost:1024/dev-api/system/user/getInfo -> 200 (23ms)
+2026-04-03 11:38:22.490 | DEBUG    | core.request_wrapper:123 - [HTTP] POST http://localhost:1024/dev-api/auth/login -> 200 (401ms)
+2026-04-03 11:44:07.871 | DEBUG    | utils.logger:38 - [REQUEST]  POST http://test.com/api
+  Body: {'username': 'admin'}
+2026-04-03 11:44:07.872 | DEBUG    | utils.logger:46 - [RESPONSE] 200 (123ms)
+  Body: {'code': 200}
+2026-04-03 11:44:07.872 | WARNING  | utils.logger:46 - [RESPONSE] 500 (45ms)
+  Body: {'code': 500}
+2026-04-03 11:44:21.151 | DEBUG    | utils.logger:38 - [REQUEST]  GET /api/test
+  Body: None
+2026-04-03 11:44:48.703 | WARNING  | __main__:5 - [RESPONSE] 500 (88ms)
+  Body: {'code': 500, 'msg': 'server error'}
+2026-04-03 11:44:48.704 | DEBUG    | __main__:6 - [RESPONSE] 200 (45ms)
+  Body: {'code': 200}
+2026-04-03 11:44:48.704 | DEBUG    | __main__:7 - [REQUEST]  POST /api/login
+  Body: {'username': 'admin'}
+2026-04-03 11:44:48.704 | WARNING  | __main__:17 - 直接调用 logger，调用者信息应指向本行（<stdin>）
+2026-04-03 11:44:56.207 | DEBUG    | core.request_wrapper:123 - [HTTP] POST http://localhost:1024/dev-api/auth/login -> 200 (516ms)
+2026-04-03 11:44:56.614 | DEBUG    | core.request_wrapper:123 - [HTTP] POST http://localhost:1024/dev-api/auth/login -> 200 (399ms)
+2026-04-03 11:44:56.790 | DEBUG    | core.request_wrapper:123 - [HTTP] GET http://localhost:1024/dev-api/system/user/getInfo -> 200 (176ms)
+2026-04-03 11:44:57.210 | DEBUG    | core.request_wrapper:123 - [HTTP] POST http://localhost:1024/dev-api/auth/login -> 200 (415ms)
+2026-04-03 11:44:57.211 | INFO     | business.system_flows:80 - [SystemFlows] 登录成功，token 已注入。user=admin
+2026-04-03 11:44:57.374 | DEBUG    | core.request_wrapper:123 - [HTTP] GET http://localhost:1024/dev-api/system/user/getInfo -> 200 (162ms)
+2026-04-03 11:44:57.376 | INFO     | business.system_flows:125 - [SystemFlows] getInfo 成功: userId=1, roles=['admin'], permissions_count=1
+2026-04-03 11:44:57.782 | DEBUG    | core.request_wrapper:123 - [HTTP] POST http://localhost:1024/dev-api/auth/login -> 200 (392ms)
+2026-04-03 11:44:58.237 | DEBUG    | core.request_wrapper:123 - [HTTP] POST http://localhost:1024/dev-api/auth/login -> 200 (422ms)
+2026-04-03 11:44:58.379 | DEBUG    | core.request_wrapper:123 - [HTTP] GET http://localhost:1024/dev-api/system/user/getInfo -> 200 (141ms)
+2026-04-03 11:44:58.389 | DEBUG    | core.request_wrapper:123 - [HTTP] GET http://localhost:1024/dev-api/system/user/getInfo -> 200 (8ms)
+2026-04-03 11:44:58.815 | DEBUG    | core.request_wrapper:123 - [HTTP] POST http://localhost:1024/dev-api/auth/login -> 200 (423ms)
+2026-04-03 11:49:43.620 | DEBUG    | core.request_wrapper:123 - [HTTP] POST http://localhost:1024/dev-api/auth/login -> 200 (546ms)
+2026-04-03 11:50:30.364 | DEBUG    | core.request_wrapper:123 - [HTTP] POST http://localhost:1024/dev-api/auth/login -> 200 (488ms)
+2026-04-03 11:50:30.788 | DEBUG    | core.request_wrapper:123 - [HTTP] POST http://localhost:1024/dev-api/auth/login -> 200 (409ms)
+2026-04-03 11:50:30.945 | DEBUG    | core.request_wrapper:123 - [HTTP] GET http://localhost:1024/dev-api/system/user/getInfo -> 200 (156ms)
+2026-04-03 11:50:31.364 | DEBUG    | core.request_wrapper:123 - [HTTP] POST http://localhost:1024/dev-api/auth/login -> 200 (414ms)
+2026-04-03 11:50:31.366 | INFO     | business.system_flows:80 - [SystemFlows] 登录成功，token 已注入。user=admin
+2026-04-03 11:50:31.516 | DEBUG    | core.request_wrapper:123 - [HTTP] GET http://localhost:1024/dev-api/system/user/getInfo -> 200 (150ms)
+2026-04-03 11:50:31.517 | INFO     | business.system_flows:125 - [SystemFlows] getInfo 成功: userId=1, roles=['admin'], permissions_count=1
+2026-04-03 11:50:31.954 | DEBUG    | core.request_wrapper:123 - [HTTP] POST http://localhost:1024/dev-api/auth/login -> 200 (420ms)
+2026-04-03 11:50:32.426 | DEBUG    | core.request_wrapper:123 - [HTTP] POST http://localhost:1024/dev-api/auth/login -> 200 (422ms)
+2026-04-03 11:50:32.574 | DEBUG    | core.request_wrapper:123 - [HTTP] GET http://localhost:1024/dev-api/system/user/getInfo -> 200 (148ms)
+2026-04-03 11:50:32.600 | DEBUG    | core.request_wrapper:123 - [HTTP] GET http://localhost:1024/dev-api/system/user/getInfo -> 200 (18ms)
+2026-04-03 11:50:33.012 | DEBUG    | core.request_wrapper:123 - [HTTP] POST http://localhost:1024/dev-api/auth/login -> 200 (407ms)
+2026-04-03 13:00:10.319 | DEBUG    | core.request_wrapper:123 - [HTTP] POST http://localhost:1024/dev-api/auth/login -> 200 (634ms)
+2026-04-03 13:00:10.748 | DEBUG    | core.request_wrapper:123 - [HTTP] POST http://localhost:1024/dev-api/auth/login -> 200 (414ms)
+2026-04-03 13:00:10.926 | DEBUG    | core.request_wrapper:123 - [HTTP] GET http://localhost:1024/dev-api/system/user/getInfo -> 200 (177ms)
+2026-04-03 13:00:11.364 | DEBUG    | core.request_wrapper:123 - [HTTP] POST http://localhost:1024/dev-api/auth/login -> 200 (420ms)
+2026-04-03 13:00:11.366 | INFO     | business.system_flows:80 - [SystemFlows] 登录成功，token 已注入。user=admin
+2026-04-03 13:00:11.521 | DEBUG    | core.request_wrapper:123 - [HTTP] GET http://localhost:1024/dev-api/system/user/getInfo -> 200 (154ms)
+2026-04-03 13:00:11.522 | INFO     | business.system_flows:125 - [SystemFlows] getInfo 成功: userId=1, roles=['admin'], permissions_count=1
+2026-04-03 13:00:11.952 | DEBUG    | core.request_wrapper:123 - [HTTP] POST http://localhost:1024/dev-api/auth/login -> 200 (420ms)
+2026-04-03 13:00:12.420 | DEBUG    | core.request_wrapper:123 - [HTTP] POST http://localhost:1024/dev-api/auth/login -> 200 (417ms)
+2026-04-03 13:00:12.568 | DEBUG    | core.request_wrapper:123 - [HTTP] GET http://localhost:1024/dev-api/system/user/getInfo -> 200 (147ms)
+2026-04-03 13:00:12.604 | DEBUG    | core.request_wrapper:123 - [HTTP] GET http://localhost:1024/dev-api/system/user/getInfo -> 200 (26ms)
+2026-04-03 13:00:13.056 | DEBUG    | core.request_wrapper:123 - [HTTP] POST http://localhost:1024/dev-api/auth/login -> 200 (447ms)
+2026-04-03 20:40:20.822 | DEBUG    | core.request_wrapper:123 - [HTTP] POST http://localhost:1024/dev-api/auth/login -> 200 (694ms)
+2026-04-03 20:40:21.606 | DEBUG    | core.request_wrapper:123 - [HTTP] POST http://localhost:1024/dev-api/system/user -> 200 (752ms)
+2026-04-03 20:40:22.097 | DEBUG    | core.request_wrapper:123 - [HTTP] POST http://localhost:1024/dev-api/auth/login -> 200 (475ms)
+2026-04-03 20:40:22.841 | DEBUG    | core.request_wrapper:123 - [HTTP] POST http://localhost:1024/dev-api/system/user -> 200 (717ms)
+2026-04-03 20:40:23.292 | DEBUG    | core.request_wrapper:123 - [HTTP] POST http://localhost:1024/dev-api/auth/login -> 200 (440ms)
+2026-04-03 20:40:24.052 | DEBUG    | core.request_wrapper:123 - [HTTP] POST http://localhost:1024/dev-api/system/user -> 200 (733ms)
+2026-04-03 20:40:24.803 | DEBUG    | core.request_wrapper:123 - [HTTP] POST http://localhost:1024/dev-api/system/user -> 200 (725ms)
+2026-04-03 20:40:24.848 | WARNING  | conftest:102 - [conftest] 用例失败: tests/test_system/test_add_user.py::TestAddUser::test_add_user_duplicate_username | Context: {}
+2026-04-03 20:40:25.283 | DEBUG    | core.request_wrapper:123 - [HTTP] POST http://localhost:1024/dev-api/auth/login -> 200 (432ms)
+2026-04-03 20:40:26.017 | DEBUG    | core.request_wrapper:123 - [HTTP] POST http://localhost:1024/dev-api/system/user -> 200 (709ms)
+2026-04-03 20:40:26.762 | DEBUG    | core.request_wrapper:123 - [HTTP] POST http://localhost:1024/dev-api/system/user -> 200 (719ms)
+2026-04-03 20:40:26.785 | WARNING  | conftest:102 - [conftest] 用例失败: tests/test_system/test_add_user.py::TestAddUser::test_add_user_duplicate_phonenumber | Context: {}
+2026-04-03 20:40:27.218 | DEBUG    | core.request_wrapper:123 - [HTTP] POST http://localhost:1024/dev-api/auth/login -> 200 (427ms)
+2026-04-03 20:40:27.967 | DEBUG    | core.request_wrapper:123 - [HTTP] POST http://localhost:1024/dev-api/system/user -> 200 (722ms)
+2026-04-03 20:40:28.698 | DEBUG    | core.request_wrapper:123 - [HTTP] POST http://localhost:1024/dev-api/system/user -> 200 (705ms)
+2026-04-03 20:40:28.715 | WARNING  | conftest:102 - [conftest] 用例失败: tests/test_system/test_add_user.py::TestAddUser::test_add_user_duplicate_email | Context: {}
+2026-04-03 20:40:28.774 | DEBUG    | core.request_wrapper:123 - [HTTP] POST http://localhost:1024/dev-api/system/user -> 200 (37ms)
+2026-04-03 20:40:29.198 | DEBUG    | core.request_wrapper:123 - [HTTP] POST http://localhost:1024/dev-api/auth/login -> 200 (419ms)
+2026-04-03 20:40:29.926 | DEBUG    | core.request_wrapper:123 - [HTTP] POST http://localhost:1024/dev-api/system/user -> 200 (701ms)
+2026-04-03 20:40:30.384 | DEBUG    | core.request_wrapper:123 - [HTTP] POST http://localhost:1024/dev-api/auth/login -> 200 (446ms)
+2026-04-03 20:40:31.123 | DEBUG    | core.request_wrapper:123 - [HTTP] POST http://localhost:1024/dev-api/system/user -> 200 (712ms)
+2026-04-03 20:40:31.566 | DEBUG    | core.request_wrapper:123 - [HTTP] POST http://localhost:1024/dev-api/auth/login -> 200 (431ms)
+2026-04-03 20:40:32.287 | DEBUG    | core.request_wrapper:123 - [HTTP] POST http://localhost:1024/dev-api/system/user -> 200 (694ms)
+2026-04-03 20:40:32.733 | DEBUG    | core.request_wrapper:123 - [HTTP] POST http://localhost:1024/dev-api/auth/login -> 200 (435ms)
+2026-04-03 20:40:33.467 | DEBUG    | core.request_wrapper:123 - [HTTP] POST http://localhost:1024/dev-api/system/user -> 200 (707ms)
+2026-04-03 20:40:33.914 | DEBUG    | core.request_wrapper:123 - [HTTP] POST http://localhost:1024/dev-api/auth/login -> 200 (432ms)
+2026-04-03 20:40:34.637 | DEBUG    | core.request_wrapper:123 - [HTTP] POST http://localhost:1024/dev-api/system/user -> 200 (696ms)
+2026-04-03 20:40:35.090 | DEBUG    | core.request_wrapper:123 - [HTTP] POST http://localhost:1024/dev-api/auth/login -> 200 (437ms)
+2026-04-03 20:40:35.824 | DEBUG    | core.request_wrapper:123 - [HTTP] POST http://localhost:1024/dev-api/system/user -> 200 (706ms)
+2026-04-03 20:40:36.283 | DEBUG    | core.request_wrapper:123 - [HTTP] POST http://localhost:1024/dev-api/auth/login -> 200 (447ms)
+2026-04-03 20:40:37.019 | DEBUG    | core.request_wrapper:123 - [HTTP] POST http://localhost:1024/dev-api/system/user -> 200 (709ms)
+2026-04-03 20:40:37.466 | DEBUG    | core.request_wrapper:123 - [HTTP] POST http://localhost:1024/dev-api/auth/login -> 200 (433ms)
+2026-04-03 20:40:38.232 | DEBUG    | core.request_wrapper:123 - [HTTP] POST http://localhost:1024/dev-api/system/user -> 200 (738ms)
+2026-04-03 20:40:38.655 | DEBUG    | core.request_wrapper:123 - [HTTP] POST http://localhost:1024/dev-api/auth/login -> 200 (411ms)
+2026-04-03 20:40:39.111 | DEBUG    | core.request_wrapper:123 - [HTTP] POST http://localhost:1024/dev-api/auth/login -> 200 (444ms)
+2026-04-03 20:40:39.280 | DEBUG    | core.request_wrapper:123 - [HTTP] GET http://localhost:1024/dev-api/system/user/getInfo -> 200 (168ms)
+2026-04-03 20:40:39.709 | DEBUG    | core.request_wrapper:123 - [HTTP] POST http://localhost:1024/dev-api/auth/login -> 200 (413ms)
+2026-04-03 20:40:39.711 | INFO     | business.system_flows:80 - [SystemFlows] 登录成功，token 已注入。user=admin
+2026-04-03 20:40:39.860 | DEBUG    | core.request_wrapper:123 - [HTTP] GET http://localhost:1024/dev-api/system/user/getInfo -> 200 (149ms)
+2026-04-03 20:40:39.862 | INFO     | business.system_flows:125 - [SystemFlows] getInfo 成功: userId=1, roles=['admin'], permissions_count=1
+2026-04-03 20:40:40.282 | DEBUG    | core.request_wrapper:123 - [HTTP] POST http://localhost:1024/dev-api/auth/login -> 200 (410ms)
+2026-04-03 20:40:40.735 | DEBUG    | core.request_wrapper:123 - [HTTP] POST http://localhost:1024/dev-api/auth/login -> 200 (432ms)
+2026-04-03 20:40:40.883 | DEBUG    | core.request_wrapper:123 - [HTTP] GET http://localhost:1024/dev-api/system/user/getInfo -> 200 (148ms)
+2026-04-03 20:40:40.910 | DEBUG    | core.request_wrapper:123 - [HTTP] GET http://localhost:1024/dev-api/system/user/getInfo -> 200 (17ms)
+2026-04-03 20:40:41.345 | DEBUG    | core.request_wrapper:123 - [HTTP] POST http://localhost:1024/dev-api/auth/login -> 200 (429ms)
+2026-04-03 21:08:41.885 | DEBUG    | utils.db_client:66 - [DBClient:ry_cloud] 连接成功: 115.190.2.96:3306
+2026-04-03 21:08:41.928 | INFO     | utils.db_client:85 - [DBClient:ry_cloud] 健康检查通过。
+2026-04-03 21:08:41.929 | INFO     | test_system.conftest:33 - [conftest:system] 数据库 'ry_cloud' 健康检查通过。
+2026-04-03 21:08:42.536 | DEBUG    | core.request_wrapper:123 - [HTTP] POST http://localhost:1024/dev-api/auth/login -> 200 (600ms)
+2026-04-03 21:08:43.273 | DEBUG    | core.request_wrapper:123 - [HTTP] POST http://localhost:1024/dev-api/system/user -> 200 (705ms)
+2026-04-03 21:08:43.737 | DEBUG    | core.request_wrapper:123 - [HTTP] POST http://localhost:1024/dev-api/auth/login -> 200 (455ms)
+2026-04-03 21:08:44.484 | DEBUG    | core.request_wrapper:123 - [HTTP] POST http://localhost:1024/dev-api/system/user -> 200 (725ms)
+2026-04-03 21:08:44.988 | DEBUG    | core.request_wrapper:123 - [HTTP] POST http://localhost:1024/dev-api/auth/login -> 200 (413ms)
+2026-04-03 21:08:45.725 | DEBUG    | core.request_wrapper:123 - [HTTP] POST http://localhost:1024/dev-api/system/user -> 200 (711ms)
+2026-04-03 21:08:45.772 | WARNING  | conftest:102 - [conftest] 用例失败: tests/test_system/test_add_user.py::TestAddUser::test_add_user_duplicate_username | Context: {}
+2026-04-03 21:08:46.287 | DEBUG    | core.request_wrapper:123 - [HTTP] POST http://localhost:1024/dev-api/auth/login -> 200 (431ms)
+2026-04-03 21:08:47.031 | DEBUG    | core.request_wrapper:123 - [HTTP] POST http://localhost:1024/dev-api/system/user -> 200 (717ms)
+2026-04-03 21:08:47.049 | WARNING  | conftest:102 - [conftest] 用例失败: tests/test_system/test_add_user.py::TestAddUser::test_add_user_duplicate_phonenumber | Context: {}
+2026-04-03 21:08:47.553 | DEBUG    | core.request_wrapper:123 - [HTTP] POST http://localhost:1024/dev-api/auth/login -> 200 (417ms)
+2026-04-03 21:08:48.277 | DEBUG    | core.request_wrapper:123 - [HTTP] POST http://localhost:1024/dev-api/system/user -> 200 (697ms)
+2026-04-03 21:08:48.294 | WARNING  | conftest:102 - [conftest] 用例失败: tests/test_system/test_add_user.py::TestAddUser::test_add_user_duplicate_email | Context: {}
+2026-04-03 21:08:48.334 | DEBUG    | core.request_wrapper:123 - [HTTP] POST http://localhost:1024/dev-api/system/user -> 200 (17ms)
+2026-04-03 21:08:48.769 | DEBUG    | core.request_wrapper:123 - [HTTP] POST http://localhost:1024/dev-api/auth/login -> 200 (431ms)
+2026-04-03 21:08:49.487 | DEBUG    | core.request_wrapper:123 - [HTTP] POST http://localhost:1024/dev-api/system/user -> 200 (691ms)
+2026-04-03 21:08:49.926 | DEBUG    | core.request_wrapper:123 - [HTTP] POST http://localhost:1024/dev-api/auth/login -> 200 (428ms)
+2026-04-03 21:08:50.664 | DEBUG    | core.request_wrapper:123 - [HTTP] POST http://localhost:1024/dev-api/system/user -> 200 (711ms)
+2026-04-03 21:08:51.105 | DEBUG    | core.request_wrapper:123 - [HTTP] POST http://localhost:1024/dev-api/auth/login -> 200 (432ms)
+2026-04-03 21:08:51.836 | DEBUG    | core.request_wrapper:123 - [HTTP] POST http://localhost:1024/dev-api/system/user -> 200 (705ms)
+2026-04-03 21:08:52.277 | DEBUG    | core.request_wrapper:123 - [HTTP] POST http://localhost:1024/dev-api/auth/login -> 200 (431ms)
+2026-04-03 21:08:53.044 | DEBUG    | core.request_wrapper:123 - [HTTP] POST http://localhost:1024/dev-api/system/user -> 200 (740ms)
+2026-04-03 21:08:53.493 | DEBUG    | core.request_wrapper:123 - [HTTP] POST http://localhost:1024/dev-api/auth/login -> 200 (435ms)
+2026-04-03 21:08:54.230 | DEBUG    | core.request_wrapper:123 - [HTTP] POST http://localhost:1024/dev-api/system/user -> 200 (710ms)
+2026-04-03 21:08:54.658 | DEBUG    | core.request_wrapper:123 - [HTTP] POST http://localhost:1024/dev-api/auth/login -> 200 (421ms)
+2026-04-03 21:08:55.389 | DEBUG    | core.request_wrapper:123 - [HTTP] POST http://localhost:1024/dev-api/system/user -> 200 (711ms)
+2026-04-03 21:08:55.824 | DEBUG    | core.request_wrapper:123 - [HTTP] POST http://localhost:1024/dev-api/auth/login -> 200 (423ms)
+2026-04-03 21:08:56.546 | DEBUG    | core.request_wrapper:123 - [HTTP] POST http://localhost:1024/dev-api/system/user -> 200 (695ms)
+2026-04-03 21:08:57.016 | DEBUG    | core.request_wrapper:123 - [HTTP] POST http://localhost:1024/dev-api/auth/login -> 200 (458ms)
+2026-04-03 21:08:57.735 | DEBUG    | core.request_wrapper:123 - [HTTP] POST http://localhost:1024/dev-api/system/user -> 200 (706ms)
+2026-04-03 21:08:58.175 | DEBUG    | core.request_wrapper:123 - [HTTP] POST http://localhost:1024/dev-api/auth/login -> 200 (428ms)
+2026-04-03 21:08:58.596 | DEBUG    | core.request_wrapper:123 - [HTTP] POST http://localhost:1024/dev-api/auth/login -> 200 (410ms)
+2026-04-03 21:08:58.772 | DEBUG    | core.request_wrapper:123 - [HTTP] GET http://localhost:1024/dev-api/system/user/getInfo -> 200 (176ms)
+2026-04-03 21:08:59.235 | DEBUG    | core.request_wrapper:123 - [HTTP] POST http://localhost:1024/dev-api/auth/login -> 200 (445ms)
+2026-04-03 21:08:59.236 | INFO     | business.system_flows:80 - [SystemFlows] 登录成功，token 已注入。user=admin
+2026-04-03 21:08:59.371 | DEBUG    | core.request_wrapper:123 - [HTTP] GET http://localhost:1024/dev-api/system/user/getInfo -> 200 (135ms)
+2026-04-03 21:08:59.372 | INFO     | business.system_flows:125 - [SystemFlows] getInfo 成功: userId=1, roles=['admin'], permissions_count=1
+2026-04-03 21:08:59.793 | DEBUG    | core.request_wrapper:123 - [HTTP] POST http://localhost:1024/dev-api/auth/login -> 200 (410ms)
+2026-04-03 21:09:00.233 | DEBUG    | core.request_wrapper:123 - [HTTP] POST http://localhost:1024/dev-api/auth/login -> 200 (419ms)
+2026-04-03 21:09:00.385 | DEBUG    | core.request_wrapper:123 - [HTTP] GET http://localhost:1024/dev-api/system/user/getInfo -> 200 (152ms)
+2026-04-03 21:09:00.408 | DEBUG    | core.request_wrapper:123 - [HTTP] GET http://localhost:1024/dev-api/system/user/getInfo -> 200 (15ms)
+2026-04-03 21:09:00.821 | DEBUG    | core.request_wrapper:123 - [HTTP] POST http://localhost:1024/dev-api/auth/login -> 200 (405ms)
+2026-04-03 21:50:47.047 | DEBUG    | utils.db_client:66 - [DBClient:ry_cloud] 连接成功: 115.190.2.96:3306
+2026-04-03 21:50:47.099 | INFO     | utils.db_client:85 - [DBClient:ry_cloud] 健康检查通过。
+2026-04-03 21:50:47.100 | INFO     | test_system.conftest:33 - [conftest:system] 数据库 'ry_cloud' 健康检查通过。
+2026-04-03 21:50:50.284 | WARNING  | conftest:102 - [conftest] 用例失败: tests/test_system/test_add_user.py::TestAddUser::test_add_user_required_fields_only | Context: {}
+2026-04-03 21:50:53.445 | WARNING  | conftest:102 - [conftest] 用例失败: tests/test_system/test_add_user.py::TestAddUser::test_add_user_all_fields | Context: {}
+2026-04-03 21:50:53.614 | WARNING  | conftest:102 - [conftest] 用例失败: tests/test_system/test_add_user.py::TestAddUser::test_add_user_duplicate_username | Context: {}
+2026-04-03 21:50:56.870 | WARNING  | conftest:102 - [conftest] 用例失败: tests/test_system/test_add_user.py::TestAddUser::test_add_user_duplicate_phonenumber | Context: {}
+2026-04-03 21:51:32.587 | DEBUG    | utils.db_client:66 - [DBClient:ry_cloud] 连接成功: 115.190.2.96:3306
+2026-04-03 21:51:32.636 | INFO     | utils.db_client:85 - [DBClient:ry_cloud] 健康检查通过。
+2026-04-03 21:51:32.636 | INFO     | test_system.conftest:33 - [conftest:system] 数据库 'ry_cloud' 健康检查通过。
+2026-04-03 21:51:33.356 | DEBUG    | core.request_wrapper:123 - [HTTP] POST http://127.0.0.1:1026/dev-api/auth/login -> 200 (717ms)
+2026-04-03 21:51:34.415 | DEBUG    | core.request_wrapper:123 - [HTTP] POST http://127.0.0.1:1026/dev-api/system/user -> 200 (1028ms)
+2026-04-03 21:51:34.881 | DEBUG    | core.request_wrapper:123 - [HTTP] POST http://127.0.0.1:1026/dev-api/auth/login -> 200 (458ms)
+2026-04-03 21:51:35.741 | DEBUG    | core.request_wrapper:123 - [HTTP] POST http://127.0.0.1:1026/dev-api/system/user -> 200 (834ms)
+2026-04-03 21:51:35.953 | WARNING  | conftest:102 - [conftest] 用例失败: tests/test_system/test_add_user.py::TestAddUser::test_add_user_duplicate_username | Context: {}
+2026-04-03 21:51:36.618 | DEBUG    | core.request_wrapper:123 - [HTTP] POST http://127.0.0.1:1026/dev-api/auth/login -> 200 (556ms)
+2026-04-03 21:51:37.460 | DEBUG    | core.request_wrapper:123 - [HTTP] POST http://127.0.0.1:1026/dev-api/system/user -> 200 (816ms)
+2026-04-03 21:51:37.478 | WARNING  | conftest:102 - [conftest] 用例失败: tests/test_system/test_add_user.py::TestAddUser::test_add_user_duplicate_phonenumber | Context: {}
+2026-04-03 21:51:38.117 | DEBUG    | core.request_wrapper:123 - [HTTP] POST http://127.0.0.1:1026/dev-api/auth/login -> 200 (525ms)
+2026-04-03 21:51:38.970 | DEBUG    | core.request_wrapper:123 - [HTTP] POST http://127.0.0.1:1026/dev-api/system/user -> 200 (824ms)
+2026-04-03 21:51:38.985 | WARNING  | conftest:102 - [conftest] 用例失败: tests/test_system/test_add_user.py::TestAddUser::test_add_user_duplicate_email | Context: {}
+2026-04-03 21:51:39.026 | DEBUG    | core.request_wrapper:123 - [HTTP] POST http://127.0.0.1:1026/dev-api/system/user -> 200 (14ms)
+2026-04-03 21:51:39.588 | DEBUG    | core.request_wrapper:123 - [HTTP] POST http://127.0.0.1:1026/dev-api/auth/login -> 200 (558ms)
+2026-04-03 21:51:40.448 | DEBUG    | core.request_wrapper:123 - [HTTP] POST http://127.0.0.1:1026/dev-api/system/user -> 200 (833ms)
+2026-04-03 21:51:41.014 | DEBUG    | core.request_wrapper:123 - [HTTP] POST http://127.0.0.1:1026/dev-api/auth/login -> 200 (555ms)
+2026-04-03 21:51:41.917 | DEBUG    | core.request_wrapper:123 - [HTTP] POST http://127.0.0.1:1026/dev-api/system/user -> 200 (875ms)
+2026-04-03 21:51:42.428 | DEBUG    | core.request_wrapper:123 - [HTTP] POST http://127.0.0.1:1026/dev-api/auth/login -> 200 (501ms)
+2026-04-03 21:51:43.290 | DEBUG    | core.request_wrapper:123 - [HTTP] POST http://127.0.0.1:1026/dev-api/system/user -> 200 (835ms)
+2026-04-03 21:51:43.865 | DEBUG    | core.request_wrapper:123 - [HTTP] POST http://127.0.0.1:1026/dev-api/auth/login -> 200 (566ms)
+2026-04-03 21:51:44.837 | DEBUG    | core.request_wrapper:123 - [HTTP] POST http://127.0.0.1:1026/dev-api/system/user -> 200 (944ms)
+2026-04-03 21:51:45.339 | DEBUG    | core.request_wrapper:123 - [HTTP] POST http://127.0.0.1:1026/dev-api/auth/login -> 200 (492ms)
+2026-04-03 21:51:46.191 | DEBUG    | core.request_wrapper:123 - [HTTP] POST http://127.0.0.1:1026/dev-api/system/user -> 200 (834ms)
+2026-04-03 21:51:46.718 | DEBUG    | core.request_wrapper:123 - [HTTP] POST http://127.0.0.1:1026/dev-api/auth/login -> 200 (515ms)
+2026-04-03 21:51:48.092 | DEBUG    | core.request_wrapper:123 - [HTTP] POST http://127.0.0.1:1026/dev-api/system/user -> 200 (1348ms)
+2026-04-03 21:51:48.698 | DEBUG    | core.request_wrapper:123 - [HTTP] POST http://127.0.0.1:1026/dev-api/auth/login -> 200 (594ms)
+2026-04-03 21:51:49.605 | DEBUG    | core.request_wrapper:123 - [HTTP] POST http://127.0.0.1:1026/dev-api/system/user -> 200 (895ms)
+2026-04-03 21:51:50.114 | DEBUG    | core.request_wrapper:123 - [HTTP] POST http://127.0.0.1:1026/dev-api/auth/login -> 200 (498ms)
+2026-04-03 21:51:50.934 | DEBUG    | core.request_wrapper:123 - [HTTP] POST http://127.0.0.1:1026/dev-api/system/user -> 200 (792ms)
+2026-04-03 21:51:51.499 | DEBUG    | core.request_wrapper:123 - [HTTP] POST http://127.0.0.1:1026/dev-api/auth/login -> 200 (550ms)
+2026-04-03 21:51:52.055 | DEBUG    | core.request_wrapper:123 - [HTTP] POST http://127.0.0.1:1026/dev-api/auth/login -> 200 (536ms)
+2026-04-03 21:51:52.286 | DEBUG    | core.request_wrapper:123 - [HTTP] GET http://127.0.0.1:1026/dev-api/system/user/getInfo -> 200 (230ms)
+2026-04-03 21:51:52.809 | DEBUG    | core.request_wrapper:123 - [HTTP] POST http://127.0.0.1:1026/dev-api/auth/login -> 200 (506ms)
+2026-04-03 21:51:52.811 | INFO     | business.system_flows:80 - [SystemFlows] 登录成功，token 已注入。user=admin
+2026-04-03 21:51:53.003 | DEBUG    | core.request_wrapper:123 - [HTTP] GET http://127.0.0.1:1026/dev-api/system/user/getInfo -> 200 (191ms)
+2026-04-03 21:51:53.005 | INFO     | business.system_flows:125 - [SystemFlows] getInfo 成功: userId=1, roles=['admin'], permissions_count=1
+2026-04-03 21:51:53.596 | DEBUG    | core.request_wrapper:123 - [HTTP] POST http://127.0.0.1:1026/dev-api/auth/login -> 200 (579ms)
+2026-04-03 21:51:54.154 | DEBUG    | core.request_wrapper:123 - [HTTP] POST http://127.0.0.1:1026/dev-api/auth/login -> 200 (532ms)
+2026-04-03 21:51:54.336 | DEBUG    | core.request_wrapper:123 - [HTTP] GET http://127.0.0.1:1026/dev-api/system/user/getInfo -> 200 (182ms)
+2026-04-03 21:51:54.353 | DEBUG    | core.request_wrapper:123 - [HTTP] GET http://127.0.0.1:1026/dev-api/system/user/getInfo -> 200 (8ms)
+2026-04-03 21:51:54.881 | DEBUG    | core.request_wrapper:123 - [HTTP] POST http://127.0.0.1:1026/dev-api/auth/login -> 200 (523ms)

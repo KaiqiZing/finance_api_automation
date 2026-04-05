@@ -1,0 +1,5 @@
+userId:      1
+userName:    admin
+nickName:    若依
+roles:       ['admin']
+permissions: ['*:*:*']

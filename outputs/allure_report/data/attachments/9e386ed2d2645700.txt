@@ -1,0 +1,2 @@
+[32m20:40:39[0m | [1mINFO    [0m | [36mbusiness.system_flows[0m:[36m80[0m - [SystemFlows] 登录成功，token 已注入。user=admin
+[32m20:40:39[0m | [1mINFO    [0m | [36mbusiness.system_flows[0m:[36m125[0m - [SystemFlows] getInfo 成功: userId=1, roles=['admin'], permissions_count=1

@@ -1,0 +1,155 @@
+2026-04-05 17:13:28.560 | DEBUG    | utils.db_client:66 - [DBClient:ry_cloud] 连接成功: 115.190.2.96:3306
+2026-04-05 17:13:28.609 | INFO     | utils.db_client:85 - [DBClient:ry_cloud] 健康检查通过。
+2026-04-05 17:13:28.609 | INFO     | test_system.conftest:33 - [conftest:system] 数据库 'ry_cloud' 健康检查通过。
+2026-04-05 17:13:29.170 | DEBUG    | core.request_wrapper:123 - [HTTP] POST http://127.0.0.1:1024/dev-api/auth/login -> 200 (557ms)
+2026-04-05 17:13:30.060 | DEBUG    | core.request_wrapper:123 - [HTTP] POST http://127.0.0.1:1024/dev-api/system/user -> 200 (859ms)
+2026-04-05 17:13:30.455 | DEBUG    | core.request_wrapper:123 - [HTTP] POST http://127.0.0.1:1024/dev-api/auth/login -> 200 (387ms)
+2026-04-05 17:13:31.208 | DEBUG    | core.request_wrapper:123 - [HTTP] POST http://127.0.0.1:1024/dev-api/system/user -> 200 (732ms)
+2026-04-05 17:13:31.407 | WARNING  | conftest:102 - [conftest] 用例失败: tests/test_system/test_add_user.py::TestAddUser::test_add_user_duplicate_username | Context: {}
+2026-04-05 17:13:31.946 | DEBUG    | core.request_wrapper:123 - [HTTP] POST http://127.0.0.1:1024/dev-api/auth/login -> 200 (441ms)
+2026-04-05 17:13:32.722 | DEBUG    | core.request_wrapper:123 - [HTTP] POST http://127.0.0.1:1024/dev-api/system/user -> 200 (748ms)
+2026-04-05 17:13:32.743 | WARNING  | conftest:102 - [conftest] 用例失败: tests/test_system/test_add_user.py::TestAddUser::test_add_user_duplicate_phonenumber | Context: {}
+2026-04-05 17:13:33.273 | DEBUG    | core.request_wrapper:123 - [HTTP] POST http://127.0.0.1:1024/dev-api/auth/login -> 200 (425ms)
+2026-04-05 17:13:34.010 | DEBUG    | core.request_wrapper:123 - [HTTP] POST http://127.0.0.1:1024/dev-api/system/user -> 200 (710ms)
+2026-04-05 17:13:34.027 | WARNING  | conftest:102 - [conftest] 用例失败: tests/test_system/test_add_user.py::TestAddUser::test_add_user_duplicate_email | Context: {}
+2026-04-05 17:13:34.173 | DEBUG    | core.request_wrapper:123 - [HTTP] POST http://127.0.0.1:1024/dev-api/system/user -> 200 (123ms)
+2026-04-05 17:13:34.595 | DEBUG    | core.request_wrapper:123 - [HTTP] POST http://127.0.0.1:1024/dev-api/auth/login -> 200 (411ms)
+2026-04-05 17:13:35.375 | DEBUG    | core.request_wrapper:123 - [HTTP] POST http://127.0.0.1:1024/dev-api/system/user -> 200 (754ms)
+2026-04-05 17:13:35.875 | DEBUG    | core.request_wrapper:123 - [HTTP] POST http://127.0.0.1:1024/dev-api/auth/login -> 200 (486ms)
+2026-04-05 17:13:36.663 | DEBUG    | core.request_wrapper:123 - [HTTP] POST http://127.0.0.1:1024/dev-api/system/user -> 200 (763ms)
+2026-04-05 17:13:37.107 | DEBUG    | core.request_wrapper:123 - [HTTP] POST http://127.0.0.1:1024/dev-api/auth/login -> 200 (431ms)
+2026-04-05 17:13:37.868 | DEBUG    | core.request_wrapper:123 - [HTTP] POST http://127.0.0.1:1024/dev-api/system/user -> 200 (745ms)
+2026-04-05 17:13:38.298 | DEBUG    | core.request_wrapper:123 - [HTTP] POST http://127.0.0.1:1024/dev-api/auth/login -> 200 (414ms)
+2026-04-05 17:13:39.057 | DEBUG    | core.request_wrapper:123 - [HTTP] POST http://127.0.0.1:1024/dev-api/system/user -> 200 (730ms)
+2026-04-05 17:13:39.466 | DEBUG    | core.request_wrapper:123 - [HTTP] POST http://127.0.0.1:1024/dev-api/auth/login -> 200 (400ms)
+2026-04-05 17:13:40.229 | DEBUG    | core.request_wrapper:123 - [HTTP] POST http://127.0.0.1:1024/dev-api/system/user -> 200 (734ms)
+2026-04-05 17:13:40.644 | DEBUG    | core.request_wrapper:123 - [HTTP] POST http://127.0.0.1:1024/dev-api/auth/login -> 200 (400ms)
+2026-04-05 17:13:41.412 | DEBUG    | core.request_wrapper:123 - [HTTP] POST http://127.0.0.1:1024/dev-api/system/user -> 200 (750ms)
+2026-04-05 17:13:41.805 | DEBUG    | core.request_wrapper:123 - [HTTP] POST http://127.0.0.1:1024/dev-api/auth/login -> 200 (378ms)
+2026-04-05 17:13:42.524 | DEBUG    | core.request_wrapper:123 - [HTTP] POST http://127.0.0.1:1024/dev-api/system/user -> 200 (704ms)
+2026-04-05 17:13:42.908 | DEBUG    | core.request_wrapper:123 - [HTTP] POST http://127.0.0.1:1024/dev-api/auth/login -> 200 (381ms)
+2026-04-05 17:13:43.660 | DEBUG    | core.request_wrapper:123 - [HTTP] POST http://127.0.0.1:1024/dev-api/system/user -> 200 (724ms)
+2026-04-05 17:13:44.081 | DEBUG    | core.request_wrapper:123 - [HTTP] POST http://127.0.0.1:1024/dev-api/auth/login -> 200 (411ms)
+2026-04-05 17:13:44.530 | DEBUG    | core.request_wrapper:123 - [HTTP] POST http://127.0.0.1:1024/dev-api/auth/login -> 200 (437ms)
+2026-04-05 17:13:44.689 | DEBUG    | core.request_wrapper:123 - [HTTP] GET http://127.0.0.1:1024/dev-api/system/user/getInfo -> 200 (158ms)
+2026-04-05 17:13:45.116 | DEBUG    | core.request_wrapper:123 - [HTTP] POST http://127.0.0.1:1024/dev-api/auth/login -> 200 (415ms)
+2026-04-05 17:13:45.117 | INFO     | business.system_flows:80 - [SystemFlows] 登录成功，token 已注入。user=admin
+2026-04-05 17:13:45.276 | DEBUG    | core.request_wrapper:123 - [HTTP] GET http://127.0.0.1:1024/dev-api/system/user/getInfo -> 200 (158ms)
+2026-04-05 17:13:45.277 | INFO     | business.system_flows:125 - [SystemFlows] getInfo 成功: userId=1, roles=['admin'], permissions_count=1
+2026-04-05 17:13:45.699 | DEBUG    | core.request_wrapper:123 - [HTTP] POST http://127.0.0.1:1024/dev-api/auth/login -> 200 (411ms)
+2026-04-05 17:13:46.152 | DEBUG    | core.request_wrapper:123 - [HTTP] POST http://127.0.0.1:1024/dev-api/auth/login -> 200 (429ms)
+2026-04-05 17:13:46.314 | DEBUG    | core.request_wrapper:123 - [HTTP] GET http://127.0.0.1:1024/dev-api/system/user/getInfo -> 200 (162ms)
+2026-04-05 17:13:46.332 | DEBUG    | core.request_wrapper:123 - [HTTP] GET http://127.0.0.1:1024/dev-api/system/user/getInfo -> 200 (8ms)
+2026-04-05 17:13:46.741 | DEBUG    | core.request_wrapper:123 - [HTTP] POST http://127.0.0.1:1024/dev-api/auth/login -> 200 (401ms)
+2026-04-05 17:20:34.779 | DEBUG    | utils.db_client:66 - [DBClient:ry_cloud] 连接成功: 115.190.2.96:3306
+2026-04-05 17:20:34.821 | INFO     | utils.db_client:85 - [DBClient:ry_cloud] 健康检查通过。
+2026-04-05 17:20:34.821 | INFO     | test_system.conftest:33 - [conftest:system] 数据库 'ry_cloud' 健康检查通过。
+2026-04-05 17:20:34.969 | WARNING  | conftest:102 - [conftest] 用例失败: tests/test_system/test_add_user.py::TestAddUser::test_add_user_duplicate_username | Context: {}
+2026-04-05 17:20:47.229 | DEBUG    | utils.db_client:66 - [DBClient:ry_cloud] 连接成功: 115.190.2.96:3306
+2026-04-05 17:20:47.273 | INFO     | utils.db_client:85 - [DBClient:ry_cloud] 健康检查通过。
+2026-04-05 17:20:47.273 | INFO     | test_system.conftest:33 - [conftest:system] 数据库 'ry_cloud' 健康检查通过。
+2026-04-05 17:20:47.896 | DEBUG    | core.request_wrapper:123 - [HTTP] POST http://127.0.0.1:1024/dev-api/auth/login -> 200 (528ms)
+2026-04-05 17:20:48.689 | DEBUG    | core.request_wrapper:123 - [HTTP] POST http://127.0.0.1:1024/dev-api/system/user -> 200 (763ms)
+2026-04-05 17:20:48.735 | WARNING  | conftest:102 - [conftest] 用例失败: tests/test_system/test_add_user.py::TestAddUser::test_add_user_duplicate_phonenumber | Context: {}
+2026-04-05 17:28:31.390 | DEBUG    | utils.db_client:66 - [DBClient:ry_cloud] 连接成功: 115.190.2.96:3306
+2026-04-05 17:28:31.436 | INFO     | utils.db_client:85 - [DBClient:ry_cloud] 健康检查通过。
+2026-04-05 17:28:31.436 | INFO     | test_system.conftest:33 - [conftest:system] 数据库 'ry_cloud' 健康检查通过。
+2026-04-05 17:28:31.948 | DEBUG    | core.request_wrapper:123 - [HTTP] POST http://127.0.0.1:1024/dev-api/auth/login -> 200 (509ms)
+2026-04-05 17:28:32.693 | DEBUG    | core.request_wrapper:123 - [HTTP] POST http://127.0.0.1:1024/dev-api/system/user -> 200 (721ms)
+2026-04-05 17:28:33.176 | DEBUG    | core.request_wrapper:123 - [HTTP] POST http://127.0.0.1:1024/dev-api/auth/login -> 200 (474ms)
+2026-04-05 17:28:33.924 | DEBUG    | core.request_wrapper:123 - [HTTP] POST http://127.0.0.1:1024/dev-api/system/user -> 200 (725ms)
+2026-04-05 17:28:34.114 | WARNING  | conftest:102 - [conftest] 用例失败: tests/test_system/test_add_user.py::TestAddUser::test_add_user_duplicate_username | Context: {}
+2026-04-05 17:28:34.612 | DEBUG    | core.request_wrapper:123 - [HTTP] POST http://127.0.0.1:1024/dev-api/auth/login -> 200 (402ms)
+2026-04-05 17:28:35.342 | DEBUG    | core.request_wrapper:123 - [HTTP] POST http://127.0.0.1:1024/dev-api/system/user -> 200 (708ms)
+2026-04-05 17:28:35.356 | WARNING  | conftest:102 - [conftest] 用例失败: tests/test_system/test_add_user.py::TestAddUser::test_add_user_duplicate_phonenumber | Context: {}
+2026-04-05 17:28:35.863 | DEBUG    | core.request_wrapper:123 - [HTTP] POST http://127.0.0.1:1024/dev-api/auth/login -> 200 (409ms)
+2026-04-05 17:28:36.596 | DEBUG    | core.request_wrapper:123 - [HTTP] POST http://127.0.0.1:1024/dev-api/system/user -> 200 (710ms)
+2026-04-05 17:28:36.609 | WARNING  | conftest:102 - [conftest] 用例失败: tests/test_system/test_add_user.py::TestAddUser::test_add_user_duplicate_email | Context: {}
+2026-04-05 17:28:36.634 | DEBUG    | core.request_wrapper:123 - [HTTP] POST http://127.0.0.1:1024/dev-api/system/user -> 200 (8ms)
+2026-04-05 17:28:37.039 | DEBUG    | core.request_wrapper:123 - [HTTP] POST http://127.0.0.1:1024/dev-api/auth/login -> 200 (401ms)
+2026-04-05 17:28:37.753 | DEBUG    | core.request_wrapper:123 - [HTTP] POST http://127.0.0.1:1024/dev-api/system/user -> 200 (703ms)
+2026-04-05 17:28:38.156 | DEBUG    | core.request_wrapper:123 - [HTTP] POST http://127.0.0.1:1024/dev-api/auth/login -> 200 (395ms)
+2026-04-05 17:28:38.897 | DEBUG    | core.request_wrapper:123 - [HTTP] POST http://127.0.0.1:1024/dev-api/system/user -> 200 (717ms)
+2026-04-05 17:28:39.308 | DEBUG    | core.request_wrapper:123 - [HTTP] POST http://127.0.0.1:1024/dev-api/auth/login -> 200 (401ms)
+2026-04-05 17:28:40.018 | DEBUG    | core.request_wrapper:123 - [HTTP] POST http://127.0.0.1:1024/dev-api/system/user -> 200 (688ms)
+2026-04-05 17:28:40.426 | DEBUG    | core.request_wrapper:123 - [HTTP] POST http://127.0.0.1:1024/dev-api/auth/login -> 200 (400ms)
+2026-04-05 17:28:41.167 | DEBUG    | core.request_wrapper:123 - [HTTP] POST http://127.0.0.1:1024/dev-api/system/user -> 200 (716ms)
+2026-04-05 17:28:41.561 | DEBUG    | core.request_wrapper:123 - [HTTP] POST http://127.0.0.1:1024/dev-api/auth/login -> 200 (384ms)
+2026-04-05 17:28:42.273 | DEBUG    | core.request_wrapper:123 - [HTTP] POST http://127.0.0.1:1024/dev-api/system/user -> 200 (692ms)
+2026-04-05 17:28:42.677 | DEBUG    | core.request_wrapper:123 - [HTTP] POST http://127.0.0.1:1024/dev-api/auth/login -> 200 (394ms)
+2026-04-05 17:28:43.396 | DEBUG    | core.request_wrapper:123 - [HTTP] POST http://127.0.0.1:1024/dev-api/system/user -> 200 (697ms)
+2026-04-05 17:28:43.792 | DEBUG    | core.request_wrapper:123 - [HTTP] POST http://127.0.0.1:1024/dev-api/auth/login -> 200 (388ms)
+2026-04-05 17:28:44.511 | DEBUG    | core.request_wrapper:123 - [HTTP] POST http://127.0.0.1:1024/dev-api/system/user -> 200 (696ms)
+2026-04-05 17:28:44.920 | DEBUG    | core.request_wrapper:123 - [HTTP] POST http://127.0.0.1:1024/dev-api/auth/login -> 200 (401ms)
+2026-04-05 17:28:45.625 | DEBUG    | core.request_wrapper:123 - [HTTP] POST http://127.0.0.1:1024/dev-api/system/user -> 200 (694ms)
+2026-04-05 17:56:24.359 | DEBUG    | utils.db_client:66 - [DBClient:ry_cloud] 连接成功: 115.190.2.96:3306
+2026-04-05 17:56:24.408 | INFO     | utils.db_client:85 - [DBClient:ry_cloud] 健康检查通过。
+2026-04-05 17:56:24.408 | INFO     | test_system.conftest:33 - [conftest:system] 数据库 'ry_cloud' 健康检查通过。
+2026-04-05 17:56:24.859 | DEBUG    | core.request_wrapper:123 - [HTTP] POST http://127.0.0.1:1024/dev-api/auth/login -> 200 (446ms)
+2026-04-05 17:56:25.601 | DEBUG    | core.request_wrapper:123 - [HTTP] POST http://127.0.0.1:1024/dev-api/system/user -> 200 (724ms)
+2026-04-05 17:56:26.062 | DEBUG    | core.request_wrapper:123 - [HTTP] POST http://127.0.0.1:1024/dev-api/auth/login -> 200 (451ms)
+2026-04-05 17:56:26.794 | DEBUG    | core.request_wrapper:123 - [HTTP] POST http://127.0.0.1:1024/dev-api/system/user -> 200 (731ms)
+2026-04-05 17:56:27.287 | DEBUG    | core.request_wrapper:123 - [HTTP] POST http://127.0.0.1:1024/dev-api/auth/login -> 200 (400ms)
+2026-04-05 17:56:27.448 | DEBUG    | core.request_wrapper:123 - [HTTP] POST http://127.0.0.1:1024/dev-api/system/user -> 200 (151ms)
+2026-04-05 17:56:27.934 | DEBUG    | core.request_wrapper:123 - [HTTP] POST http://127.0.0.1:1024/dev-api/auth/login -> 200 (396ms)
+2026-04-05 17:56:28.136 | DEBUG    | core.request_wrapper:123 - [HTTP] POST http://127.0.0.1:1024/dev-api/system/user -> 200 (191ms)
+2026-04-05 17:56:28.641 | DEBUG    | core.request_wrapper:123 - [HTTP] POST http://127.0.0.1:1024/dev-api/auth/login -> 200 (415ms)
+2026-04-05 17:56:28.895 | DEBUG    | core.request_wrapper:123 - [HTTP] POST http://127.0.0.1:1024/dev-api/system/user -> 200 (239ms)
+2026-04-05 17:56:28.925 | DEBUG    | core.request_wrapper:123 - [HTTP] POST http://127.0.0.1:1024/dev-api/system/user -> 200 (11ms)
+2026-04-05 17:56:29.350 | DEBUG    | core.request_wrapper:123 - [HTTP] POST http://127.0.0.1:1024/dev-api/auth/login -> 200 (422ms)
+2026-04-05 17:56:30.076 | DEBUG    | core.request_wrapper:123 - [HTTP] POST http://127.0.0.1:1024/dev-api/system/user -> 200 (711ms)
+2026-04-05 17:56:30.490 | DEBUG    | core.request_wrapper:123 - [HTTP] POST http://127.0.0.1:1024/dev-api/auth/login -> 200 (406ms)
+2026-04-05 17:56:31.207 | DEBUG    | core.request_wrapper:123 - [HTTP] POST http://127.0.0.1:1024/dev-api/system/user -> 200 (710ms)
+2026-04-05 17:56:31.610 | DEBUG    | core.request_wrapper:123 - [HTTP] POST http://127.0.0.1:1024/dev-api/auth/login -> 200 (393ms)
+2026-04-05 17:56:32.331 | DEBUG    | core.request_wrapper:123 - [HTTP] POST http://127.0.0.1:1024/dev-api/system/user -> 200 (705ms)
+2026-04-05 17:56:32.736 | DEBUG    | core.request_wrapper:123 - [HTTP] POST http://127.0.0.1:1024/dev-api/auth/login -> 200 (397ms)
+2026-04-05 17:56:33.459 | DEBUG    | core.request_wrapper:123 - [HTTP] POST http://127.0.0.1:1024/dev-api/system/user -> 200 (708ms)
+2026-04-05 17:56:33.912 | DEBUG    | core.request_wrapper:123 - [HTTP] POST http://127.0.0.1:1024/dev-api/auth/login -> 200 (445ms)
+2026-04-05 17:56:34.621 | DEBUG    | core.request_wrapper:123 - [HTTP] POST http://127.0.0.1:1024/dev-api/system/user -> 200 (693ms)
+2026-04-05 17:56:35.026 | DEBUG    | core.request_wrapper:123 - [HTTP] POST http://127.0.0.1:1024/dev-api/auth/login -> 200 (397ms)
+2026-04-05 17:56:35.737 | DEBUG    | core.request_wrapper:123 - [HTTP] POST http://127.0.0.1:1024/dev-api/system/user -> 200 (699ms)
+2026-04-05 17:56:36.142 | DEBUG    | core.request_wrapper:123 - [HTTP] POST http://127.0.0.1:1024/dev-api/auth/login -> 200 (396ms)
+2026-04-05 17:56:36.847 | DEBUG    | core.request_wrapper:123 - [HTTP] POST http://127.0.0.1:1024/dev-api/system/user -> 200 (689ms)
+2026-04-05 17:56:37.243 | DEBUG    | core.request_wrapper:123 - [HTTP] POST http://127.0.0.1:1024/dev-api/auth/login -> 200 (387ms)
+2026-04-05 17:56:37.984 | DEBUG    | core.request_wrapper:123 - [HTTP] POST http://127.0.0.1:1024/dev-api/system/user -> 200 (726ms)
+2026-04-05 18:14:47.599 | DEBUG    | utils.db_client:66 - [DBClient:ry_cloud] 连接成功: 115.190.2.96:3306
+2026-04-05 18:14:47.649 | INFO     | utils.db_client:85 - [DBClient:ry_cloud] 健康检查通过。
+2026-04-05 18:14:47.650 | INFO     | test_system.conftest:33 - [conftest:system] 数据库 'ry_cloud' 健康检查通过。
+2026-04-05 18:14:48.207 | DEBUG    | core.request_wrapper:123 - [HTTP] POST http://127.0.0.1:1024/dev-api/auth/login -> 200 (549ms)
+2026-04-05 18:14:48.968 | DEBUG    | core.request_wrapper:123 - [HTTP] POST http://127.0.0.1:1024/dev-api/system/user -> 200 (744ms)
+2026-04-05 18:14:49.595 | DEBUG    | core.request_wrapper:123 - [HTTP] DELETE http://127.0.0.1:1024/dev-api/system/user/206 -> 200 (537ms)
+2026-04-05 18:14:50.101 | DEBUG    | core.request_wrapper:123 - [HTTP] POST http://127.0.0.1:1024/dev-api/auth/login -> 200 (412ms)
+2026-04-05 18:14:50.603 | DEBUG    | core.request_wrapper:123 - [HTTP] DELETE http://127.0.0.1:1024/dev-api/system/user/205 -> 200 (501ms)
+2026-04-05 18:14:51.110 | DEBUG    | core.request_wrapper:123 - [HTTP] POST http://127.0.0.1:1024/dev-api/auth/login -> 200 (496ms)
+2026-04-05 18:14:51.664 | DEBUG    | core.request_wrapper:123 - [HTTP] DELETE http://127.0.0.1:1024/dev-api/system/user/99999999 -> 200 (553ms)
+2026-04-05 18:14:51.687 | DEBUG    | core.request_wrapper:123 - [HTTP] DELETE http://127.0.0.1:1024/dev-api/system/user/1 -> 200 (15ms)
+2026-04-05 18:25:47.183 | DEBUG    | utils.db_client:66 - [DBClient:ry_cloud] 连接成功: 115.190.2.96:3306
+2026-04-05 18:25:47.231 | INFO     | utils.db_client:85 - [DBClient:ry_cloud] 健康检查通过。
+2026-04-05 18:25:47.231 | INFO     | test_system.conftest:33 - [conftest:system] 数据库 'ry_cloud' 健康检查通过。
+2026-04-05 18:25:47.818 | DEBUG    | core.request_wrapper:123 - [HTTP] POST http://127.0.0.1:1024/dev-api/auth/login -> 200 (579ms)
+2026-04-05 18:25:47.819 | INFO     | test_system.test_delete_user:85 - [DEL-001] 前置步骤：新增测试用户 userName=test_180834fe
+2026-04-05 18:25:48.635 | DEBUG    | core.request_wrapper:123 - [HTTP] POST http://127.0.0.1:1024/dev-api/system/user -> 200 (796ms)
+2026-04-05 18:25:48.636 | DEBUG    | test_system.test_delete_user:91 - [DEL-001] 新增响应: {'msg': '操作成功', 'code': 200}
+2026-04-05 18:25:48.636 | INFO     | test_system.test_delete_user:95 - [DEL-001] 用户新增成功，userName=test_180834fe
+2026-04-05 18:25:48.637 | DEBUG    | test_system.test_delete_user:98 - [DEL-001] 查询 sys_user 获取 user_id，userName=test_180834fe
+2026-04-05 18:25:48.726 | INFO     | test_system.test_delete_user:103 - [DEL-001] 查到 user_id=207，userName=test_180834fe
+2026-04-05 18:25:48.729 | WARNING  | test_system.test_delete_user:112 - [DEL-001] 即将删除用户 | user_id=207 | userName=test_180834fe
+2026-04-05 18:25:49.292 | DEBUG    | core.request_wrapper:123 - [HTTP] DELETE http://127.0.0.1:1024/dev-api/system/user/207 -> 200 (563ms)
+2026-04-05 18:25:49.292 | DEBUG    | test_system.test_delete_user:117 - [DEL-001] 删除响应: {'msg': '操作成功', 'code': 200}
+2026-04-05 18:25:49.294 | INFO     | test_system.test_delete_user:135 - [DEL-001] 删除成功 | user_id=207 | userName=test_180834fe | msg=操作成功
+2026-04-05 18:25:49.309 | DEBUG    | test_system.test_delete_user:155 - [DEL-002] 查询 sys_user 获取 user_id >= 3 的候选用户
+2026-04-05 18:25:49.400 | INFO     | test_system.test_delete_user:167 - [DEL-002] DB 查询到候选用户 | user_id=204 | user_name=test_dcac2e73
+2026-04-05 18:25:49.844 | DEBUG    | core.request_wrapper:123 - [HTTP] POST http://127.0.0.1:1024/dev-api/auth/login -> 200 (442ms)
+2026-04-05 18:25:49.846 | WARNING  | test_system.test_delete_user:183 - [DEL-002] 即将删除用户 | user_id=204 | user_name=test_dcac2e73
+2026-04-05 18:25:50.399 | DEBUG    | core.request_wrapper:123 - [HTTP] DELETE http://127.0.0.1:1024/dev-api/system/user/204 -> 200 (553ms)
+2026-04-05 18:25:50.400 | DEBUG    | test_system.test_delete_user:188 - [DEL-002] 删除响应: {'msg': '操作成功', 'code': 200}
+2026-04-05 18:25:50.401 | INFO     | test_system.test_delete_user:206 - [DEL-002] 删除成功 | user_id=204 | user_name=test_dcac2e73 | msg=操作成功
+2026-04-05 18:25:50.897 | DEBUG    | core.request_wrapper:123 - [HTTP] POST http://127.0.0.1:1024/dev-api/auth/login -> 200 (485ms)
+2026-04-05 18:25:50.898 | INFO     | test_system.test_delete_user:230 - [DEL-003] 使用不存在的 user_id=99999999 发起删除请求
+2026-04-05 18:25:51.432 | DEBUG    | core.request_wrapper:123 - [HTTP] DELETE http://127.0.0.1:1024/dev-api/system/user/99999999 -> 200 (534ms)
+2026-04-05 18:25:51.433 | DEBUG    | test_system.test_delete_user:232 - [DEL-003] 响应: {'msg': '操作失败', 'code': 500}
+2026-04-05 18:25:51.434 | INFO     | test_system.test_delete_user:245 - [DEL-003] 按预期被拦截 | user_id=99999999 | code=500 | msg=操作失败
+2026-04-05 18:25:51.445 | INFO     | test_system.test_delete_user:266 - [DEL-004] 未注入 Token，发起删除请求，预期被鉴权拦截
+2026-04-05 18:25:51.463 | DEBUG    | core.request_wrapper:123 - [HTTP] DELETE http://127.0.0.1:1024/dev-api/system/user/1 -> 200 (17ms)
+2026-04-05 18:25:51.463 | DEBUG    | test_system.test_delete_user:268 - [DEL-004] 响应: {'code': 401, 'msg': '令牌不能为空'}
+2026-04-05 18:25:51.464 | INFO     | test_system.test_delete_user:294 - [DEL-004] 鉴权拦截验证通过 | code=401 | msg=令牌不能为空

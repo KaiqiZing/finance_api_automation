@@ -1,0 +1,48 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "AccountRegisterResponse",
+  "description": "账户注册接口响应结构契约",
+  "type": "object",
+  "required": ["code", "message", "data"],
+  "properties": {
+    "code": {
+      "type": "integer",
+      "description": "业务状态码，0 表示成功"
+    },
+    "biz_status": {
+      "type": "string",
+      "enum": ["SUCCESS", "FAIL", "PROCESSING"]
+    },
+    "message": {
+      "type": "string"
+    },
+    "data": {
+      "type": "object",
+      "required": ["cust_id", "account_no", "status"],
+      "properties": {
+        "cust_id": {
+          "type": "string",
+          "minLength": 1,
+          "description": "客户唯一标识"
+        },
+        "account_no": {
+          "type": "string",
+          "minLength": 1,
+          "description": "银行账号"
+        },
+        "status": {
+          "type": "string",
+          "enum": ["PENDING", "ACTIVE"],
+          "description": "账户初始状态"
+        },
+        "created_at": {
+          "type": "string",
+          "format": "date-time"
+        }
+      }
+    },
+    "trace_id": {
+      "type": "string"
+    }
+  }
+}

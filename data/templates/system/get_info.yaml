@@ -1,0 +1,14 @@
+# 获取当前登录用户信息接口 YAML 模板
+# 接口: GET /dev-api/system/user/getInfo
+# 依赖: 请求头携带登录后返回的 Authorization: Bearer <token>
+# 无请求体
+
+api_info:
+  path: "/system/user/getInfo"
+  method: "GET"
+  description: "查询当前登录用户的详细信息（权限、角色、菜单等）"
+
+logic_rules: []
+
+# GET 接口无 payload
+payload: {}

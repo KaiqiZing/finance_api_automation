@@ -1,0 +1,1 @@
+[32m20:40:24[0m | [33m[1mWARNING [0m | [36mconftest[0m:[36m102[0m - [conftest] 用例失败: tests/test_system/test_add_user.py::TestAddUser::test_add_user_duplicate_username | Context: {}

@@ -1,0 +1,56 @@
+# 账户注册接口 YAML 模板
+# 对应接口: POST /api/v1/account/register
+# 字段说明: 40+ 动态字段，包含三要素及业务属性
+
+api_info:
+  path: "/api/v1/account/register"
+  method: "POST"
+  description: "个人账户注册"
+
+# 字段依赖规则
+logic_rules:
+  - condition: "id_type != '01'"
+    remove_fields: ["area_code"]
+  - condition: "account_type == '02'"
+    required_fields: ["enterprise_name", "tax_no"]
+
+payload:
+  # === 基本身份信息 ===
+  cust_name: "${get_name}"
+  id_type: "${choice(['01', '02'])}"
+  id_no: "${gen_id_by_type(01)}"
+  mobile: "${get_mobile}"
+  gender: "${choice(['M', 'F'])}"
+  nationality: "CN"
+  birth_date: "1990-01-01"
+
+  # === 账户类型 ===
+  account_type: "01"
+  channel: "${choice(['APP', 'WEB', 'API'])}"
+  product_code: "STD_ACCOUNT_V1"
+
+  # === 地址信息 ===
+  province_code: "${choice(['110000', '310000', '440000', '330000'])}"
+  city_code: "${rand_str(num, 6)}"
+  area_code: "${rand_str(num, 6)}"
+  address: "${rand_str(chn, 10)}路${rand_str(num, 3)}号"
+  zip_code: "${rand_str(num, 6)}"
+
+  # === 联系方式 ===
+  email: "${rand_str(en, 8)}@test.com"
+  work_phone: "010${rand_str(num, 8)}"
+
+  # === 风险评估 ===
+  risk_level: "${choice(['R1', 'R2', 'R3'])}"
+  investment_experience: "${choice(['NONE', 'LESS_3Y', '3_5Y', 'MORE_5Y'])}"
+  annual_income: "${choice(['LT50K', '50K_200K', '200K_500K', 'GT500K'])}"
+
+  # === 协议 ===
+  agreement_version: "V2.3"
+  confirm_agreement: true
+  ip_address: "192.168.${rand_str(num, 1)}.${rand_str(num, 2)}"
+
+  # === 扩展字段 ===
+  remark: "${rand_str(chn, 5)}测试备注"
+  trace_id: "${uuid}"
+  request_time: "${timestamp}"

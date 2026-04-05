@@ -1,0 +1,14 @@
+# 系统登录接口 YAML 模板
+# 接口: POST /dev-api/auth/login
+# 文档: 用户名/密码登录，返回 token
+
+api_info:
+  path: "/auth/login"
+  method: "POST"
+  description: "系统用户登录，获取 Bearer Token"
+
+logic_rules: []
+
+payload:
+  username: "admin"
+  password: "admin123"

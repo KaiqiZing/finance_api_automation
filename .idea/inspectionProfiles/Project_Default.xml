@@ -1,0 +1,49 @@
+<component name="InspectionProjectProfileManager">
+  <profile version="1.0">
+    <option name="myName" value="Project Default" />
+    <inspection_tool class="PyPackageRequirementsInspection" enabled="true" level="WARNING" enabled_by_default="true">
+      <option name="ignoredPackages">
+        <list>
+          <option value="selenium" />
+          <option value="coloredlogs" />
+          <option value="ddddocr" />
+          <option value="flatbuffers" />
+          <option value="humanfriendly" />
+          <option value="mpmath" />
+          <option value="onnxruntime" />
+          <option value="packaging" />
+          <option value="pillow" />
+          <option value="protobuf" />
+          <option value="pyreadline3" />
+          <option value="sympy" />
+          <option value="pytest" />
+          <option value="pytest-html" />
+          <option value="pytest-json-report" />
+          <option value="allure-pytest" />
+          <option value="requests" />
+          <option value="urllib3" />
+          <option value="PyYAML" />
+          <option value="faker" />
+          <option value="jsonschema" />
+          <option value="pytest-xdist" />
+          <option value="pytest-rerunfailures" />
+          <option value="pymysql" />
+          <option value="psycopg2-binary" />
+          <option value="redis" />
+          <option value="responses" />
+          <option value="mocket" />
+          <option value="locust" />
+          <option value="pytest-cov" />
+          <option value="flake8" />
+          <option value="black" />
+          <option value="mypy" />
+          <option value="colorlog" />
+          <option value="structlog" />
+          <option value="python-dotenv" />
+          <option value="pydantic" />
+          <option value="dynaconf" />
+        </list>
+      </option>
+    </inspection_tool>
+  </profile>
+</component>

@@ -1,0 +1,2 @@
+"DESCRIPTION","DURATION IN MS","NAME","PARENT SUITE","START TIME","STATUS","STOP TIME","SUB SUITE","SUITE","TEST CLASS","TEST METHOD"
+"使用居民身份证完成账户注册，验证账户状态和 DB 数据落地。","0","TC-REG-001：使用身份证正常注册开户","","2026-04-03","skipped","2026-04-03","","","",""

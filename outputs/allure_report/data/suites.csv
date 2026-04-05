@@ -1,0 +1,79 @@
+"DESCRIPTION","DURATION IN MS","NAME","PARENT SUITE","START TIME","STATUS","STOP TIME","SUB SUITE","SUITE","TEST CLASS","TEST METHOD"
+"数据驱动：对 sex 枚举每个值各新增一个用户，均断言 code==200。","1203","TC-SYS-USR-008：数据驱动 - sex 枚举 0/1/2 均可新增用户成功","tests.test_system","2026-04-03","passed","2026-04-03","TestAddUser","test_add_user","",""
+"
+        通过 SystemFlows 执行完整链路，断言:
+        - GlobalContext 中 system_token / system_user_name / system_roles / system_permissions 均已填充
+        - user.userName 与登录用户名一致
+        ","569","TC-SYS-003：完整链路 —— 登录 → getInfo 一步完成","tests.test_system","2026-04-03","passed","2026-04-03","TestUserLogin","test_user_login","",""
+"
+        先登录获取 access_token，再调用 getInfo，断言:
+        - getInfo 响应 code == 200
+        - user.userName == 'admin'
+        - roles 列表非空
+        - permissions 列表非空
+        - 响应结构符合 JSON Schema 契约
+        ","619","TC-SYS-002：登录后调用 getInfo，返回用户名/角色/权限","tests.test_system","2026-04-03","passed","2026-04-03","TestUserLogin","test_user_login","",""
+"
+        数据驱动：对 parametrize 中每组账号执行登录，均断言 code==200 且 access_token 非空。
+        ","432","TC-SYS-006：数据驱动 - 多账号登录均应成功","tests.test_system","2026-04-03","passed","2026-04-03","TestUserLogin","test_user_login","",""
+"数据驱动：对接口文档中每个部门各新增一个用户，均断言 code==200。","1171","TC-SYS-USR-007：数据驱动 - 文档所有部门 deptId 均可新增用户成功","tests.test_system","2026-04-03","passed","2026-04-03","TestAddUser","test_add_user","",""
+"
+        只传三个必填字段，断言:
+        - 响应 code == 200
+        - 响应 msg == ""操作成功""
+        ","1483","TC-SYS-USR-001：仅传必填字段（userName/nickName/password）新增用户成功","tests.test_system","2026-04-03","passed","2026-04-03","TestAddUser","test_add_user","",""
+"
+        先新增含邮箱的用户，再用同一邮箱新增另一用户，断言:
+        - code == 500
+        - msg 包含""邮箱账号已存在""
+        ","1911","TC-SYS-USR-005：重复邮箱新增，code==500 且提示邮箱账号已存在","tests.test_system","2026-04-03","failed","2026-04-03","TestAddUser","test_add_user","",""
+"
+        不调用登录、不设置 token，直接请求 getInfo，断言:
+        - 响应 code 不为 200（实际返回 401 或业务异常码）
+        - 响应 msg 包含""令牌""、""登录""、""认证""或""token""相关提示
+        ","19","TC-SYS-005：不携带 Token 直接调用 getInfo，应被鉴权拦截","tests.test_system","2026-04-03","passed","2026-04-03","TestUserLogin","test_user_login","",""
+"数据驱动：对接口文档中每个部门各新增一个用户，均断言 code==200。","1155","TC-SYS-USR-007：数据驱动 - 文档所有部门 deptId 均可新增用户成功","tests.test_system","2026-04-03","passed","2026-04-03","TestAddUser","test_add_user","",""
+"
+        对同一 userName 连续新增两次，断言第二次:
+        - code == 500
+        - msg 包含""登录账号已存在""
+        ","1956","TC-SYS-USR-003：重复用户名新增，code==500 且提示登录账号已存在","tests.test_system","2026-04-03","failed","2026-04-03","TestAddUser","test_add_user","",""
+"数据驱动：对 sex 枚举每个值各新增一个用户，均断言 code==200。","1185","TC-SYS-USR-008：数据驱动 - sex 枚举 0/1/2 均可新增用户成功","tests.test_system","2026-04-03","passed","2026-04-03","TestAddUser","test_add_user","",""
+"
+        使用系统中不存在的用户名登录，断言:
+        - 服务端返回非 200 的业务码（如 500 / 401）
+        - 响应中无有效 access_token
+
+        注意: 若本地代理对所有请求统一返回 200，该用例会被标记为 xfail（预期失败），
+        直连后端时应恢复为正常 FAIL → PASS 状态。
+        ","413","TC-SYS-004a：不存在的用户名登录，应被服务端拒绝（xfail 标记）","tests.test_system","2026-04-03","skipped","2026-04-03","TestUserLogin","test_user_login","",""
+"数据驱动：对接口文档中每个部门各新增一个用户，均断言 code==200。","1150","TC-SYS-USR-007：数据驱动 - 文档所有部门 deptId 均可新增用户成功","tests.test_system","2026-04-03","passed","2026-04-03","TestAddUser","test_add_user","",""
+"
+        不调用登录、不注入 token，直接调用 add_user，断言:
+        - 响应 code 不为 200
+        - msg 包含鉴权相关关键词
+        ","56","TC-SYS-USR-006：未携带 Token 新增用户，应被鉴权拦截","tests.test_system","2026-04-03","passed","2026-04-03","TestAddUser","test_add_user","",""
+"数据驱动：对 sex 枚举每个值各新增一个用户，均断言 code==200。","1174","TC-SYS-USR-008：数据驱动 - sex 枚举 0/1/2 均可新增用户成功","tests.test_system","2026-04-03","passed","2026-04-03","TestAddUser","test_add_user","",""
+"数据驱动：对接口文档中每个部门各新增一个用户，均断言 code==200。","1188","TC-SYS-USR-007：数据驱动 - 文档所有部门 deptId 均可新增用户成功","tests.test_system","2026-04-03","passed","2026-04-03","TestAddUser","test_add_user","",""
+"数据驱动：对接口文档中每个部门各新增一个用户，均断言 code==200。","1159","TC-SYS-USR-007：数据驱动 - 文档所有部门 deptId 均可新增用户成功","tests.test_system","2026-04-03","passed","2026-04-03","TestAddUser","test_add_user","",""
+"
+        使用正确的用户名/密码登录，断言:
+        - 响应 code == 200
+        - data.access_token 非空且为字符串
+        - data.expires_in 为正整数（Token 有效期）
+        - 响应结构符合 system_login_response JSON Schema
+        ","417","TC-SYS-001：admin 正常登录，data.access_token 非空","tests.test_system","2026-04-03","passed","2026-04-03","TestUserLogin","test_user_login","",""
+"
+        登录后调用 getInfo，断言返回的 user.userName 与登录时传入的 username 完全一致，
+        确保系统不会将 A 账号的 token 指向 B 账号的信息。
+        ","583","TC-SYS-004b：登录后 getInfo 返回的用户名与登录账号一致","tests.test_system","2026-04-03","passed","2026-04-03","TestUserLogin","test_user_login","",""
+"
+        传入文档中所有字段，断言:
+        - 响应 code == 200
+        - 响应结构符合 JSON Schema 契约
+        ","1223","TC-SYS-USR-002：全字段新增用户，断言 code==200 & 响应结构合法","tests.test_system","2026-04-03","passed","2026-04-03","TestAddUser","test_add_user","",""
+"
+        先新增含手机号的用户，再用同一手机号新增另一用户，断言:
+        - code == 500
+        - msg 包含""手机号码已存在""
+        ","1917","TC-SYS-USR-004：重复手机号新增，code==500 且提示手机号码已存在","tests.test_system","2026-04-03","failed","2026-04-03","TestAddUser","test_add_user","",""

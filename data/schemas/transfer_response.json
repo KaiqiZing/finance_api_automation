@@ -1,0 +1,46 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "TransferResponse",
+  "description": "转账接口响应结构契约",
+  "type": "object",
+  "required": ["code", "message", "data"],
+  "properties": {
+    "code": {
+      "type": "integer"
+    },
+    "biz_status": {
+      "type": "string",
+      "enum": ["SUCCESS", "FAIL", "PROCESSING"]
+    },
+    "message": {
+      "type": "string"
+    },
+    "data": {
+      "type": "object",
+      "required": ["order_no", "status"],
+      "properties": {
+        "order_no": {
+          "type": "string",
+          "description": "转账订单号"
+        },
+        "status": {
+          "type": "string",
+          "enum": ["PENDING", "SUCCESS", "FAILED", "PROCESSING"]
+        },
+        "amount": {
+          "type": "number"
+        },
+        "currency": {
+          "type": "string"
+        },
+        "created_at": {
+          "type": "string",
+          "format": "date-time"
+        }
+      }
+    },
+    "trace_id": {
+      "type": "string"
+    }
+  }
+}

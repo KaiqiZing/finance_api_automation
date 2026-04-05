@@ -1,0 +1,39 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "SystemGetInfoResponse",
+  "description": "获取用户信息接口响应结构契约",
+  "type": "object",
+  "required": ["code"],
+  "properties": {
+    "code": {
+      "type": "integer",
+      "description": "200 表示成功"
+    },
+    "msg": {
+      "type": "string"
+    },
+    "user": {
+      "type": "object",
+      "description": "用户基本信息",
+      "properties": {
+        "userId": { "type": "integer" },
+        "userName": { "type": "string" },
+        "nickName": { "type": "string" },
+        "email": { "type": "string" },
+        "phonenumber": { "type": "string" },
+        "sex": { "type": "string" },
+        "status": { "type": "string" }
+      }
+    },
+    "roles": {
+      "type": "array",
+      "items": { "type": "string" },
+      "description": "角色标识列表"
+    },
+    "permissions": {
+      "type": "array",
+      "items": { "type": "string" },
+      "description": "权限标识列表"
+    }
+  }
+}
