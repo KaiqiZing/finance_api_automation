@@ -1,2 +1,0 @@
-[32m18:25:50[0m | [1mINFO    [0m | [36mtest_system.test_delete_user[0m:[36m230[0m - [DEL-003] 使用不存在的 user_id=99999999 发起删除请求
-[32m18:25:51[0m | [1mINFO    [0m | [36mtest_system.test_delete_user[0m:[36m245[0m - [DEL-003] 按预期被拦截 | user_id=99999999 | code=500 | msg=操作失败

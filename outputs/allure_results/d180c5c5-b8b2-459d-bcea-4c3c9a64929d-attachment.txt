@@ -1,2 +1,0 @@
-[32m18:25:51[0m | [1mINFO    [0m | [36mtest_system.test_delete_user[0m:[36m266[0m - [DEL-004] 未注入 Token，发起删除请求，预期被鉴权拦截
-[32m18:25:51[0m | [1mINFO    [0m | [36mtest_system.test_delete_user[0m:[36m294[0m - [DEL-004] 鉴权拦截验证通过 | code=401 | msg=令牌不能为空

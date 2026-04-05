@@ -153,3 +153,36 @@
 2026-04-05 18:25:51.463 | DEBUG    | core.request_wrapper:123 - [HTTP] DELETE http://127.0.0.1:1024/dev-api/system/user/1 -> 200 (17ms)
 2026-04-05 18:25:51.463 | DEBUG    | test_system.test_delete_user:268 - [DEL-004] 响应: {'code': 401, 'msg': '令牌不能为空'}
 2026-04-05 18:25:51.464 | INFO     | test_system.test_delete_user:294 - [DEL-004] 鉴权拦截验证通过 | code=401 | msg=令牌不能为空
+2026-04-05 18:38:24.095 | DEBUG    | utils.db_client:66 - [DBClient:ry_cloud] 连接成功: 115.190.2.96:3306
+2026-04-05 18:38:24.140 | INFO     | utils.db_client:85 - [DBClient:ry_cloud] 健康检查通过。
+2026-04-05 18:38:24.142 | INFO     | test_system.conftest:33 - [conftest:system] 数据库 'ry_cloud' 健康检查通过。
+2026-04-05 18:38:24.709 | DEBUG    | core.request_wrapper:123 - [HTTP] POST http://127.0.0.1:1024/dev-api/auth/login -> 200 (557ms)
+2026-04-05 18:38:24.709 | INFO     | test_system.test_delete_user:85 - [DEL-001] 前置步骤：新增测试用户 userName=test_3d603a5a
+2026-04-05 18:38:25.466 | DEBUG    | core.request_wrapper:123 - [HTTP] POST http://127.0.0.1:1024/dev-api/system/user -> 200 (738ms)
+2026-04-05 18:38:25.467 | DEBUG    | test_system.test_delete_user:91 - [DEL-001] 新增响应: {'msg': '操作成功', 'code': 200}
+2026-04-05 18:38:25.467 | INFO     | test_system.test_delete_user:95 - [DEL-001] 用户新增成功，userName=test_3d603a5a
+2026-04-05 18:38:25.468 | DEBUG    | test_system.test_delete_user:98 - [DEL-001] 查询 sys_user 获取 user_id，userName=test_3d603a5a
+2026-04-05 18:38:25.566 | INFO     | test_system.test_delete_user:103 - [DEL-001] 查到 user_id=208，userName=test_3d603a5a
+2026-04-05 18:38:25.568 | WARNING  | test_system.test_delete_user:112 - [DEL-001] 即将删除用户 | user_id=208 | userName=test_3d603a5a
+2026-04-05 18:38:26.096 | DEBUG    | core.request_wrapper:123 - [HTTP] DELETE http://127.0.0.1:1024/dev-api/system/user/208 -> 200 (528ms)
+2026-04-05 18:38:26.097 | DEBUG    | test_system.test_delete_user:117 - [DEL-001] 删除响应: {'msg': '操作成功', 'code': 200}
+2026-04-05 18:38:26.098 | INFO     | test_system.test_delete_user:135 - [DEL-001] 删除成功 | user_id=208 | userName=test_3d603a5a | msg=操作成功
+2026-04-05 18:38:26.107 | DEBUG    | test_system.test_delete_user:156 - [DEL-002] 查询 sys_user 获取 user_id >= 3 的候选用户
+2026-04-05 18:38:26.194 | INFO     | test_system.test_delete_user:168 - [DEL-002] DB 查询到候选用户 | user_id=203 | user_name=test_d04b9a97
+2026-04-05 18:38:26.598 | DEBUG    | core.request_wrapper:123 - [HTTP] POST http://127.0.0.1:1024/dev-api/auth/login -> 200 (402ms)
+2026-04-05 18:38:26.600 | WARNING  | test_system.test_delete_user:184 - [DEL-002] 即将删除用户 | user_id=203 | user_name=test_d04b9a97
+2026-04-05 18:38:27.123 | DEBUG    | core.request_wrapper:123 - [HTTP] DELETE http://127.0.0.1:1024/dev-api/system/user/203 -> 200 (523ms)
+2026-04-05 18:38:27.124 | DEBUG    | test_system.test_delete_user:189 - [DEL-002] 删除响应: {'msg': '操作成功', 'code': 200}
+2026-04-05 18:38:27.125 | INFO     | test_system.test_delete_user:207 - [DEL-002] 删除成功 | user_id=203 | user_name=test_d04b9a97 | msg=操作成功
+2026-04-05 18:38:27.125 | DEBUG    | test_system.test_delete_user:213 - [DEL-002] 回查 sys_user，验证 del_flag 是否已更新
+2026-04-05 18:38:27.215 | INFO     | test_system.test_delete_user:229 - [DEL-002] DB 回查结果 | user_id=203 | user_name=test_d04b9a97 | del_flag=2
+2026-04-05 18:38:27.215 | INFO     | test_system.test_delete_user:240 - [DEL-002] DB 验证通过：user_id=203 del_flag 已标记为 '2'
+2026-04-05 18:38:27.652 | DEBUG    | core.request_wrapper:123 - [HTTP] POST http://127.0.0.1:1024/dev-api/auth/login -> 200 (424ms)
+2026-04-05 18:38:27.653 | INFO     | test_system.test_delete_user:264 - [DEL-003] 使用不存在的 user_id=99999999 发起删除请求
+2026-04-05 18:38:28.228 | DEBUG    | core.request_wrapper:123 - [HTTP] DELETE http://127.0.0.1:1024/dev-api/system/user/99999999 -> 200 (575ms)
+2026-04-05 18:38:28.228 | DEBUG    | test_system.test_delete_user:266 - [DEL-003] 响应: {'msg': '操作失败', 'code': 500}
+2026-04-05 18:38:28.229 | INFO     | test_system.test_delete_user:279 - [DEL-003] 按预期被拦截 | user_id=99999999 | code=500 | msg=操作失败
+2026-04-05 18:38:28.238 | INFO     | test_system.test_delete_user:300 - [DEL-004] 未注入 Token，发起删除请求，预期被鉴权拦截
+2026-04-05 18:38:28.246 | DEBUG    | core.request_wrapper:123 - [HTTP] DELETE http://127.0.0.1:1024/dev-api/system/user/1 -> 200 (8ms)
+2026-04-05 18:38:28.246 | DEBUG    | test_system.test_delete_user:302 - [DEL-004] 响应: {'code': 401, 'msg': '令牌不能为空'}
+2026-04-05 18:38:28.247 | INFO     | test_system.test_delete_user:328 - [DEL-004] 鉴权拦截验证通过 | code=401 | msg=令牌不能为空

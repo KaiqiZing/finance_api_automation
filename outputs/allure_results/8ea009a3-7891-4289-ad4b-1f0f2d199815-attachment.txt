@@ -1,2 +1,0 @@
-DEBUG    urllib3.connectionpool:connectionpool.py:241 Starting new HTTP connection (1): 127.0.0.1:7890
-DEBUG    urllib3.connectionpool:connectionpool.py:544 http://127.0.0.1:7890 "DELETE http://127.0.0.1:1024/dev-api/system/user/1 HTTP/1.1" 200 39

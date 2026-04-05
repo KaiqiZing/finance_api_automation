@@ -1,2 +1,0 @@
-userName=test_180834fe
-user_id=207

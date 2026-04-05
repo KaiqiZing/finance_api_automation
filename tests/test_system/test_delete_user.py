@@ -142,7 +142,7 @@ class TestDeleteUser:
     # ==================================================================
 
     @allure.story("正常删除用户")
-    @allure.title("TC-SYS-DEL-002：从 sys_user 表取普通用户 ID，直接删除，断言 code==200")
+    @allure.title("TC-SYS-DEL-002：从 sys_user 表取普通用户 ID，直接删除，断言 code==200 并验证 DB 记录已软删")
     @allure.severity(allure.severity_level.CRITICAL)
     def test_delete_existing_user_from_db(self) -> None:
         """
@@ -150,6 +150,7 @@ class TestDeleteUser:
         调用删除接口，断言:
         - code == 200
         - msg == "操作成功"
+        - DB 中该 user_id 的 del_flag 已变为 '2'（若依软删标记）
         """
         with allure.step("从 sys_user 表查询 user_id >= 3 的可删用户"):
             logger.debug("[DEL-002] 查询 sys_user 获取 user_id >= 3 的候选用户")
@@ -206,6 +207,39 @@ class TestDeleteUser:
             logger.info(
                 "[DEL-002] 删除成功 | user_id={} | user_name={} | msg={}",
                 target_id, target_name, resp.get("msg"),
+            )
+
+        with allure.step(f"回查 DB：验证 user_id={target_id} 已被软删（del_flag='2'）"):
+            logger.debug("[DEL-002] 回查 sys_user，验证 del_flag 是否已更新")
+            db = DBClient.instance("ry_cloud")
+            after_row = db.fetch_one(
+                "SELECT user_id, user_name, del_flag FROM sys_user WHERE user_id = %s LIMIT 1",
+                (target_id,),
+            )
+            actual_flag = after_row["del_flag"] if after_row else None
+            allure.attach(
+                body=(
+                    f"user_id={target_id}\n"
+                    f"user_name={target_name}\n"
+                    f"del_flag（删除后）={actual_flag!r}"
+                ),
+                name="DB 回查结果",
+                attachment_type=allure.attachment_type.TEXT,
+            )
+            logger.info(
+                "[DEL-002] DB 回查结果 | user_id={} | user_name={} | del_flag={}",
+                target_id, target_name, actual_flag,
+            )
+            assert after_row is not None, (
+                f"DB 中已找不到 user_id={target_id} 的记录（连物理行都消失了）"
+            )
+            assert actual_flag == "2", (
+                f"期望 del_flag='2'，实际={actual_flag!r}，"
+                f"user_id={target_id} | user_name={target_name}"
+            )
+            logger.info(
+                "[DEL-002] DB 验证通过：user_id={} del_flag 已标记为 '2'",
+                target_id,
             )
 
     # ==================================================================

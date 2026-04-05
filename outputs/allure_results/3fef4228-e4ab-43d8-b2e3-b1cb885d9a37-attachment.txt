@@ -1,2 +1,0 @@
-user_id=204
-user_name=test_dcac2e73
