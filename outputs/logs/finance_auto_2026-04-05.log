@@ -186,3 +186,171 @@
 2026-04-05 18:38:28.246 | DEBUG    | core.request_wrapper:123 - [HTTP] DELETE http://127.0.0.1:1024/dev-api/system/user/1 -> 200 (8ms)
 2026-04-05 18:38:28.246 | DEBUG    | test_system.test_delete_user:302 - [DEL-004] 响应: {'code': 401, 'msg': '令牌不能为空'}
 2026-04-05 18:38:28.247 | INFO     | test_system.test_delete_user:328 - [DEL-004] 鉴权拦截验证通过 | code=401 | msg=令牌不能为空
+2026-04-05 19:29:32.073 | DEBUG    | utils.db_client:66 - [DBClient:ry_cloud] 连接成功: 115.190.2.96:3306
+2026-04-05 19:29:32.115 | INFO     | utils.db_client:85 - [DBClient:ry_cloud] 健康检查通过。
+2026-04-05 19:29:32.115 | INFO     | test_system.conftest:33 - [conftest:system] 数据库 'ry_cloud' 健康检查通过。
+2026-04-05 19:29:32.677 | DEBUG    | core.request_wrapper:123 - [HTTP] POST http://127.0.0.1:1024/dev-api/auth/login -> 200 (555ms)
+2026-04-05 19:29:32.678 | INFO     | test_system.test_update_user:107 - [UPD-001] 前置步骤：新增测试用户 userName=test_9cd091cc
+2026-04-05 19:29:33.484 | DEBUG    | core.request_wrapper:123 - [HTTP] POST http://127.0.0.1:1024/dev-api/system/user -> 200 (784ms)
+2026-04-05 19:29:33.484 | DEBUG    | test_system.test_update_user:114 - [UPD-001] 新增响应: {'msg': '操作成功', 'code': 200}
+2026-04-05 19:29:33.484 | INFO     | test_system.test_update_user:116 - [UPD-001] 用户新增成功 userName=test_9cd091cc
+2026-04-05 19:29:33.648 | INFO     | test_system.test_update_user:124 - [UPD-001] DB 查询到 user_id=209 dept_id=105
+2026-04-05 19:29:33.649 | INFO     | test_system.test_update_user:133 - [UPD-001] 修改用户昵称 | user_id=209 | 原昵称=原始昵称 | 新昵称=自动化修改昵称
+2026-04-05 19:29:33.874 | DEBUG    | core.request_wrapper:123 - [HTTP] PUT http://127.0.0.1:1024/dev-api/system/user -> 200 (214ms)
+2026-04-05 19:29:33.874 | DEBUG    | test_system.test_update_user:142 - [UPD-001] 修改响应: {'msg': '用户账号不能为空', 'code': 500}
+2026-04-05 19:29:33.906 | WARNING  | conftest:102 - [conftest] 用例失败: tests/test_system/test_update_user.py::TestUpdateUser::test_update_nick_name_after_add | Context: {}
+2026-04-05 19:29:33.910 | DEBUG    | test_system.test_update_user:194 - [UPD-002] 查询 sys_user 获取候选用户
+2026-04-05 19:29:33.992 | INFO     | test_system.test_update_user:207 - [UPD-002] 候选用户 | user_id=209 | user_name=test_9cd091cc | dept_id=105
+2026-04-05 19:29:34.419 | DEBUG    | core.request_wrapper:123 - [HTTP] POST http://127.0.0.1:1024/dev-api/auth/login -> 200 (426ms)
+2026-04-05 19:29:34.419 | INFO     | test_system.test_update_user:233 - [UPD-002] 修改多字段 | user_id=209 | nick_name=批量修改昵称 | sex=1 | remark=自动化多字段修改备注
+2026-04-05 19:29:34.517 | DEBUG    | core.request_wrapper:123 - [HTTP] PUT http://127.0.0.1:1024/dev-api/system/user -> 200 (98ms)
+2026-04-05 19:29:34.517 | DEBUG    | test_system.test_update_user:244 - [UPD-002] 修改响应: {'msg': '用户账号不能为空', 'code': 500}
+2026-04-05 19:29:34.524 | WARNING  | conftest:102 - [conftest] 用例失败: tests/test_system/test_update_user.py::TestUpdateUser::test_update_multiple_fields | Context: {}
+2026-04-05 19:29:34.528 | DEBUG    | test_system.test_update_user:305 - [UPD-003] 查询已有邮箱用户
+2026-04-05 19:29:34.611 | INFO     | test_system.test_update_user:315 - [UPD-003] 已有邮箱 email=ry@163.com 来自 user_id=1
+2026-04-05 19:29:34.612 | DEBUG    | test_system.test_update_user:318 - [UPD-003] 查询修改目标用户（user_id >= 3，排除邮箱来源用户）
+2026-04-05 19:29:34.692 | INFO     | test_system.test_update_user:329 - [UPD-003] 修改目标 user_id=209 user_name=test_9cd091cc
+2026-04-05 19:29:35.110 | DEBUG    | core.request_wrapper:123 - [HTTP] POST http://127.0.0.1:1024/dev-api/auth/login -> 200 (416ms)
+2026-04-05 19:29:35.111 | INFO     | test_system.test_update_user:349 - [UPD-003] 尝试写入重复邮箱 | user_id=209 | email=ry@163.com
+2026-04-05 19:29:35.247 | DEBUG    | core.request_wrapper:123 - [HTTP] PUT http://127.0.0.1:1024/dev-api/system/user -> 200 (110ms)
+2026-04-05 19:29:35.248 | DEBUG    | test_system.test_update_user:358 - [UPD-003] 响应: {'msg': '用户账号不能为空', 'code': 500}
+2026-04-05 19:29:35.269 | WARNING  | conftest:102 - [conftest] 用例失败: tests/test_system/test_update_user.py::TestUpdateUser::test_update_duplicate_email | Context: {}
+2026-04-05 19:29:35.275 | DEBUG    | test_system.test_update_user:398 - [UPD-004] 查询已有手机号用户
+2026-04-05 19:29:35.357 | INFO     | test_system.test_update_user:408 - [UPD-004] 已有手机号 phonenumber=15888888888 来自 user_id=1
+2026-04-05 19:29:35.357 | DEBUG    | test_system.test_update_user:414 - [UPD-004] 查询修改目标用户（排除手机号来源用户）
+2026-04-05 19:29:35.440 | INFO     | test_system.test_update_user:425 - [UPD-004] 修改目标 user_id=209 user_name=test_9cd091cc
+2026-04-05 19:29:35.886 | DEBUG    | core.request_wrapper:123 - [HTTP] POST http://127.0.0.1:1024/dev-api/auth/login -> 200 (444ms)
+2026-04-05 19:29:35.887 | INFO     | test_system.test_update_user:445 - [UPD-004] 尝试写入重复手机号 | user_id=209 | phonenumber=15888888888
+2026-04-05 19:29:36.003 | DEBUG    | core.request_wrapper:123 - [HTTP] PUT http://127.0.0.1:1024/dev-api/system/user -> 200 (103ms)
+2026-04-05 19:29:36.004 | DEBUG    | test_system.test_update_user:454 - [UPD-004] 响应: {'msg': '用户账号不能为空', 'code': 500}
+2026-04-05 19:29:36.019 | WARNING  | conftest:102 - [conftest] 用例失败: tests/test_system/test_update_user.py::TestUpdateUser::test_update_duplicate_phonenumber | Context: {}
+2026-04-05 19:29:36.029 | INFO     | test_system.test_update_user:493 - [UPD-005] 未注入 Token，发起修改请求，预期被鉴权拦截
+2026-04-05 19:29:36.047 | DEBUG    | core.request_wrapper:123 - [HTTP] PUT http://127.0.0.1:1024/dev-api/system/user -> 200 (9ms)
+2026-04-05 19:29:36.047 | DEBUG    | test_system.test_update_user:495 - [UPD-005] 响应: {'code': 401, 'msg': '令牌不能为空'}
+2026-04-05 19:29:36.047 | INFO     | test_system.test_update_user:521 - [UPD-005] 鉴权拦截验证通过 | code=401 | msg=令牌不能为空
+2026-04-05 19:35:32.741 | DEBUG    | utils.db_client:66 - [DBClient:ry_cloud] 连接成功: 115.190.2.96:3306
+2026-04-05 19:35:32.791 | INFO     | utils.db_client:85 - [DBClient:ry_cloud] 健康检查通过。
+2026-04-05 19:35:32.792 | INFO     | test_system.conftest:33 - [conftest:system] 数据库 'ry_cloud' 健康检查通过。
+2026-04-05 19:35:33.353 | DEBUG    | core.request_wrapper:123 - [HTTP] POST http://127.0.0.1:1024/dev-api/auth/login -> 200 (552ms)
+2026-04-05 19:35:33.353 | INFO     | test_system.test_update_user:107 - [UPD-001] 前置步骤：新增测试用户 userName=test_db932a32
+2026-04-05 19:35:34.149 | DEBUG    | core.request_wrapper:123 - [HTTP] POST http://127.0.0.1:1024/dev-api/system/user -> 200 (775ms)
+2026-04-05 19:35:34.149 | DEBUG    | test_system.test_update_user:114 - [UPD-001] 新增响应: {'msg': '操作成功', 'code': 200}
+2026-04-05 19:35:34.149 | INFO     | test_system.test_update_user:116 - [UPD-001] 用户新增成功 userName=test_db932a32
+2026-04-05 19:35:34.334 | INFO     | test_system.test_update_user:124 - [UPD-001] DB 查询到 user_id=210 dept_id=105
+2026-04-05 19:35:34.336 | INFO     | test_system.test_update_user:133 - [UPD-001] 修改用户昵称 | user_id=210 | 原昵称=原始昵称 | 新昵称=自动化修改昵称
+2026-04-05 19:35:35.208 | DEBUG    | core.request_wrapper:123 - [HTTP] PUT http://127.0.0.1:1024/dev-api/system/user -> 200 (852ms)
+2026-04-05 19:35:35.209 | DEBUG    | test_system.test_update_user:143 - [UPD-001] 修改响应: {'msg': '操作成功', 'code': 200}
+2026-04-05 19:35:35.210 | DEBUG    | test_system.test_update_user:161 - [UPD-001] 回查 DB 验证修改结果
+2026-04-05 19:35:35.303 | INFO     | test_system.test_update_user:176 - [UPD-001] DB 验证通过 | user_id=210 | nick_name=自动化修改昵称
+2026-04-05 19:35:35.322 | DEBUG    | test_system.test_update_user:195 - [UPD-002] 查询 sys_user 获取候选用户
+2026-04-05 19:35:35.418 | INFO     | test_system.test_update_user:208 - [UPD-002] 候选用户 | user_id=210 | user_name=test_db932a32 | dept_id=105
+2026-04-05 19:35:35.853 | DEBUG    | core.request_wrapper:123 - [HTTP] POST http://127.0.0.1:1024/dev-api/auth/login -> 200 (434ms)
+2026-04-05 19:35:35.854 | INFO     | test_system.test_update_user:234 - [UPD-002] 修改多字段 | user_id=210 | nick_name=批量修改昵称 | sex=1 | remark=自动化多字段修改备注
+2026-04-05 19:35:36.693 | DEBUG    | core.request_wrapper:123 - [HTTP] PUT http://127.0.0.1:1024/dev-api/system/user -> 200 (838ms)
+2026-04-05 19:35:36.693 | DEBUG    | test_system.test_update_user:246 - [UPD-002] 修改响应: {'msg': '操作成功', 'code': 200}
+2026-04-05 19:35:36.694 | DEBUG    | test_system.test_update_user:264 - [UPD-002] 回查 DB 验证修改结果
+2026-04-05 19:35:36.808 | WARNING  | conftest:102 - [conftest] 用例失败: tests/test_system/test_update_user.py::TestUpdateUser::test_update_multiple_fields | Context: {}
+2026-04-05 19:35:36.813 | DEBUG    | test_system.test_update_user:307 - [UPD-003] 查询已有邮箱用户
+2026-04-05 19:35:36.905 | INFO     | test_system.test_update_user:317 - [UPD-003] 已有邮箱 email=ry@163.com 来自 user_id=1
+2026-04-05 19:35:36.906 | DEBUG    | test_system.test_update_user:320 - [UPD-003] 查询修改目标用户（user_id >= 3，排除邮箱来源用户）
+2026-04-05 19:35:36.997 | INFO     | test_system.test_update_user:331 - [UPD-003] 修改目标 user_id=210 user_name=test_db932a32
+2026-04-05 19:35:37.408 | DEBUG    | core.request_wrapper:123 - [HTTP] POST http://127.0.0.1:1024/dev-api/auth/login -> 200 (411ms)
+2026-04-05 19:35:37.409 | INFO     | test_system.test_update_user:351 - [UPD-003] 尝试写入重复邮箱 | user_id=210 | email=ry@163.com
+2026-04-05 19:35:37.427 | WARNING  | conftest:102 - [conftest] 用例失败: tests/test_system/test_update_user.py::TestUpdateUser::test_update_duplicate_email | Context: {}
+2026-04-05 19:35:37.430 | DEBUG    | test_system.test_update_user:400 - [UPD-004] 查询已有手机号用户
+2026-04-05 19:35:37.520 | INFO     | test_system.test_update_user:410 - [UPD-004] 已有手机号 phonenumber=15888888888 来自 user_id=1
+2026-04-05 19:35:37.520 | DEBUG    | test_system.test_update_user:416 - [UPD-004] 查询修改目标用户（排除手机号来源用户）
+2026-04-05 19:35:37.614 | INFO     | test_system.test_update_user:427 - [UPD-004] 修改目标 user_id=210 user_name=test_db932a32
+2026-04-05 19:35:38.015 | DEBUG    | core.request_wrapper:123 - [HTTP] POST http://127.0.0.1:1024/dev-api/auth/login -> 200 (400ms)
+2026-04-05 19:35:38.016 | INFO     | test_system.test_update_user:447 - [UPD-004] 尝试写入重复手机号 | user_id=210 | phonenumber=15888888888
+2026-04-05 19:35:38.026 | WARNING  | conftest:102 - [conftest] 用例失败: tests/test_system/test_update_user.py::TestUpdateUser::test_update_duplicate_phonenumber | Context: {}
+2026-04-05 19:35:38.031 | INFO     | test_system.test_update_user:495 - [UPD-005] 未注入 Token，发起修改请求，预期被鉴权拦截
+2026-04-05 19:35:38.038 | WARNING  | conftest:102 - [conftest] 用例失败: tests/test_system/test_update_user.py::TestUpdateUser::test_update_user_without_token | Context: {}
+2026-04-05 19:38:21.013 | DEBUG    | utils.db_client:66 - [DBClient:ry_cloud] 连接成功: 115.190.2.96:3306
+2026-04-05 19:38:21.057 | INFO     | utils.db_client:85 - [DBClient:ry_cloud] 健康检查通过。
+2026-04-05 19:38:21.058 | INFO     | test_system.conftest:33 - [conftest:system] 数据库 'ry_cloud' 健康检查通过。
+2026-04-05 19:38:21.596 | DEBUG    | core.request_wrapper:123 - [HTTP] POST http://127.0.0.1:1024/dev-api/auth/login -> 200 (534ms)
+2026-04-05 19:38:21.597 | INFO     | test_system.test_update_user:107 - [UPD-001] 前置步骤：新增测试用户 userName=test_1fa1d0a6
+2026-04-05 19:38:22.354 | DEBUG    | core.request_wrapper:123 - [HTTP] POST http://127.0.0.1:1024/dev-api/system/user -> 200 (737ms)
+2026-04-05 19:38:22.354 | DEBUG    | test_system.test_update_user:114 - [UPD-001] 新增响应: {'msg': '操作成功', 'code': 200}
+2026-04-05 19:38:22.354 | INFO     | test_system.test_update_user:116 - [UPD-001] 用户新增成功 userName=test_1fa1d0a6
+2026-04-05 19:38:22.528 | INFO     | test_system.test_update_user:124 - [UPD-001] DB 查询到 user_id=211 dept_id=105
+2026-04-05 19:38:22.530 | INFO     | test_system.test_update_user:133 - [UPD-001] 修改用户昵称 | user_id=211 | 原昵称=原始昵称 | 新昵称=自动化修改昵称
+2026-04-05 19:38:23.391 | DEBUG    | core.request_wrapper:123 - [HTTP] PUT http://127.0.0.1:1024/dev-api/system/user -> 200 (842ms)
+2026-04-05 19:38:23.392 | DEBUG    | test_system.test_update_user:143 - [UPD-001] 修改响应: {'msg': '操作成功', 'code': 200}
+2026-04-05 19:38:23.393 | DEBUG    | test_system.test_update_user:161 - [UPD-001] 回查 DB 验证修改结果
+2026-04-05 19:38:23.481 | INFO     | test_system.test_update_user:176 - [UPD-001] DB 验证通过 | user_id=211 | nick_name=自动化修改昵称
+2026-04-05 19:38:23.491 | DEBUG    | test_system.test_update_user:195 - [UPD-002] 查询 sys_user 获取候选用户
+2026-04-05 19:38:23.579 | INFO     | test_system.test_update_user:208 - [UPD-002] 候选用户 | user_id=211 | user_name=test_1fa1d0a6 | dept_id=105
+2026-04-05 19:38:23.990 | DEBUG    | core.request_wrapper:123 - [HTTP] POST http://127.0.0.1:1024/dev-api/auth/login -> 200 (410ms)
+2026-04-05 19:38:23.990 | INFO     | test_system.test_update_user:234 - [UPD-002] 修改多字段 | user_id=211 | nick_name=批量修改昵称 | sex=1 | remark=自动化多字段修改备注
+2026-04-05 19:38:24.810 | DEBUG    | core.request_wrapper:123 - [HTTP] PUT http://127.0.0.1:1024/dev-api/system/user -> 200 (820ms)
+2026-04-05 19:38:24.811 | DEBUG    | test_system.test_update_user:246 - [UPD-002] 修改响应: {'msg': '操作成功', 'code': 200}
+2026-04-05 19:38:24.813 | DEBUG    | test_system.test_update_user:264 - [UPD-002] 回查 DB 验证修改结果
+2026-04-05 19:38:24.915 | WARNING  | conftest:102 - [conftest] 用例失败: tests/test_system/test_update_user.py::TestUpdateUser::test_update_multiple_fields | Context: {}
+2026-04-05 19:38:24.919 | DEBUG    | test_system.test_update_user:307 - [UPD-003] 查询已有邮箱用户
+2026-04-05 19:38:25.003 | INFO     | test_system.test_update_user:317 - [UPD-003] 已有邮箱 email=ry@163.com 来自 user_id=1
+2026-04-05 19:38:25.003 | DEBUG    | test_system.test_update_user:320 - [UPD-003] 查询修改目标用户（user_id >= 3，排除邮箱来源用户）
+2026-04-05 19:38:25.087 | INFO     | test_system.test_update_user:331 - [UPD-003] 修改目标 user_id=211 user_name=test_1fa1d0a6
+2026-04-05 19:38:25.496 | DEBUG    | core.request_wrapper:123 - [HTTP] POST http://127.0.0.1:1024/dev-api/auth/login -> 200 (409ms)
+2026-04-05 19:38:25.497 | INFO     | test_system.test_update_user:351 - [UPD-003] 尝试写入重复邮箱 | user_id=211 | email=ry@163.com
+2026-04-05 19:38:25.769 | DEBUG    | core.request_wrapper:123 - [HTTP] PUT http://127.0.0.1:1024/dev-api/system/user -> 200 (249ms)
+2026-04-05 19:38:25.769 | DEBUG    | test_system.test_update_user:361 - [UPD-003] 响应: {'msg': "修改用户'test_1fa1d0a6'失败，邮箱账号已存在", 'code': 500}
+2026-04-05 19:38:25.771 | INFO     | test_system.test_update_user:379 - [UPD-003] 按预期被拦截 | code=500 | msg=修改用户'test_1fa1d0a6'失败，邮箱账号已存在
+2026-04-05 19:38:25.785 | DEBUG    | test_system.test_update_user:401 - [UPD-004] 查询已有手机号用户
+2026-04-05 19:38:25.881 | INFO     | test_system.test_update_user:411 - [UPD-004] 已有手机号 phonenumber=15888888888 来自 user_id=1
+2026-04-05 19:38:25.882 | DEBUG    | test_system.test_update_user:417 - [UPD-004] 查询修改目标用户（排除手机号来源用户）
+2026-04-05 19:38:25.970 | INFO     | test_system.test_update_user:428 - [UPD-004] 修改目标 user_id=211 user_name=test_1fa1d0a6
+2026-04-05 19:38:26.389 | DEBUG    | core.request_wrapper:123 - [HTTP] POST http://127.0.0.1:1024/dev-api/auth/login -> 200 (417ms)
+2026-04-05 19:38:26.390 | INFO     | test_system.test_update_user:448 - [UPD-004] 尝试写入重复手机号 | user_id=211 | phonenumber=15888888888
+2026-04-05 19:38:26.618 | DEBUG    | core.request_wrapper:123 - [HTTP] PUT http://127.0.0.1:1024/dev-api/system/user -> 200 (202ms)
+2026-04-05 19:38:26.618 | DEBUG    | test_system.test_update_user:458 - [UPD-004] 响应: {'msg': "修改用户'test_1fa1d0a6'失败，手机号码已存在", 'code': 500}
+2026-04-05 19:38:26.620 | INFO     | test_system.test_update_user:476 - [UPD-004] 按预期被拦截 | code=500 | msg=修改用户'test_1fa1d0a6'失败，手机号码已存在
+2026-04-05 19:38:26.633 | INFO     | test_system.test_update_user:497 - [UPD-005] 未注入 Token，发起修改请求，预期被鉴权拦截
+2026-04-05 19:38:26.664 | DEBUG    | core.request_wrapper:123 - [HTTP] PUT http://127.0.0.1:1024/dev-api/system/user -> 200 (19ms)
+2026-04-05 19:38:26.664 | DEBUG    | test_system.test_update_user:499 - [UPD-005] 响应: {'code': 401, 'msg': '令牌不能为空'}
+2026-04-05 19:38:26.665 | INFO     | test_system.test_update_user:525 - [UPD-005] 鉴权拦截验证通过 | code=401 | msg=令牌不能为空
+2026-04-05 19:41:13.206 | DEBUG    | utils.db_client:66 - [DBClient:ry_cloud] 连接成功: 115.190.2.96:3306
+2026-04-05 19:41:13.253 | INFO     | utils.db_client:85 - [DBClient:ry_cloud] 健康检查通过。
+2026-04-05 19:41:13.253 | INFO     | test_system.conftest:33 - [conftest:system] 数据库 'ry_cloud' 健康检查通过。
+2026-04-05 19:41:13.827 | DEBUG    | core.request_wrapper:123 - [HTTP] POST http://127.0.0.1:1024/dev-api/auth/login -> 200 (569ms)
+2026-04-05 19:41:13.828 | INFO     | test_system.test_update_user:107 - [UPD-001] 前置步骤：新增测试用户 userName=test_fc107f71
+2026-04-05 19:41:14.560 | DEBUG    | core.request_wrapper:123 - [HTTP] POST http://127.0.0.1:1024/dev-api/system/user -> 200 (711ms)
+2026-04-05 19:41:14.560 | DEBUG    | test_system.test_update_user:114 - [UPD-001] 新增响应: {'msg': '操作成功', 'code': 200}
+2026-04-05 19:41:14.560 | INFO     | test_system.test_update_user:116 - [UPD-001] 用户新增成功 userName=test_fc107f71
+2026-04-05 19:41:14.745 | INFO     | test_system.test_update_user:124 - [UPD-001] DB 查询到 user_id=212 dept_id=105
+2026-04-05 19:41:14.746 | INFO     | test_system.test_update_user:133 - [UPD-001] 修改用户昵称 | user_id=212 | 原昵称=原始昵称 | 新昵称=自动化修改昵称
+2026-04-05 19:41:15.600 | DEBUG    | core.request_wrapper:123 - [HTTP] PUT http://127.0.0.1:1024/dev-api/system/user -> 200 (836ms)
+2026-04-05 19:41:15.600 | DEBUG    | test_system.test_update_user:143 - [UPD-001] 修改响应: {'msg': '操作成功', 'code': 200}
+2026-04-05 19:41:15.601 | DEBUG    | test_system.test_update_user:161 - [UPD-001] 回查 DB 验证修改结果
+2026-04-05 19:41:15.696 | INFO     | test_system.test_update_user:176 - [UPD-001] DB 验证通过 | user_id=212 | nick_name=自动化修改昵称
+2026-04-05 19:41:15.711 | DEBUG    | test_system.test_update_user:195 - [UPD-002] 查询 sys_user 获取候选用户
+2026-04-05 19:41:15.805 | INFO     | test_system.test_update_user:208 - [UPD-002] 候选用户 | user_id=212 | user_name=test_fc107f71 | dept_id=105
+2026-04-05 19:41:16.280 | DEBUG    | core.request_wrapper:123 - [HTTP] POST http://127.0.0.1:1024/dev-api/auth/login -> 200 (474ms)
+2026-04-05 19:41:16.281 | INFO     | test_system.test_update_user:234 - [UPD-002] 修改多字段 | user_id=212 | nick_name=批量修改昵称 | sex=1 | remark=自动化多字段修改备注
+2026-04-05 19:41:17.090 | DEBUG    | core.request_wrapper:123 - [HTTP] PUT http://127.0.0.1:1024/dev-api/system/user -> 200 (808ms)
+2026-04-05 19:41:17.090 | DEBUG    | test_system.test_update_user:246 - [UPD-002] 修改响应: {'msg': '操作成功', 'code': 200}
+2026-04-05 19:41:17.091 | DEBUG    | test_system.test_update_user:264 - [UPD-002] 回查 DB 验证修改结果
+2026-04-05 19:41:17.188 | INFO     | test_system.test_update_user:285 - [UPD-002] DB 验证通过 | user_id=212 | nick_name=批量修改昵称 | sex=1 | remark=自动化多字段修改备注
+2026-04-05 19:41:17.194 | DEBUG    | test_system.test_update_user:307 - [UPD-003] 查询已有邮箱用户
+2026-04-05 19:41:17.286 | INFO     | test_system.test_update_user:317 - [UPD-003] 已有邮箱 email=ry@163.com 来自 user_id=1
+2026-04-05 19:41:17.287 | DEBUG    | test_system.test_update_user:320 - [UPD-003] 查询修改目标用户（user_id >= 3，排除邮箱来源用户）
+2026-04-05 19:41:17.398 | INFO     | test_system.test_update_user:331 - [UPD-003] 修改目标 user_id=212 user_name=test_fc107f71
+2026-04-05 19:41:17.824 | DEBUG    | core.request_wrapper:123 - [HTTP] POST http://127.0.0.1:1024/dev-api/auth/login -> 200 (423ms)
+2026-04-05 19:41:17.825 | INFO     | test_system.test_update_user:351 - [UPD-003] 尝试写入重复邮箱 | user_id=212 | email=ry@163.com
+2026-04-05 19:41:18.106 | DEBUG    | core.request_wrapper:123 - [HTTP] PUT http://127.0.0.1:1024/dev-api/system/user -> 200 (252ms)
+2026-04-05 19:41:18.106 | DEBUG    | test_system.test_update_user:361 - [UPD-003] 响应: {'msg': "修改用户'test_fc107f71'失败，邮箱账号已存在", 'code': 500}
+2026-04-05 19:41:18.108 | INFO     | test_system.test_update_user:379 - [UPD-003] 按预期被拦截 | code=500 | msg=修改用户'test_fc107f71'失败，邮箱账号已存在
+2026-04-05 19:41:18.119 | DEBUG    | test_system.test_update_user:401 - [UPD-004] 查询已有手机号用户
+2026-04-05 19:41:18.212 | INFO     | test_system.test_update_user:411 - [UPD-004] 已有手机号 phonenumber=15888888888 来自 user_id=1
+2026-04-05 19:41:18.213 | DEBUG    | test_system.test_update_user:417 - [UPD-004] 查询修改目标用户（排除手机号来源用户）
+2026-04-05 19:41:18.304 | INFO     | test_system.test_update_user:428 - [UPD-004] 修改目标 user_id=212 user_name=test_fc107f71
+2026-04-05 19:41:18.723 | DEBUG    | core.request_wrapper:123 - [HTTP] POST http://127.0.0.1:1024/dev-api/auth/login -> 200 (417ms)
+2026-04-05 19:41:18.724 | INFO     | test_system.test_update_user:448 - [UPD-004] 尝试写入重复手机号 | user_id=212 | phonenumber=15888888888
+2026-04-05 19:41:18.963 | DEBUG    | core.request_wrapper:123 - [HTTP] PUT http://127.0.0.1:1024/dev-api/system/user -> 200 (202ms)
+2026-04-05 19:41:18.963 | DEBUG    | test_system.test_update_user:458 - [UPD-004] 响应: {'msg': "修改用户'test_fc107f71'失败，手机号码已存在", 'code': 500}
+2026-04-05 19:41:18.964 | INFO     | test_system.test_update_user:476 - [UPD-004] 按预期被拦截 | code=500 | msg=修改用户'test_fc107f71'失败，手机号码已存在
+2026-04-05 19:41:18.974 | INFO     | test_system.test_update_user:497 - [UPD-005] 未注入 Token，发起修改请求，预期被鉴权拦截
+2026-04-05 19:41:18.997 | DEBUG    | core.request_wrapper:123 - [HTTP] PUT http://127.0.0.1:1024/dev-api/system/user -> 200 (10ms)
+2026-04-05 19:41:18.997 | DEBUG    | test_system.test_update_user:499 - [UPD-005] 响应: {'code': 401, 'msg': '令牌不能为空'}
+2026-04-05 19:41:18.998 | INFO     | test_system.test_update_user:525 - [UPD-005] 鉴权拦截验证通过 | code=401 | msg=令牌不能为空

@@ -1,0 +1,32 @@
+# 修改用户接口 YAML 模板
+# 接口: PUT /dev-api/system/user
+# 文档: 需携带 Bearer Token；userId 为必填，其余字段按需传入
+# 枚举: sex 0 男/1 女/2 未知，status 0 正常/1 停用
+# 部门: 103 研发 / 104 市场 / 105 测试 / 106 财务 / 107 运维
+# 岗位: 1 董事长 / 2 项目经理 / 3 人力资源 / 4 普通员工
+# 注意: userId/deptId 由用例从 DB 查询后通过 overrides 传入，模板不预置
+
+api_info:
+  path: "/system/user"
+  method: "PUT"
+  description: "修改系统用户"
+
+logic_rules: []
+
+payload:
+  # userId / deptId / userName 必须由用例层通过 overrides 注入，此处仅占位
+  userId: 0
+  deptId: 0
+  userName: ""
+
+  # === 可修改字段（用例层按需覆盖） ===
+  nickName: "${rand_str(chn, 3)}"
+  email: "${rand_str(en, 8)}@test.com"
+  phonenumber: "${get_mobile}"
+  sex: "${choice(['0', '1', '2'])}"
+  status: "0"
+  roleIds:
+    - 2
+  postIds:
+    - 4
+  remark: "${rand_str(chn, 5)}修改备注"
