@@ -1,0 +1,19 @@
+# 修改通知公告 YAML 模板
+# 接口: PUT /dev-api/system/notice
+# 权限标识: system:notice:edit
+# noticeId 由用例 overrides 注入
+
+api_info:
+  path: "/system/notice"
+  method: "PUT"
+  description: "修改通知公告"
+
+logic_rules: []
+
+payload:
+  noticeId: 0
+  noticeTitle: ""
+  noticeType: "1"
+  noticeContent: ""
+  status: "0"
+  remark: ""
