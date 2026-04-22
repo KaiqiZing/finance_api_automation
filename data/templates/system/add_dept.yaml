@@ -1,0 +1,25 @@
+# 新增部门接口 YAML 模板
+# 接口: POST /dev-api/system/dept
+# 权限标识: system:dept:add
+# 文档: 需携带 Bearer Token；parentId/deptName/orderNum 为必填
+# 枚举: status 0 正常/1 停用
+
+api_info:
+  path: "/system/dept"
+  method: "POST"
+  description: "新增部门"
+
+logic_rules: []
+
+payload:
+  # === 必填字段 ===
+  # parentId / deptName / orderNum 须由用例层通过 overrides 注入或保留默认占位
+  parentId: 100
+  deptName: "${rand_str(chn, 3)}部门"
+  orderNum: 999
+
+  # === 可选字段 ===
+  leader: ""
+  phone: ""
+  email: ""
+  status: "0"
