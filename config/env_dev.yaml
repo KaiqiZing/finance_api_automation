@@ -17,7 +17,7 @@ auth:
 
 # 系统管理服务（RuoYi 后端）
 system_api:
-  base_url: "http://127.0.0.1:1024/dev-api"
+  base_url: "http://192.168.0.107/dev-api"
   timeout: 15
   verify_ssl: false
   default_user: "admin"
@@ -39,10 +39,10 @@ databases:
     database: "finance_dict"
     charset: "utf8mb4"
   ry_cloud:
-    host: "115.190.2.96"
+    host: "192.168.0.107"
     port: 3306
     user: "root"
-    password: "myroot123"
+    password: "123456"
     database: "ry-cloud"
     charset: "utf8mb4"
 

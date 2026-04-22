@@ -29,6 +29,10 @@ from api.system.login_api import SystemLoginAPI
 from api.system.user_api import SystemUserAPI
 from utils.db_client import DBClient
 from utils.logger import logger
+from utils.system_ruoyi_queries import (
+    SECOND_LEVEL_DEPT_IDS,
+    fetch_random_third_level_dept_id,
+)
 
 
 # ==============================================================================
@@ -103,13 +107,19 @@ class TestUpdateUser:
         username = _gen_username()
         new_nick = "自动化修改昵称"
 
+        with allure.step(f"前置：从 DB 取三级部门 ID（二级 {SECOND_LEVEL_DEPT_IDS[0]}）"):
+            pre_dept_id = fetch_random_third_level_dept_id(SECOND_LEVEL_DEPT_IDS[0])
+            if pre_dept_id is None:
+                pytest.fail(f"二级部门 {SECOND_LEVEL_DEPT_IDS[0]} 下无可用三级子部门，无法前置新增用户")
+            logger.info("[UPD-001] 前置：取得三级 dept_id={}", pre_dept_id)
+
         with allure.step(f"前置：新增测试用户 userName={username}"):
             logger.info("[UPD-001] 前置步骤：新增测试用户 userName={}", username)
             add_resp = user_api.add_user(
                 user_name=username,
                 nick_name="原始昵称",
                 password="Test@123456",
-                dept_id=105,
+                dept_id=pre_dept_id,
             )
             logger.debug("[UPD-001] 新增响应: {}", add_resp)
             assert add_resp.get("code") == 200, f"前置新增失败: {add_resp}"
@@ -493,9 +503,23 @@ class TestUpdateUser:
         """
         user_api = SystemUserAPI()  # 故意不 set_token
 
+        with allure.step("从 DB 查询 admin（user_id=1）的 dept_id"):
+            db = DBClient.instance("ry_cloud")
+            admin_row = db.fetch_one(
+                "SELECT dept_id, user_name FROM sys_user WHERE user_id = 1 LIMIT 1"
+            )
+            admin_dept_id = int(admin_row["dept_id"]) if admin_row else 103
+            admin_user_name = admin_row["user_name"] if admin_row else "admin"
+            logger.info("[UPD-005] admin dept_id={} user_name={}", admin_dept_id, admin_user_name)
+
         with allure.step("不携带 Token，调用 PUT /system/user"):
             logger.info("[UPD-005] 未注入 Token，发起修改请求，预期被鉴权拦截")
-            resp = user_api.update_user(user_id=1, dept_id=103, user_name="admin", nick_name="鉴权测试")
+            resp = user_api.update_user(
+                user_id=1,
+                dept_id=admin_dept_id,
+                user_name=admin_user_name,
+                nick_name="鉴权测试",
+            )
             logger.debug("[UPD-005] 响应: {}", resp)
 
         with allure.step("附加响应内容"):

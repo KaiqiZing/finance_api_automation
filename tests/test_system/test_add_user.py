@@ -16,6 +16,7 @@
     TC-SYS-USR-006  未携带 Token 新增用户，断言被鉴权拦截
     TC-SYS-USR-007  数据驱动：文档所有部门 deptId 均可新增成功
     TC-SYS-USR-008  数据驱动：sex 枚举 0/1/2 均可新增成功
+    TC-SYS-USR-009  roleIds/postIds：全不选 / 部分选 / 全选 组合矩阵，断言 code==200
 """
 from __future__ import annotations
 
@@ -28,6 +29,13 @@ from api.system.login_api import SystemLoginAPI
 from api.system.user_api import SystemUserAPI
 from core.validator import Validator
 from utils.db_client import DBClient
+from utils.system_ruoyi_queries import (
+    fetch_all_eligible_post_ids,
+    fetch_all_eligible_role_ids,
+    fetch_one_post_id,
+    fetch_one_role_id,
+    fetch_random_third_level_dept_id,
+)
 
 
 # ==============================================================================
@@ -118,6 +126,23 @@ class TestAddUser:
         - 响应 code == 200
         - 响应结构符合 JSON Schema 契约
         """
+        with allure.step("从 DB 取三级 dept_id / role_id / post_id"):
+            dept_id = fetch_random_third_level_dept_id(101)
+            if dept_id is None:
+                pytest.skip("二级部门 101 下无可用三级子部门，跳过全字段测试")
+            role_id = fetch_one_role_id()
+            if role_id is None:
+                pytest.skip("sys_role 中无可用普通角色，跳过全字段测试")
+            post_id = fetch_one_post_id()
+            if post_id is None:
+                pytest.skip("sys_post 中无可用岗位，跳过全字段测试")
+
+        allure.attach(
+            body=f"dept_id={dept_id}\nrole_id={role_id}\npost_id={post_id}",
+            name="DB 取数结果",
+            attachment_type=allure.attachment_type.TEXT,
+        )
+
         token = _login_and_get_token()
         user_api = SystemUserAPI()
         user_api.set_token(token)
@@ -135,9 +160,9 @@ class TestAddUser:
                 email=email,
                 sex="0",
                 status="0",
-                dept_id=105,
-                role_ids=[2],
-                post_ids=[4],
+                dept_id=dept_id,
+                role_ids=[role_id],
+                post_ids=[post_id],
                 remark="自动化全字段测试",
             )
 
@@ -384,45 +409,58 @@ class TestAddUser:
     # ==================================================================
 
     @allure.story("正常新增用户")
-    @allure.title("TC-SYS-USR-007：数据驱动 - 文档所有部门 deptId 均可新增用户成功")
+    @allure.title("TC-SYS-USR-007：数据驱动 - 固定二级部门 101/102，三级随机，均可新增用户成功")
     @allure.severity(allure.severity_level.NORMAL)
-    @pytest.mark.parametrize("dept_id,dept_name", [
-        (103, "研发部门"),
-        (104, "市场部门"),
-        (105, "测试部门"),
-        (106, "财务部门"),
-        (107, "运维部门"),
+    @pytest.mark.parametrize("round_idx", range(10))  # 新增：执行 5 轮
+    @pytest.mark.parametrize("second_dept_id,second_dept_name", [
+        (101, "二级部门101"),
+        (102, "二级部门102"),
     ])
-    def test_add_user_different_dept(self, dept_id: int, dept_name: str) -> None:
-        """数据驱动：对接口文档中每个部门各新增一个用户，均断言 code==200。"""
+    def test_add_user_different_dept(self,round_idx: int, second_dept_id: int, second_dept_name: str) -> None:
+        """
+        数据驱动：固定二级部门（101/102），从库中随机取一条三级子部门 dept_id 传给接口，
+        断言 code==200。二级下无三级子部门时自动 skip。
+        """
+        with allure.step(f"从 DB 随机取二级 {second_dept_name}（{second_dept_id}）下的三级 dept_id"):
+            third_dept_id = fetch_random_third_level_dept_id(second_dept_id)
+            if third_dept_id is None:
+                pytest.skip(f"二级部门 {second_dept_id} 下无可用三级子部门，跳过本参数")
+
+        allure.attach(
+            body=f"二级部门 second_dept_id={second_dept_id}\n三级部门 third_dept_id={third_dept_id}",
+            name="DB 取数结果",
+            attachment_type=allure.attachment_type.TEXT,
+        )
+
         token = _login_and_get_token()
         user_api = SystemUserAPI()
         user_api.set_token(token)
 
         username = _gen_username()
 
-        with allure.step(f"新增用户至 {dept_name}（deptId={dept_id}）"):
+        with allure.step(f"新增用户至三级部门 deptId={third_dept_id}（父级: {second_dept_name}）"):
             resp = user_api.add_user(
                 user_name=username,
-                nick_name=f"{dept_name}测试",
+                nick_name=f"{second_dept_name}测试",
                 password="Test@123456",
-                dept_id=dept_id,
+                dept_id=third_dept_id,
             )
 
         allure.attach(
             body=(
                 f"userName={username}\n"
-                f"deptId={dept_id}  ({dept_name})\n"
+                f"second_dept_id={second_dept_id}  ({second_dept_name})\n"
+                f"third_dept_id={third_dept_id}\n"
                 f"code={resp.get('code')}\n"
                 f"msg={resp.get('msg')}"
             ),
-            name=f"部门 [{dept_name}] 新增结果",
+            name=f"部门 [{second_dept_name}→三级{third_dept_id}] 新增结果",
             attachment_type=allure.attachment_type.TEXT,
         )
 
-        with allure.step(f"断言 code == 200（部门: {dept_name}）"):
+        with allure.step(f"断言 code == 200（二级: {second_dept_name}，三级 deptId={third_dept_id}）"):
             assert resp.get("code") == 200, (
-                f"部门 {dept_name}（deptId={dept_id}）新增失败: {resp}"
+                f"二级 {second_dept_name}（三级 deptId={third_dept_id}）新增失败: {resp}"
             )
 
     # ==================================================================
@@ -468,3 +506,89 @@ class TestAddUser:
             assert resp.get("code") == 200, (
                 f"sex={sex}（{sex_label}）新增失败: {resp}"
             )
+
+    # ==================================================================
+    # TC-SYS-USR-009：roleIds / postIds — 全不选、部分选、全选
+    # ==================================================================
+
+    @allure.story("正常新增用户")
+    @allure.severity(allure.severity_level.NORMAL)
+    @pytest.mark.parametrize("role_mode", ["none", "partial", "all"])
+    @pytest.mark.parametrize("post_mode", ["none", "partial", "all"])
+    def test_add_user_role_post_selection_matrix(
+        self, role_mode: str, post_mode: str
+    ) -> None:
+        """
+        roleIds/postIds：可全不选（[]）、部分选（库中至少 2 条时仅传首条）、
+        全选（全部可用 id）。显式传列表以覆盖 YAML 模板占位 roleIds/postIds [0]。
+        """
+        allure.dynamic.title(
+            "TC-SYS-USR-009：roleIds/postIds — "
+            f"role={role_mode}, post={post_mode}，断言 code==200"
+        )
+
+        all_roles = fetch_all_eligible_role_ids()
+        all_posts = fetch_all_eligible_post_ids()
+
+        if role_mode == "all" and not all_roles:
+            pytest.skip("sys_role 无可用普通角色，无法测「全选」角色")
+        if role_mode == "partial" and len(all_roles) < 2:
+            pytest.skip("普通角色不足 2 条，无法测「部分选择」角色")
+        if post_mode == "all" and not all_posts:
+            pytest.skip("sys_post 无可用岗位，无法测「全选」岗位")
+        if post_mode == "partial" and len(all_posts) < 2:
+            pytest.skip("岗位不足 2 条，无法测「部分选择」岗位")
+
+        if role_mode == "none":
+            role_ids: list[int] = []
+        elif role_mode == "partial":
+            role_ids = [all_roles[0]]
+        else:
+            role_ids = list(all_roles)
+
+        if post_mode == "none":
+            post_ids: list[int] = []
+        elif post_mode == "partial":
+            post_ids = [all_posts[0]]
+        else:
+            post_ids = list(all_posts)
+
+        with allure.step("从 DB 取三级 dept_id"):
+            dept_id = fetch_random_third_level_dept_id(101)
+            if dept_id is None:
+                pytest.skip("二级部门 101 下无可用三级子部门")
+
+        allure.attach(
+            body=(
+                f"role_mode={role_mode}\npost_mode={post_mode}\n"
+                f"dept_id={dept_id}\nrole_ids={role_ids}\npost_ids={post_ids}"
+            ),
+            name="role/post 组合参数",
+            attachment_type=allure.attachment_type.TEXT,
+        )
+
+        token = _login_and_get_token()
+        user_api = SystemUserAPI()
+        user_api.set_token(token)
+        username = _gen_username()
+
+        with allure.step(f"新增用户: userName={username}"):
+            resp = user_api.add_user(
+                user_name=username,
+                nick_name=f"角色岗位矩阵-{role_mode}-{post_mode}",
+                password="Test@123456",
+                dept_id=dept_id,
+                role_ids=role_ids,
+                post_ids=post_ids,
+            )
+
+        allure.attach(
+            body=str(resp),
+            name="AddUser RolePost Matrix Response",
+            attachment_type=allure.attachment_type.TEXT,
+        )
+
+        assert resp.get("code") == 200, (
+            f"新增失败: role_mode={role_mode}, post_mode={post_mode}, "
+            f"code={resp.get('code')}, msg={resp.get('msg')}"
+        )

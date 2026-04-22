@@ -1,63 +1,127 @@
-19:41:12 [DEBUG] faker.factory: Looking for locale `en_US` in provider `faker.providers.address`.
-19:41:12 [DEBUG] faker.factory: Provider `faker.providers.address` has been localized to `en_US`.
-19:41:12 [DEBUG] faker.factory: Looking for locale `en_US` in provider `faker.providers.automotive`.
-19:41:12 [DEBUG] faker.factory: Provider `faker.providers.automotive` has been localized to `en_US`.
-19:41:12 [DEBUG] faker.factory: Looking for locale `en_US` in provider `faker.providers.bank`.
-19:41:12 [DEBUG] faker.factory: Specified locale `en_US` is not available for provider `faker.providers.bank`. Locale reset to `en_GB` for this provider.
-19:41:12 [DEBUG] faker.factory: Looking for locale `en_US` in provider `faker.providers.barcode`.
-19:41:12 [DEBUG] faker.factory: Provider `faker.providers.barcode` has been localized to `en_US`.
-19:41:12 [DEBUG] faker.factory: Looking for locale `en_US` in provider `faker.providers.color`.
-19:41:12 [DEBUG] faker.factory: Provider `faker.providers.color` has been localized to `en_US`.
-19:41:12 [DEBUG] faker.factory: Looking for locale `en_US` in provider `faker.providers.company`.
-19:41:12 [DEBUG] faker.factory: Provider `faker.providers.company` has been localized to `en_US`.
-19:41:12 [DEBUG] faker.factory: Looking for locale `en_US` in provider `faker.providers.credit_card`.
-19:41:12 [DEBUG] faker.factory: Provider `faker.providers.credit_card` has been localized to `en_US`.
-19:41:12 [DEBUG] faker.factory: Looking for locale `en_US` in provider `faker.providers.currency`.
-19:41:12 [DEBUG] faker.factory: Provider `faker.providers.currency` has been localized to `en_US`.
-19:41:12 [DEBUG] faker.factory: Looking for locale `en_US` in provider `faker.providers.date_time`.
-19:41:12 [DEBUG] faker.factory: Provider `faker.providers.date_time` has been localized to `en_US`.
-19:41:12 [DEBUG] faker.factory: Provider `faker.providers.emoji` does not feature localization. Specified locale `en_US` is not utilized for this provider.
-19:41:12 [DEBUG] faker.factory: Provider `faker.providers.file` does not feature localization. Specified locale `en_US` is not utilized for this provider.
-19:41:12 [DEBUG] faker.factory: Looking for locale `en_US` in provider `faker.providers.geo`.
-19:41:12 [DEBUG] faker.factory: Provider `faker.providers.geo` has been localized to `en_US`.
-19:41:12 [DEBUG] faker.factory: Looking for locale `en_US` in provider `faker.providers.internet`.
-19:41:12 [DEBUG] faker.factory: Provider `faker.providers.internet` has been localized to `en_US`.
-19:41:12 [DEBUG] faker.factory: Provider `faker.providers.isbn` does not feature localization. Specified locale `en_US` is not utilized for this provider.
-19:41:12 [DEBUG] faker.factory: Looking for locale `en_US` in provider `faker.providers.job`.
-19:41:12 [DEBUG] faker.factory: Provider `faker.providers.job` has been localized to `en_US`.
-19:41:12 [DEBUG] faker.factory: Looking for locale `en_US` in provider `faker.providers.lorem`.
-19:41:12 [DEBUG] faker.factory: Provider `faker.providers.lorem` has been localized to `en_US`.
-19:41:12 [DEBUG] faker.factory: Looking for locale `en_US` in provider `faker.providers.misc`.
-19:41:12 [DEBUG] faker.factory: Provider `faker.providers.misc` has been localized to `en_US`.
-19:41:12 [DEBUG] faker.factory: Looking for locale `en_US` in provider `faker.providers.passport`.
-19:41:12 [DEBUG] faker.factory: Provider `faker.providers.passport` has been localized to `en_US`.
-19:41:12 [DEBUG] faker.factory: Looking for locale `en_US` in provider `faker.providers.person`.
-19:41:12 [DEBUG] faker.factory: Provider `faker.providers.person` has been localized to `en_US`.
-19:41:12 [DEBUG] faker.factory: Looking for locale `en_US` in provider `faker.providers.phone_number`.
-19:41:12 [DEBUG] faker.factory: Provider `faker.providers.phone_number` has been localized to `en_US`.
-19:41:12 [DEBUG] faker.factory: Provider `faker.providers.profile` does not feature localization. Specified locale `en_US` is not utilized for this provider.
-19:41:12 [DEBUG] faker.factory: Provider `faker.providers.python` does not feature localization. Specified locale `en_US` is not utilized for this provider.
-19:41:12 [DEBUG] faker.factory: Provider `faker.providers.sbn` does not feature localization. Specified locale `en_US` is not utilized for this provider.
-19:41:12 [DEBUG] faker.factory: Looking for locale `en_US` in provider `faker.providers.ssn`.
-19:41:12 [DEBUG] faker.factory: Provider `faker.providers.ssn` has been localized to `en_US`.
-19:41:12 [DEBUG] faker.factory: Provider `faker.providers.user_agent` does not feature localization. Specified locale `en_US` is not utilized for this provider.
-19:41:13 [DEBUG] urllib3.connectionpool: Starting new HTTP connection (1): 127.0.0.1:7890
-19:41:13 [DEBUG] urllib3.connectionpool: http://127.0.0.1:7890 "POST http://127.0.0.1:1024/dev-api/auth/login HTTP/1.1" 200 None
-19:41:13 [DEBUG] urllib3.connectionpool: Starting new HTTP connection (1): 127.0.0.1:7890
-19:41:14 [DEBUG] urllib3.connectionpool: http://127.0.0.1:7890 "POST http://127.0.0.1:1024/dev-api/system/user HTTP/1.1" 200 None
-19:41:14 [DEBUG] urllib3.connectionpool: Resetting dropped connection: 127.0.0.1
-19:41:15 [DEBUG] urllib3.connectionpool: http://127.0.0.1:7890 "PUT http://127.0.0.1:1024/dev-api/system/user HTTP/1.1" 200 None
-19:41:15 [DEBUG] urllib3.connectionpool: Starting new HTTP connection (1): 127.0.0.1:7890
-19:41:16 [DEBUG] urllib3.connectionpool: http://127.0.0.1:7890 "POST http://127.0.0.1:1024/dev-api/auth/login HTTP/1.1" 200 None
-19:41:16 [DEBUG] urllib3.connectionpool: Starting new HTTP connection (1): 127.0.0.1:7890
-19:41:17 [DEBUG] urllib3.connectionpool: http://127.0.0.1:7890 "PUT http://127.0.0.1:1024/dev-api/system/user HTTP/1.1" 200 None
-19:41:17 [DEBUG] urllib3.connectionpool: Starting new HTTP connection (1): 127.0.0.1:7890
-19:41:17 [DEBUG] urllib3.connectionpool: http://127.0.0.1:7890 "POST http://127.0.0.1:1024/dev-api/auth/login HTTP/1.1" 200 None
-19:41:17 [DEBUG] urllib3.connectionpool: Starting new HTTP connection (1): 127.0.0.1:7890
-19:41:18 [DEBUG] urllib3.connectionpool: http://127.0.0.1:7890 "PUT http://127.0.0.1:1024/dev-api/system/user HTTP/1.1" 200 None
-19:41:18 [DEBUG] urllib3.connectionpool: Starting new HTTP connection (1): 127.0.0.1:7890
-19:41:18 [DEBUG] urllib3.connectionpool: http://127.0.0.1:7890 "POST http://127.0.0.1:1024/dev-api/auth/login HTTP/1.1" 200 None
-19:41:18 [DEBUG] urllib3.connectionpool: Starting new HTTP connection (1): 127.0.0.1:7890
-19:41:18 [DEBUG] urllib3.connectionpool: http://127.0.0.1:7890 "PUT http://127.0.0.1:1024/dev-api/system/user HTTP/1.1" 200 None
-19:41:18 [DEBUG] urllib3.connectionpool: Starting new HTTP connection (1): 127.0.0.1:7890
-19:41:18 [DEBUG] urllib3.connectionpool: http://127.0.0.1:7890 "PUT http://127.0.0.1:1024/dev-api/system/user HTTP/1.1" 200 39
+11:01:25 [DEBUG] faker.factory: Looking for locale `en_US` in provider `faker.providers.address`.
+11:01:25 [DEBUG] faker.factory: Provider `faker.providers.address` has been localized to `en_US`.
+11:01:25 [DEBUG] faker.factory: Looking for locale `en_US` in provider `faker.providers.automotive`.
+11:01:25 [DEBUG] faker.factory: Provider `faker.providers.automotive` has been localized to `en_US`.
+11:01:25 [DEBUG] faker.factory: Looking for locale `en_US` in provider `faker.providers.bank`.
+11:01:25 [DEBUG] faker.factory: Specified locale `en_US` is not available for provider `faker.providers.bank`. Locale reset to `en_GB` for this provider.
+11:01:25 [DEBUG] faker.factory: Looking for locale `en_US` in provider `faker.providers.barcode`.
+11:01:25 [DEBUG] faker.factory: Provider `faker.providers.barcode` has been localized to `en_US`.
+11:01:25 [DEBUG] faker.factory: Looking for locale `en_US` in provider `faker.providers.color`.
+11:01:25 [DEBUG] faker.factory: Provider `faker.providers.color` has been localized to `en_US`.
+11:01:25 [DEBUG] faker.factory: Looking for locale `en_US` in provider `faker.providers.company`.
+11:01:25 [DEBUG] faker.factory: Provider `faker.providers.company` has been localized to `en_US`.
+11:01:25 [DEBUG] faker.factory: Looking for locale `en_US` in provider `faker.providers.credit_card`.
+11:01:25 [DEBUG] faker.factory: Provider `faker.providers.credit_card` has been localized to `en_US`.
+11:01:25 [DEBUG] faker.factory: Looking for locale `en_US` in provider `faker.providers.currency`.
+11:01:25 [DEBUG] faker.factory: Provider `faker.providers.currency` has been localized to `en_US`.
+11:01:25 [DEBUG] faker.factory: Looking for locale `en_US` in provider `faker.providers.date_time`.
+11:01:25 [DEBUG] faker.factory: Provider `faker.providers.date_time` has been localized to `en_US`.
+11:01:25 [DEBUG] faker.factory: Provider `faker.providers.emoji` does not feature localization. Specified locale `en_US` is not utilized for this provider.
+11:01:25 [DEBUG] faker.factory: Provider `faker.providers.file` does not feature localization. Specified locale `en_US` is not utilized for this provider.
+11:01:25 [DEBUG] faker.factory: Looking for locale `en_US` in provider `faker.providers.geo`.
+11:01:25 [DEBUG] faker.factory: Provider `faker.providers.geo` has been localized to `en_US`.
+11:01:25 [DEBUG] faker.factory: Looking for locale `en_US` in provider `faker.providers.internet`.
+11:01:25 [DEBUG] faker.factory: Provider `faker.providers.internet` has been localized to `en_US`.
+11:01:25 [DEBUG] faker.factory: Provider `faker.providers.isbn` does not feature localization. Specified locale `en_US` is not utilized for this provider.
+11:01:25 [DEBUG] faker.factory: Looking for locale `en_US` in provider `faker.providers.job`.
+11:01:25 [DEBUG] faker.factory: Provider `faker.providers.job` has been localized to `en_US`.
+11:01:25 [DEBUG] faker.factory: Looking for locale `en_US` in provider `faker.providers.lorem`.
+11:01:25 [DEBUG] faker.factory: Provider `faker.providers.lorem` has been localized to `en_US`.
+11:01:25 [DEBUG] faker.factory: Looking for locale `en_US` in provider `faker.providers.misc`.
+11:01:25 [DEBUG] faker.factory: Provider `faker.providers.misc` has been localized to `en_US`.
+11:01:25 [DEBUG] faker.factory: Looking for locale `en_US` in provider `faker.providers.passport`.
+11:01:25 [DEBUG] faker.factory: Provider `faker.providers.passport` has been localized to `en_US`.
+11:01:25 [DEBUG] faker.factory: Looking for locale `en_US` in provider `faker.providers.person`.
+11:01:25 [DEBUG] faker.factory: Provider `faker.providers.person` has been localized to `en_US`.
+11:01:25 [DEBUG] faker.factory: Looking for locale `en_US` in provider `faker.providers.phone_number`.
+11:01:25 [DEBUG] faker.factory: Provider `faker.providers.phone_number` has been localized to `en_US`.
+11:01:25 [DEBUG] faker.factory: Provider `faker.providers.profile` does not feature localization. Specified locale `en_US` is not utilized for this provider.
+11:01:25 [DEBUG] faker.factory: Provider `faker.providers.python` does not feature localization. Specified locale `en_US` is not utilized for this provider.
+11:01:25 [DEBUG] faker.factory: Provider `faker.providers.sbn` does not feature localization. Specified locale `en_US` is not utilized for this provider.
+11:01:25 [DEBUG] faker.factory: Looking for locale `en_US` in provider `faker.providers.ssn`.
+11:01:25 [DEBUG] faker.factory: Provider `faker.providers.ssn` has been localized to `en_US`.
+11:01:25 [DEBUG] faker.factory: Provider `faker.providers.user_agent` does not feature localization. Specified locale `en_US` is not utilized for this provider.
+11:01:25 [DEBUG] urllib3.connectionpool: Starting new HTTP connection (1): 192.168.0.107:80
+11:01:25 [DEBUG] urllib3.connectionpool: http://192.168.0.107:80 "POST /dev-api/auth/login HTTP/1.1" 200 None
+11:01:25 [DEBUG] urllib3.connectionpool: Starting new HTTP connection (1): 192.168.0.107:80
+11:01:25 [DEBUG] urllib3.connectionpool: http://192.168.0.107:80 "GET /dev-api/system/notice/list HTTP/1.1" 200 None
+11:01:25 [DEBUG] urllib3.connectionpool: Starting new HTTP connection (1): 192.168.0.107:80
+11:01:26 [DEBUG] urllib3.connectionpool: http://192.168.0.107:80 "POST /dev-api/auth/login HTTP/1.1" 200 None
+11:01:26 [DEBUG] urllib3.connectionpool: Starting new HTTP connection (1): 192.168.0.107:80
+11:01:26 [DEBUG] urllib3.connectionpool: http://192.168.0.107:80 "GET /dev-api/system/notice/list?noticeTitle=%E6%B8%A9%E9%A6%A8 HTTP/1.1" 200 None
+11:01:26 [DEBUG] urllib3.connectionpool: Starting new HTTP connection (1): 192.168.0.107:80
+11:01:26 [DEBUG] urllib3.connectionpool: http://192.168.0.107:80 "POST /dev-api/auth/login HTTP/1.1" 200 None
+11:01:26 [DEBUG] urllib3.connectionpool: Starting new HTTP connection (1): 192.168.0.107:80
+11:01:26 [DEBUG] urllib3.connectionpool: http://192.168.0.107:80 "GET /dev-api/system/notice/list?noticeType=1 HTTP/1.1" 200 None
+11:01:26 [DEBUG] urllib3.connectionpool: Starting new HTTP connection (1): 192.168.0.107:80
+11:01:26 [DEBUG] urllib3.connectionpool: http://192.168.0.107:80 "POST /dev-api/auth/login HTTP/1.1" 200 None
+11:01:26 [DEBUG] urllib3.connectionpool: Starting new HTTP connection (1): 192.168.0.107:80
+11:01:26 [DEBUG] urllib3.connectionpool: http://192.168.0.107:80 "GET /dev-api/system/notice/list?pageNum=1&pageSize=2 HTTP/1.1" 200 None
+11:01:26 [DEBUG] urllib3.connectionpool: Starting new HTTP connection (1): 192.168.0.107:80
+11:01:26 [DEBUG] urllib3.connectionpool: http://192.168.0.107:80 "POST /dev-api/auth/login HTTP/1.1" 200 None
+11:01:26 [DEBUG] urllib3.connectionpool: Starting new HTTP connection (1): 192.168.0.107:80
+11:01:26 [DEBUG] urllib3.connectionpool: http://192.168.0.107:80 "GET /dev-api/system/notice/list?status=0 HTTP/1.1" 200 None
+11:01:26 [DEBUG] urllib3.connectionpool: Starting new HTTP connection (1): 192.168.0.107:80
+11:01:26 [DEBUG] urllib3.connectionpool: http://192.168.0.107:80 "GET /dev-api/system/notice/list HTTP/1.1" 200 39
+11:01:26 [DEBUG] urllib3.connectionpool: Starting new HTTP connection (1): 192.168.0.107:80
+11:01:26 [DEBUG] urllib3.connectionpool: http://192.168.0.107:80 "POST /dev-api/auth/login HTTP/1.1" 200 None
+11:01:26 [DEBUG] urllib3.connectionpool: Starting new HTTP connection (1): 192.168.0.107:80
+11:01:27 [DEBUG] urllib3.connectionpool: http://192.168.0.107:80 "POST /dev-api/system/notice HTTP/1.1" 200 None
+11:01:27 [DEBUG] urllib3.connectionpool: Resetting dropped connection: 192.168.0.107
+11:01:27 [DEBUG] urllib3.connectionpool: http://192.168.0.107:80 "GET /dev-api/system/notice/list?noticeTitle=%E5%88%97%E8%A1%A8%E6%A3%80%E7%B4%A2%E4%B8%93%E7%94%A8_6d1b6ff5ae HTTP/1.1" 200 None
+11:01:27 [DEBUG] urllib3.connectionpool: Resetting dropped connection: 192.168.0.107
+11:01:27 [DEBUG] urllib3.connectionpool: http://192.168.0.107:80 "DELETE /dev-api/system/notice/10 HTTP/1.1" 200 None
+11:01:27 [DEBUG] urllib3.connectionpool: Starting new HTTP connection (1): 192.168.0.107:80
+11:01:27 [DEBUG] urllib3.connectionpool: http://192.168.0.107:80 "POST /dev-api/auth/login HTTP/1.1" 200 None
+11:01:27 [DEBUG] urllib3.connectionpool: Starting new HTTP connection (1): 192.168.0.107:80
+11:01:27 [DEBUG] urllib3.connectionpool: http://192.168.0.107:80 "POST /dev-api/system/notice HTTP/1.1" 200 None
+11:01:27 [DEBUG] urllib3.connectionpool: Resetting dropped connection: 192.168.0.107
+11:01:27 [DEBUG] urllib3.connectionpool: http://192.168.0.107:80 "DELETE /dev-api/system/notice/11 HTTP/1.1" 200 None
+11:01:27 [DEBUG] urllib3.connectionpool: Starting new HTTP connection (1): 192.168.0.107:80
+11:01:27 [DEBUG] urllib3.connectionpool: http://192.168.0.107:80 "POST /dev-api/auth/login HTTP/1.1" 200 None
+11:01:27 [DEBUG] urllib3.connectionpool: Starting new HTTP connection (1): 192.168.0.107:80
+11:01:27 [DEBUG] urllib3.connectionpool: http://192.168.0.107:80 "POST /dev-api/system/notice HTTP/1.1" 200 None
+11:01:27 [DEBUG] urllib3.connectionpool: Resetting dropped connection: 192.168.0.107
+11:01:27 [DEBUG] urllib3.connectionpool: http://192.168.0.107:80 "DELETE /dev-api/system/notice/12 HTTP/1.1" 200 None
+11:01:27 [DEBUG] urllib3.connectionpool: Starting new HTTP connection (1): 192.168.0.107:80
+11:01:27 [DEBUG] urllib3.connectionpool: http://192.168.0.107:80 "POST /dev-api/system/notice HTTP/1.1" 200 39
+11:01:27 [DEBUG] urllib3.connectionpool: Starting new HTTP connection (1): 192.168.0.107:80
+11:01:27 [DEBUG] urllib3.connectionpool: http://192.168.0.107:80 "POST /dev-api/auth/login HTTP/1.1" 200 None
+11:01:27 [DEBUG] urllib3.connectionpool: Starting new HTTP connection (1): 192.168.0.107:80
+11:01:27 [DEBUG] urllib3.connectionpool: http://192.168.0.107:80 "POST /dev-api/system/notice HTTP/1.1" 200 None
+11:01:27 [DEBUG] urllib3.connectionpool: Resetting dropped connection: 192.168.0.107
+11:01:27 [DEBUG] urllib3.connectionpool: http://192.168.0.107:80 "GET /dev-api/system/notice/13 HTTP/1.1" 200 None
+11:01:27 [DEBUG] urllib3.connectionpool: Resetting dropped connection: 192.168.0.107
+11:01:27 [DEBUG] urllib3.connectionpool: http://192.168.0.107:80 "DELETE /dev-api/system/notice/13 HTTP/1.1" 200 None
+11:01:27 [DEBUG] urllib3.connectionpool: Starting new HTTP connection (1): 192.168.0.107:80
+11:01:28 [DEBUG] urllib3.connectionpool: http://192.168.0.107:80 "POST /dev-api/auth/login HTTP/1.1" 200 None
+11:01:28 [DEBUG] urllib3.connectionpool: Starting new HTTP connection (1): 192.168.0.107:80
+11:01:28 [DEBUG] urllib3.connectionpool: http://192.168.0.107:80 "POST /dev-api/system/notice HTTP/1.1" 200 None
+11:01:28 [DEBUG] urllib3.connectionpool: Resetting dropped connection: 192.168.0.107
+11:01:28 [DEBUG] urllib3.connectionpool: http://192.168.0.107:80 "PUT /dev-api/system/notice HTTP/1.1" 200 None
+11:01:28 [DEBUG] urllib3.connectionpool: Resetting dropped connection: 192.168.0.107
+11:01:28 [DEBUG] urllib3.connectionpool: http://192.168.0.107:80 "GET /dev-api/system/notice/14 HTTP/1.1" 200 None
+11:01:28 [DEBUG] urllib3.connectionpool: Resetting dropped connection: 192.168.0.107
+11:01:28 [DEBUG] urllib3.connectionpool: http://192.168.0.107:80 "DELETE /dev-api/system/notice/14 HTTP/1.1" 200 None
+11:01:28 [DEBUG] urllib3.connectionpool: Starting new HTTP connection (1): 192.168.0.107:80
+11:01:28 [DEBUG] urllib3.connectionpool: http://192.168.0.107:80 "POST /dev-api/auth/login HTTP/1.1" 200 None
+11:01:28 [DEBUG] urllib3.connectionpool: Starting new HTTP connection (1): 192.168.0.107:80
+11:01:28 [DEBUG] urllib3.connectionpool: http://192.168.0.107:80 "POST /dev-api/system/notice HTTP/1.1" 200 None
+11:01:28 [DEBUG] urllib3.connectionpool: Resetting dropped connection: 192.168.0.107
+11:01:28 [DEBUG] urllib3.connectionpool: http://192.168.0.107:80 "DELETE /dev-api/system/notice/15 HTTP/1.1" 200 None
+11:01:28 [DEBUG] urllib3.connectionpool: Starting new HTTP connection (1): 192.168.0.107:80
+11:01:28 [DEBUG] urllib3.connectionpool: http://192.168.0.107:80 "POST /dev-api/auth/login HTTP/1.1" 200 None
+11:01:28 [DEBUG] urllib3.connectionpool: Starting new HTTP connection (1): 192.168.0.107:80
+11:01:28 [DEBUG] urllib3.connectionpool: http://192.168.0.107:80 "POST /dev-api/system/notice HTTP/1.1" 200 None
+11:01:28 [DEBUG] urllib3.connectionpool: Resetting dropped connection: 192.168.0.107
+11:01:28 [DEBUG] urllib3.connectionpool: http://192.168.0.107:80 "POST /dev-api/system/notice HTTP/1.1" 200 None
+11:01:28 [DEBUG] urllib3.connectionpool: Resetting dropped connection: 192.168.0.107
+11:01:28 [DEBUG] urllib3.connectionpool: http://192.168.0.107:80 "DELETE /dev-api/system/notice/16,17 HTTP/1.1" 200 None
+11:01:28 [DEBUG] urllib3.connectionpool: Starting new HTTP connection (1): 192.168.0.107:80
+11:01:29 [DEBUG] urllib3.connectionpool: http://192.168.0.107:80 "POST /dev-api/auth/login HTTP/1.1" 200 None
+11:01:29 [DEBUG] urllib3.connectionpool: Starting new HTTP connection (1): 192.168.0.107:80
+11:01:29 [DEBUG] urllib3.connectionpool: http://192.168.0.107:80 "DELETE /dev-api/system/notice/99999999 HTTP/1.1" 200 None
+11:01:29 [DEBUG] urllib3.connectionpool: Starting new HTTP connection (1): 192.168.0.107:80
+11:01:29 [DEBUG] urllib3.connectionpool: http://192.168.0.107:80 "POST /dev-api/auth/login HTTP/1.1" 200 None
+11:01:29 [DEBUG] urllib3.connectionpool: Starting new HTTP connection (1): 192.168.0.107:80
+11:01:29 [DEBUG] urllib3.connectionpool: http://192.168.0.107:80 "GET /dev-api/system/notice/99999999 HTTP/1.1" 200 None

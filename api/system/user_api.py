@@ -104,9 +104,10 @@ class SystemUserAPI(BaseAPI):
             email:       邮箱。
             sex:         性别，"0" 男 / "1" 女 / "2" 未知。
             status:      状态，"0" 正常 / "1" 停用，默认 "0"。
-            dept_id:     部门 ID（103 研发/104 市场/105 测试/106 财务/107 运维）。
-            role_ids:    角色 ID 数组，默认 [2]。
-            post_ids:    岗位 ID 数组（1 董事长/2 项目经理/3 人力资源/4 普通员工）。
+            dept_id:     部门 ID，来自 sys_dept.dept_id（业务上应为三级叶子节点，
+                         建议通过 fetch_random_third_level_dept_id 查询获得）。
+            role_ids:    角色 ID 数组，来自 sys_role.role_id（建议通过 fetch_one_role_id 查询）。
+            post_ids:    岗位 ID 数组，来自 sys_post.post_id（建议通过 fetch_one_post_id 查询）。
             remark:      备注。
 
         Returns:
@@ -161,16 +162,17 @@ class SystemUserAPI(BaseAPI):
               若依服务端校验 userName 不能为空，即使不修改用户名也必须携带原值。
 
         Args:
-            user_id:     必填，目标用户 ID。
-            dept_id:     必填，用户所在部门 ID（须与 DB 中一致）。
+            user_id:     必填，目标用户 ID（来自 sys_user.user_id，须先查库获得）。
+            dept_id:     必填，用户所在部门 ID（须与 sys_user 中 DB 记录一致；
+                         业务上为 sys_dept 三级叶子节点 dept_id）。
             user_name:   必填，用户登录账号（即使不修改也必须传原值）。
             nick_name:   昵称。
             email:       邮箱（修改时会检查唯一性）。
             phonenumber: 手机号（修改时会检查唯一性）。
             sex:         性别，"0" 男 / "1" 女 / "2" 未知。
             status:      状态，"0" 正常 / "1" 停用。
-            role_ids:    角色 ID 数组。
-            post_ids:    岗位 ID 数组。
+            role_ids:    角色 ID 数组（来自 sys_role.role_id）。
+            post_ids:    岗位 ID 数组（来自 sys_post.post_id）。
             remark:      备注。
 
         Returns:
