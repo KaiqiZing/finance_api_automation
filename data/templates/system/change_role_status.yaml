@@ -1,0 +1,18 @@
+# 角色状态修改接口 YAML 模板
+# 接口: PUT /dev-api/system/role/changeStatus
+# 权限标识: system:role:edit
+# 文档: 需携带 Bearer Token；roleId/status 为必填
+# 注意: roleId 必须由用例层通过 overrides 注入，此处仅占位
+# 枚举: status 0 正常/1 停用
+
+api_info:
+  path: "/system/role/changeStatus"
+  method: "PUT"
+  description: "修改角色状态"
+
+logic_rules: []
+
+payload:
+  # roleId/status 必须由用例层通过 overrides 注入，此处仅占位
+  roleId: 0
+  status: "0"
