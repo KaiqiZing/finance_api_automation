@@ -1,0 +1,26 @@
+# 修改部门接口 YAML 模板
+# 接口: PUT /dev-api/system/dept
+# 权限标识: system:dept:edit
+# 文档: 需携带 Bearer Token；deptId/parentId/deptName/orderNum 为必填
+# 注意: deptId/parentId/deptName/orderNum 必须由用例层通过 overrides 注入，此处仅占位
+# 枚举: status 0 正常/1 停用
+
+api_info:
+  path: "/system/dept"
+  method: "PUT"
+  description: "修改部门"
+
+logic_rules: []
+
+payload:
+  # deptId/parentId/deptName/orderNum 必须由用例层通过 overrides 注入，此处仅占位
+  deptId: 0
+  parentId: 0
+  deptName: ""
+  orderNum: 0
+
+  # === 可选字段 ===
+  leader: ""
+  phone: ""
+  email: ""
+  status: "0"
