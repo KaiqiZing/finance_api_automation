@@ -1,0 +1,28 @@
+# 新增角色接口 YAML 模板
+# 接口: POST /dev-api/system/role
+# 权限标识: system:role:add
+# 文档: 需携带 Bearer Token；roleName/roleKey/roleSort/status 为必填
+# 枚举: status 0 正常/1 停用
+# 枚举: dataScope 1 全部/2 自定义/3 本部门/4 本部门及以下/5 仅本人
+# menuIds: 须由用例层通过 overrides 注入（来自 sys_menu.menu_id），此处默认空数组
+
+api_info:
+  path: "/system/role"
+  method: "POST"
+  description: "新增角色"
+
+logic_rules: []
+
+payload:
+  # === 必填字段 ===
+  roleName: "${rand_str(chn, 3)}角色"
+  roleKey: "test_${rand_str(en, 6)}"
+  roleSort: 10
+  status: "0"
+
+  # === 可选字段（含文档默认值）===
+  dataScope: "1"
+  menuCheckStrictly: true
+  deptCheckStrictly: true
+  menuIds: []
+  remark: "${rand_str(chn, 4)}测试备注"

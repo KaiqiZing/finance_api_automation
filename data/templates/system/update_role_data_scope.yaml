@@ -1,0 +1,20 @@
+# 修改角色数据权限接口 YAML 模板
+# 接口: PUT /dev-api/system/role/dataScope
+# 权限标识: system:role:edit
+# 文档: 需携带 Bearer Token；roleId/dataScope 为必填
+# 注意: roleId 必须由用例层通过 overrides 注入，此处仅占位
+# 枚举: dataScope 1 全部/2 自定义/3 本部门/4 本部门及以下/5 仅本人
+# deptIds: dataScope="2" 自定义时需传，其余场景可传空数组
+
+api_info:
+  path: "/system/role/dataScope"
+  method: "PUT"
+  description: "修改角色数据权限"
+
+logic_rules: []
+
+payload:
+  # roleId 必须由用例层通过 overrides 注入，此处仅占位
+  roleId: 0
+  dataScope: "1"
+  deptIds: []
