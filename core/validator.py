@@ -21,7 +21,7 @@ from utils.db_client import DBClient
 from utils.logger import logger
 
 
-class AssertionError(Exception):
+class ValidationAssertionError(Exception):
     """断言失败，附带 Diff 信息。"""
 
 
@@ -34,9 +34,16 @@ class Validator:
 
     @staticmethod
     def assert_status_code(response: dict, expected: int = 200) -> None:
-        """断言 HTTP 状态码（适用于已解析的 body dict，通过 resp._status_code 传入）。"""
-        # 实际调用时由 response 对象包装，此处为占位说明
-        pass
+        """断言 HTTP 状态码（从响应字典的 _status_code 字段读取）。"""
+        actual = response.get("_status_code")
+        if actual is None:
+            raise ValidationAssertionError(
+                f"响应中不含 '_status_code' 字段，无法断言 HTTP 状态码。响应: {response}"
+            )
+        if actual != expected:
+            raise ValidationAssertionError(
+                f"HTTP 状态码断言失败：期望 {expected}，实际 {actual}"
+            )
 
     # ------------------------------------------------------------------
     # 业务断言
@@ -44,14 +51,24 @@ class Validator:
 
     @staticmethod
     def assert_success(body: dict[str, Any]) -> None:
-        """断言业务成功：biz_status == 'SUCCESS' 或 code == 0。"""
+        """断言业务成功：biz_status == 'SUCCESS'、code == 0 或若依 code == 200。"""
         biz_status = body.get("biz_status") or body.get("status")
         code = body.get("code")
-        ok = (biz_status == "SUCCESS") or (code == 0) or (code == "0")
+        ok = (biz_status == "SUCCESS") or (code in (0, 200)) or (code in ("0", "200"))
         if not ok:
-            raise AssertionError(
+            raise ValidationAssertionError(
                 f"业务响应非成功: biz_status={biz_status!r}, code={code!r}, "
-                f"message={body.get('message')!r}"
+                f"message={Validator._message(body)!r}"
+            )
+
+    @staticmethod
+    def assert_ruoyi_success(body: dict[str, Any]) -> None:
+        """断言若依接口成功：HTTP 200 且业务 code == 200。"""
+        Validator.assert_status_code(body, 200)
+        code = body.get("code")
+        if code != 200:
+            raise ValidationAssertionError(
+                f"若依响应非成功: code={code!r}, msg={Validator._message(body)!r}, body={body}"
             )
 
     @staticmethod
@@ -63,10 +80,10 @@ class Validator:
         actual = body
         for k in keys:
             if not isinstance(actual, dict) or k not in actual:
-                raise AssertionError(f"字段路径 '{field_path}' 不存在于响应中。响应: {body}")
+                raise ValidationAssertionError(f"字段路径 '{field_path}' 不存在于响应中。响应: {body}")
             actual = actual[k]
         if actual != expected:
-            raise AssertionError(f"字段 '{field_path}': 期望 {expected!r}，实际 {actual!r}")
+            raise ValidationAssertionError(f"字段 '{field_path}': 期望 {expected!r}，实际 {actual!r}")
 
     @staticmethod
     def assert_field_contains(body: dict[str, Any], field_path: str, keyword: str) -> None:
@@ -74,9 +91,11 @@ class Validator:
         keys = field_path.split(".")
         actual = body
         for k in keys:
+            if not isinstance(actual, dict) or k not in actual:
+                raise ValidationAssertionError(f"字段路径 '{field_path}' 不存在。响应: {body}")
             actual = actual[k]
         if keyword not in str(actual):
-            raise AssertionError(f"字段 '{field_path}' 值 {actual!r} 不包含关键词 {keyword!r}")
+            raise ValidationAssertionError(f"字段 '{field_path}' 值 {actual!r} 不包含关键词 {keyword!r}")
 
     # ------------------------------------------------------------------
     # Schema 断言
@@ -98,7 +117,7 @@ class Validator:
         try:
             jsonschema.validate(instance=body, schema=schema)
         except jsonschema.ValidationError as e:
-            raise AssertionError(f"[Validator] Schema 校验失败: {e.message}") from e
+            raise ValidationAssertionError(f"[Validator] Schema 校验失败: {e.message}") from e
 
     # ------------------------------------------------------------------
     # Diff 断言
@@ -111,7 +130,7 @@ class Validator:
         """
         diff = DeepDiff(expected, actual, ignore_order=True, exclude_paths=exclude_paths or [])
         if diff:
-            raise AssertionError(f"[Validator] 响应与期望存在差异:\n{diff.to_json(indent=2)}")
+            raise ValidationAssertionError(f"[Validator] 响应与期望存在差异:\n{diff.to_json(indent=2)}")
 
     # ------------------------------------------------------------------
     # DB 断言（含轮询）
@@ -145,7 +164,7 @@ class Validator:
             if actual == expected:
                 return
             time.sleep(interval)
-        raise AssertionError(
+        raise ValidationAssertionError(
             f"[Validator] DB 断言超时（{timeout}s）: SQL={sql!r}, "
             f"期望={expected!r}, 最后实际值={actual!r}"
         )
@@ -156,7 +175,7 @@ class Validator:
         db = DBClient.instance(db_alias)
         result = db.fetch_all(sql)
         if not result:
-            raise AssertionError(f"[Validator] DB 断言：期望有数据但查询无结果。SQL={sql!r}")
+            raise ValidationAssertionError(f"[Validator] DB 断言：期望有数据但查询无结果。SQL={sql!r}")
 
     @staticmethod
     def assert_db_not_exists(sql: str, *, db_alias: str = "default") -> None:
@@ -164,6 +183,10 @@ class Validator:
         db = DBClient.instance(db_alias)
         result = db.fetch_all(sql)
         if result:
-            raise AssertionError(
+            raise ValidationAssertionError(
                 f"[Validator] DB 断言：期望无数据但查询到 {len(result)} 条。SQL={sql!r}"
             )
+
+    @staticmethod
+    def _message(body: dict[str, Any]) -> Any:
+        return body.get("msg") or body.get("message")

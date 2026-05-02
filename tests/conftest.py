@@ -5,8 +5,15 @@
     session  - 数据库连接初始化/健康检查、Token 获取（整个测试会话只跑一次）。
     function - GlobalContext 清理（每条用例后重置，防止数据污染）。
 
+日志系统生命周期:
+    pytest_sessionstart  → 初始化 ApiLogger（MongoSink 主 + JsonlSink 降级）。
+    pytest_runtest_setup → 每条用例开始前更新当前 nodeid。
+    pytest_sessionfinish → flush + close，确保日志全部落盘。
+
 Allure 集成:
-    - pytest_runtest_makereport hook 实现失败时自动附加 GlobalContext 快照。
+    - pytest_runtest_makereport hook 实现失败时自动附加：
+        1. GlobalContext 业务快照（过滤内部 _ 前缀字段）
+        2. API 链路追踪摘要（last_trace_id + 最近 5 条请求）
 """
 from __future__ import annotations
 
@@ -22,6 +29,70 @@ from core.context import GlobalContext
 from core.request_wrapper import RequestWrapper, RequestConfig
 from utils.db_client import DBClient
 from utils.logger import logger
+
+
+# ==============================================================================
+# Session 级别：ApiLogger 初始化（Hook，早于所有 Fixture）
+# ==============================================================================
+
+def pytest_sessionstart(session) -> None:
+    """
+    Session 开始：根据 logging 配置初始化 ApiLogger。
+    失败时仅打印警告，不阻断测试执行（降级到无日志采集模式）。
+    """
+    try:
+        from core.settings import BASE_DIR
+        from utils.api_logger import ApiLogger, JsonlSink, MongoSink, _DEFAULT_SENSITIVE_KEYS
+
+        log_cfg: dict = cfg.logging
+        mongo_cfg: dict = log_cfg.get("mongo", {})
+
+        # 降级目录
+        fallback_rel = log_cfg.get("fallback_dir", "outputs/api_logs")
+        fallback_dir = BASE_DIR / fallback_rel
+        fallback_sink = JsonlSink(fallback_dir)
+
+        # 敏感字段集合：优先取配置，为空则沿用模块默认值
+        raw_keys = log_cfg.get("sensitive_keys", [])
+        sensitive_keys = frozenset(raw_keys) if raw_keys else _DEFAULT_SENSITIVE_KEYS
+
+        if mongo_cfg.get("enabled", False):
+            sink = MongoSink(
+                uri=mongo_cfg.get("uri", "mongodb://localhost:27018"),
+                db_name=mongo_cfg.get("db_name", "finance_auto_logs"),
+                collection_name=mongo_cfg.get("collection_name", "api_logs"),
+                fallback_sink=fallback_sink,
+                batch_size=int(mongo_cfg.get("batch_size", 20)),
+                flush_interval_sec=float(mongo_cfg.get("flush_interval_sec", 2.0)),
+                queue_maxsize=int(mongo_cfg.get("queue_maxsize", 500)),
+                max_pool_size=int(mongo_cfg.get("max_pool_size", 20)),
+            )
+        else:
+            sink = fallback_sink
+
+        ApiLogger.initialize(sink=sink, env=cfg.env, sensitive_keys=sensitive_keys)
+    except Exception as exc:
+        logger.warning(f"[conftest] ApiLogger 初始化失败，日志采集不可用: {exc}")
+
+
+def pytest_runtest_setup(item) -> None:
+    """每条用例开始前：将当前 nodeid 注入 ApiLogger，使日志记录可关联到具体用例。"""
+    try:
+        from utils.api_logger import ApiLogger
+        al = ApiLogger.instance()
+        if al:
+            al.set_current_nodeid(item.nodeid)
+    except Exception as exc:
+        logger.warning(f"[conftest] ApiLogger 更新 nodeid 失败: {exc}")
+
+
+def pytest_sessionfinish(session, exitstatus) -> None:
+    """Session 结束：flush + close ApiLogger，确保所有日志落盘后再退出。"""
+    try:
+        from utils.api_logger import ApiLogger
+        ApiLogger.shutdown()
+    except Exception as exc:
+        logger.warning(f"[conftest] ApiLogger 关闭失败: {exc}")
 
 
 # ==============================================================================
@@ -50,28 +121,6 @@ def db_health_check() -> Generator[None, None, None]:
 
 
 # ==============================================================================
-# Session 级别：全局 Token 获取
-# ==============================================================================
-
-@pytest.fixture(scope="session")
-def session_token() -> str:
-    """
-    在整个测试会话中获取一次 Token，供需要鉴权的接口共享。
-    注意：若 Token 有效期较短，改为 function 级别。
-    """
-    from api.account.login_api import LoginAPI
-    from core.validator import Validator
-
-    login_api = LoginAPI()
-    resp = login_api.login()
-    Validator.assert_success(resp)
-    token = resp["data"]["token"]
-    GlobalContext.instance().set("token", token)
-    logger.info("[conftest] Session Token 获取成功。")
-    return token
-
-
-# ==============================================================================
 # Function 级别：GlobalContext 隔离清理
 # ==============================================================================
 
@@ -83,7 +132,7 @@ def reset_global_context() -> Generator[None, None, None]:
 
 
 # ==============================================================================
-# Allure Hook：失败时自动附加 GlobalContext 快照
+# Allure Hook：失败时自动附加上下文快照 + API 链路追踪摘要
 # ==============================================================================
 
 @pytest.hookimpl(tryfirst=True, hookwrapper=True)
@@ -91,15 +140,46 @@ def pytest_runtest_makereport(item, call):
     outcome = yield
     report = outcome.get_result()
 
-    if report.when == "call" and report.failed:
-        snapshot = GlobalContext.instance().snapshot()
-        if snapshot:
-            allure.attach(
-                body=json.dumps(snapshot, ensure_ascii=False, indent=2),
-                name="GlobalContext 快照（失败时）",
-                attachment_type=allure.attachment_type.JSON,
-            )
-        logger.warning(f"[conftest] 用例失败: {item.nodeid} | Context: {snapshot}")
+    if report.when != "call" or not report.failed:
+        return
+
+    ctx = GlobalContext.instance()
+    snapshot = ctx.snapshot()
+
+    # 1. 业务上下文快照（过滤内部 _ 前缀字段，避免污染 Allure 展示）
+    business_snapshot = {k: v for k, v in snapshot.items() if not k.startswith("_")}
+    if business_snapshot:
+        allure.attach(
+            body=json.dumps(business_snapshot, ensure_ascii=False, indent=2),
+            name="GlobalContext 快照（失败时）",
+            attachment_type=allure.attachment_type.JSON,
+        )
+
+    # 2. API 链路追踪摘要（trace_id + 最近 5 条请求）
+    last_trace_id: str = ctx.get("_last_trace_id", "")
+    recent_logs: list = ctx.get("_recent_api_logs") or []
+
+    if last_trace_id or recent_logs:
+        trace_summary = {
+            "last_trace_id": last_trace_id,
+            "mongo_query_hint": (
+                f"db.api_logs.find({{trace_id: '{last_trace_id}'}})"
+                if last_trace_id else "N/A"
+            ),
+            "recent_api_requests": recent_logs,
+        }
+        short_id = last_trace_id[:8] if last_trace_id else "N/A"
+        allure.attach(
+            body=json.dumps(trace_summary, ensure_ascii=False, indent=2),
+            name=f"API链路追踪（trace_id: {short_id}…）",
+            attachment_type=allure.attachment_type.JSON,
+        )
+
+    logger.warning(
+        f"[conftest] 用例失败: {item.nodeid} | "
+        f"trace_id={last_trace_id} | "
+        f"recent_requests={len(recent_logs)} 条"
+    )
 
 
 # ==============================================================================

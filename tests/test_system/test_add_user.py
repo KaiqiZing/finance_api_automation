@@ -20,14 +20,12 @@
 """
 from __future__ import annotations
 
-import uuid
-
 import allure
 import pytest
 
-from api.system.login_api import SystemLoginAPI
 from api.system.user_api import SystemUserAPI
 from core.validator import Validator
+from tests.test_system.conftest import _login_and_get_token, gen_phone, gen_username
 from utils.db_client import DBClient
 from utils.system_ruoyi_queries import (
     fetch_all_eligible_post_ids,
@@ -36,28 +34,6 @@ from utils.system_ruoyi_queries import (
     fetch_one_role_id,
     fetch_random_third_level_dept_id,
 )
-
-
-# ==============================================================================
-# 辅助函数
-# ==============================================================================
-
-def _gen_username() -> str:
-    """生成唯一用户名（取 UUID 前 8 位），防止用例间重名冲突。"""
-    return "test_" + uuid.uuid4().hex[:8]
-
-
-def _gen_phone() -> str:
-    """生成唯一 11 位手机号（138 + 8 位数字）。"""
-    return f"138{uuid.uuid4().int % 100_000_000:08d}"
-
-
-def _login_and_get_token() -> str:
-    """用 admin 账号登录，返回 access_token。"""
-    login_api = SystemLoginAPI()
-    resp = login_api.login(username="admin", password="admin123")
-    assert resp.get("code") == 200, f"登录失败，无法获取 token: {resp}"
-    return resp["data"]["access_token"]
 
 
 # ==============================================================================
@@ -87,7 +63,7 @@ class TestAddUser:
         user_api = SystemUserAPI()
         user_api.set_token(token)
 
-        username = _gen_username()
+        username = gen_username()
 
         with allure.step(f"调用新增接口（仅必填字段）: userName={username}"):
             resp = user_api.add_user(
@@ -147,8 +123,8 @@ class TestAddUser:
         user_api = SystemUserAPI()
         user_api.set_token(token)
 
-        username = _gen_username()
-        phonenumber = _gen_phone()
+        username = gen_username()
+        phonenumber = gen_phone()
         email = username + "@test.com"
 
         with allure.step(f"调用新增接口（全字段）: userName={username}"):
@@ -275,7 +251,7 @@ class TestAddUser:
 
         with allure.step(f"使用不同用户名、已存在的 phonenumber={existing_phone} 调用新增接口，预期 code==500"):
             resp = user_api.add_user(
-                user_name=_gen_username(),
+                user_name=gen_username(),
                 nick_name="手机号重复测试",
                 password="Test@123456",
                 phonenumber=existing_phone,
@@ -334,7 +310,7 @@ class TestAddUser:
 
         with allure.step(f"使用不同用户名、已存在的 email={existing_email} 调用新增接口，预期 code==500"):
             resp = user_api.add_user(
-                user_name=_gen_username(),
+                user_name=gen_username(),
                 nick_name="邮箱重复测试",
                 password="Test@123456",
                 email=existing_email,
@@ -374,7 +350,7 @@ class TestAddUser:
 
         with allure.step("不携带 Token，直接调用 add_user"):
             resp = user_api.add_user(
-                user_name=_gen_username(),
+                user_name=gen_username(),
                 nick_name="鉴权测试",
                 password="Test@123456",
             )
@@ -436,7 +412,7 @@ class TestAddUser:
         user_api = SystemUserAPI()
         user_api.set_token(token)
 
-        username = _gen_username()
+        username = gen_username()
 
         with allure.step(f"新增用户至三级部门 deptId={third_dept_id}（父级: {second_dept_name}）"):
             resp = user_api.add_user(
@@ -481,7 +457,7 @@ class TestAddUser:
         user_api = SystemUserAPI()
         user_api.set_token(token)
 
-        username = _gen_username()
+        username = gen_username()
 
         with allure.step(f"新增用户，性别={sex_label}（sex={sex}）"):
             resp = user_api.add_user(
@@ -570,7 +546,7 @@ class TestAddUser:
         token = _login_and_get_token()
         user_api = SystemUserAPI()
         user_api.set_token(token)
-        username = _gen_username()
+        username = gen_username()
 
         with allure.step(f"新增用户: userName={username}"):
             resp = user_api.add_user(

@@ -9,6 +9,7 @@
 from __future__ import annotations
 
 import os
+import threading
 from pathlib import Path
 from typing import Any
 
@@ -21,6 +22,7 @@ class AppConfig:
     """全局应用配置（懒加载，首次访问时解析）。"""
 
     _instance: "AppConfig | None" = None
+    _lock: threading.Lock = threading.Lock()
 
     def __init__(self, env: str) -> None:
         self._env = env
@@ -29,8 +31,10 @@ class AppConfig:
     @classmethod
     def instance(cls) -> "AppConfig":
         if cls._instance is None:
-            env = os.environ.get("TEST_ENV", "test").lower()
-            cls._instance = cls(env)
+            with cls._lock:
+                if cls._instance is None:
+                    env = os.environ.get("TEST_ENV", "test").lower()
+                    cls._instance = cls(env)
         return cls._instance
 
     @classmethod
@@ -74,6 +78,10 @@ class AppConfig:
     @property
     def allure_meta(self) -> dict[str, str]:
         return self._data.get("allure", {})
+
+    @property
+    def logging(self) -> dict[str, Any]:
+        return self._data.get("logging", {})
 
     def get(self, key: str, default: Any = None) -> Any:
         return self._data.get(key, default)

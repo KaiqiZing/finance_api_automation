@@ -1,0 +1,365 @@
+10:53:35 [DEBUG] pymongo.topology: {"message": "Starting topology monitoring", "topologyId": {"$oid": "69f5672f6ae847fd4f91074a"}}
+10:53:35 [DEBUG] pymongo.topology: {"message": "Topology description changed", "topologyId": {"$oid": "69f5672f6ae847fd4f91074a"}, "previousDescription": "<TopologyDescription id: 69f5672f6ae847fd4f91074a, topology_type: Unknown, servers: []>", "newDescription": "<TopologyDescription id: 69f5672f6ae847fd4f91074a, topology_type: Unknown, servers: [<ServerDescription ('192.168.0.107', 27018) server_type: Unknown, rtt: None>]>"}
+10:53:35 [DEBUG] pymongo.topology: {"message": "Starting server monitoring", "topologyId": {"$oid": "69f5672f6ae847fd4f91074a"}, "serverHost": "192.168.0.107", "serverPort": 27018}
+10:53:35 [DEBUG] pymongo.connection: {"message": "Connection pool created", "clientId": {"$oid": "69f5672f6ae847fd4f91074a"}, "serverHost": "192.168.0.107", "serverPort": 27018, "maxPoolSize": 20}
+10:53:35 [DEBUG] pymongo.serverSelection: {"message": "Server selection started", "selector": "Primary()", "operation": "buildinfo", "topologyDescription": "<TopologyDescription id: 69f5672f6ae847fd4f91074a, topology_type: Unknown, servers: [<ServerDescription ('192.168.0.107', 27018) server_type: Unknown, rtt: None>]>", "clientId": {"$oid": "69f5672f6ae847fd4f91074a"}}
+10:53:35 [DEBUG] pymongo.serverSelection: {"message": "Waiting for suitable server to become available", "selector": "Primary()", "operation": "buildinfo", "topologyDescription": "<TopologyDescription id: 69f5672f6ae847fd4f91074a, topology_type: Unknown, servers: [<ServerDescription ('192.168.0.107', 27018) server_type: Unknown, rtt: None>]>", "clientId": {"$oid": "69f5672f6ae847fd4f91074a"}, "remainingTimeMS": 2999}
+10:53:35 [DEBUG] pymongo.topology: {"message": "Server heartbeat started", "topologyId": {"$oid": "69f5672f6ae847fd4f91074a"}, "driverConnectionId": 1, "serverHost": "192.168.0.107", "serverPort": 27018, "awaited": false}
+10:53:35 [DEBUG] pymongo.topology: {"message": "Server heartbeat succeeded", "topologyId": {"$oid": "69f5672f6ae847fd4f91074a"}, "driverConnectionId": 1, "serverConnectionId": 40, "serverHost": "192.168.0.107", "serverPort": 27018, "awaited": false, "durationMS": 48.22366600274108, "reply": "{\"helloOk\": true, \"ismaster\": true, \"topologyVersion\": {\"processId\": {\"$oid\": \"69f5619d50dab230c2adbd86\"}}, \"maxBsonObjectSize\": 16777216, \"maxMessageSizeBytes\": 48000000, \"maxWriteBatchSize\": 100000, \"localTime\": {\"$date\": \"2026-05-02T02:53:34.826Z\"}, \"logicalSessionTimeoutMinutes\": 30, \"connectionId\": 40, \"maxWireVersion\": 27, \"ok\": 1.0}"}
+10:53:35 [DEBUG] pymongo.connection: {"message": "Connection pool ready", "clientId": {"$oid": "69f5672f6ae847fd4f91074a"}, "serverHost": "192.168.0.107", "serverPort": 27018}
+10:53:35 [DEBUG] pymongo.topology: {"message": "Topology description changed", "topologyId": {"$oid": "69f5672f6ae847fd4f91074a"}, "previousDescription": "<TopologyDescription id: 69f5672f6ae847fd4f91074a, topology_type: Unknown, servers: [<ServerDescription ('192.168.0.107', 27018) server_type: Unknown, rtt: None>]>", "newDescription": "<TopologyDescription id: 69f5672f6ae847fd4f91074a, topology_type: Single, servers: [<ServerDescription ('192.168.0.107', 27018) server_type: Standalone, rtt: 0.048223666002741084>]>"}
+10:53:35 [DEBUG] pymongo.serverSelection: {"message": "Server selection succeeded", "selector": "Primary()", "operation": "buildinfo", "topologyDescription": "<TopologyDescription id: 69f5672f6ae847fd4f91074a, topology_type: Single, servers: [<ServerDescription ('192.168.0.107', 27018) server_type: Standalone, rtt: 0.048223666002741084>]>", "clientId": {"$oid": "69f5672f6ae847fd4f91074a"}, "serverHost": "192.168.0.107", "serverPort": 27018}
+10:53:35 [DEBUG] pymongo.connection: {"message": "Connection checkout started", "clientId": {"$oid": "69f5672f6ae847fd4f91074a"}, "serverHost": "192.168.0.107", "serverPort": 27018}
+10:53:35 [DEBUG] pymongo.connection: {"message": "Connection created", "clientId": {"$oid": "69f5672f6ae847fd4f91074a"}, "serverHost": "192.168.0.107", "serverPort": 27018, "driverConnectionId": 1}
+10:53:35 [DEBUG] pymongo.topology: {"message": "Server heartbeat started", "topologyId": {"$oid": "69f5672f6ae847fd4f91074a"}, "driverConnectionId": 1, "serverConnectionId": 40, "serverHost": "192.168.0.107", "serverPort": 27018, "awaited": true}
+10:53:35 [DEBUG] pymongo.connection: {"message": "Connection ready", "clientId": {"$oid": "69f5672f6ae847fd4f91074a"}, "serverHost": "192.168.0.107", "serverPort": 27018, "driverConnectionId": 1, "durationMS": 0.053879834013059735}
+10:53:35 [DEBUG] pymongo.connection: {"message": "Connection checked out", "clientId": {"$oid": "69f5672f6ae847fd4f91074a"}, "serverHost": "192.168.0.107", "serverPort": 27018, "driverConnectionId": 1, "durationMS": 0.05756120900332462}
+10:53:35 [DEBUG] pymongo.command: {"message": "Command started", "clientId": {"$oid": "69f5672f6ae847fd4f91074a"}, "command": "{\"buildinfo\": 1, \"lsid\": {\"id\": {\"$binary\": {\"base64\": \"Uwpl6o83TYuVGMndOS5KYQ==\", \"subType\": \"04\"}}}, \"$db\": \"admin\"}", "commandName": "buildinfo", "databaseName": "admin", "requestId": 1144108930, "operationId": 1144108930, "driverConnectionId": 1, "serverConnectionId": 41, "serverHost": "192.168.0.107", "serverPort": 27018}
+10:53:35 [DEBUG] pymongo.command: {"message": "Command succeeded", "clientId": {"$oid": "69f5672f6ae847fd4f91074a"}, "durationMS": 5.901, "reply": "{\"version\": \"8.2.7\", \"versionArray\": [8, 2, 7], \"gitVersion\": \"8f6785264a643d2eeb5e4046f7876a23e40e1a09\", \"allocator\": \"tcmalloc-google\", \"javascriptEngine\": \"mozjs\", \"sysinfo\": \"deprecated\", \"openssl\": {\"running\": \"OpenSSL 3.0.13 30 Jan 2024\", \"compiled\": \"OpenSSL 3.0.13 30 Jan 2024\"}, \"buildEnvironment\": {\"distmod\": \"ubuntu2404\", \"distarch\": \"x86_64\", \"cc\": \"external/mongo_toolchain_v5/v5/bin/gcc: gcc (GCC) 14.2.0\nCopyright (C) 2024 Free Software Foundation, Inc.\nThis is free software; see the source for copying conditions.  There is NO\nwarranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.\n\n\", \"ccflags\": \"-U_FORTIFY_SOURCE -std=c++20 -nostdinc++ -Wall -Wsign-compare -Winvalid-pch -Wno-missing-braces -Wno-psabi -Bexternal/mongo_toolchain_v5/v5/bin -Bexternal/mongo_toolchain_v5/stow/gcc-v5/libexec/gcc/x86_64-mongodb-linux/14.2.0 -Bexternal/mongo_toolchain_v5/stow/gcc-v5/lib/gcc/x86_64-mongodb-linux/14.2.0 -Bexternal/mongo_toolchain_v5/stow/llvm-v5/bin -fPIE -...", "commandName": "buildinfo", "databaseName": "admin", "requestId": 1144108930, "operationId": 1144108930, "driverConnectionId": 1, "serverConnectionId": 41, "serverHost": "192.168.0.107", "serverPort": 27018}
+10:53:35 [DEBUG] pymongo.connection: {"message": "Connection checked in", "clientId": {"$oid": "69f5672f6ae847fd4f91074a"}, "serverHost": "192.168.0.107", "serverPort": 27018, "driverConnectionId": 1}
+10:53:35 [DEBUG] faker.factory: Looking for locale `en_US` in provider `faker.providers.address`.
+10:53:35 [DEBUG] faker.factory: Provider `faker.providers.address` has been localized to `en_US`.
+10:53:35 [DEBUG] faker.factory: Looking for locale `en_US` in provider `faker.providers.automotive`.
+10:53:35 [DEBUG] faker.factory: Provider `faker.providers.automotive` has been localized to `en_US`.
+10:53:35 [DEBUG] faker.factory: Looking for locale `en_US` in provider `faker.providers.bank`.
+10:53:35 [DEBUG] faker.factory: Specified locale `en_US` is not available for provider `faker.providers.bank`. Locale reset to `en_GB` for this provider.
+10:53:35 [DEBUG] faker.factory: Looking for locale `en_US` in provider `faker.providers.barcode`.
+10:53:35 [DEBUG] faker.factory: Provider `faker.providers.barcode` has been localized to `en_US`.
+10:53:35 [DEBUG] faker.factory: Looking for locale `en_US` in provider `faker.providers.color`.
+10:53:35 [DEBUG] faker.factory: Provider `faker.providers.color` has been localized to `en_US`.
+10:53:35 [DEBUG] faker.factory: Looking for locale `en_US` in provider `faker.providers.company`.
+10:53:35 [DEBUG] faker.factory: Provider `faker.providers.company` has been localized to `en_US`.
+10:53:35 [DEBUG] faker.factory: Looking for locale `en_US` in provider `faker.providers.credit_card`.
+10:53:35 [DEBUG] faker.factory: Provider `faker.providers.credit_card` has been localized to `en_US`.
+10:53:35 [DEBUG] faker.factory: Looking for locale `en_US` in provider `faker.providers.currency`.
+10:53:35 [DEBUG] faker.factory: Provider `faker.providers.currency` has been localized to `en_US`.
+10:53:35 [DEBUG] faker.factory: Looking for locale `en_US` in provider `faker.providers.date_time`.
+10:53:35 [DEBUG] faker.factory: Provider `faker.providers.date_time` has been localized to `en_US`.
+10:53:35 [DEBUG] faker.factory: Provider `faker.providers.emoji` does not feature localization. Specified locale `en_US` is not utilized for this provider.
+10:53:35 [DEBUG] faker.factory: Provider `faker.providers.file` does not feature localization. Specified locale `en_US` is not utilized for this provider.
+10:53:35 [DEBUG] faker.factory: Looking for locale `en_US` in provider `faker.providers.geo`.
+10:53:35 [DEBUG] faker.factory: Provider `faker.providers.geo` has been localized to `en_US`.
+10:53:35 [DEBUG] faker.factory: Looking for locale `en_US` in provider `faker.providers.internet`.
+10:53:35 [DEBUG] faker.factory: Provider `faker.providers.internet` has been localized to `en_US`.
+10:53:35 [DEBUG] faker.factory: Provider `faker.providers.isbn` does not feature localization. Specified locale `en_US` is not utilized for this provider.
+10:53:35 [DEBUG] faker.factory: Looking for locale `en_US` in provider `faker.providers.job`.
+10:53:35 [DEBUG] faker.factory: Provider `faker.providers.job` has been localized to `en_US`.
+10:53:35 [DEBUG] faker.factory: Looking for locale `en_US` in provider `faker.providers.lorem`.
+10:53:35 [DEBUG] faker.factory: Provider `faker.providers.lorem` has been localized to `en_US`.
+10:53:35 [DEBUG] faker.factory: Looking for locale `en_US` in provider `faker.providers.misc`.
+10:53:35 [DEBUG] faker.factory: Provider `faker.providers.misc` has been localized to `en_US`.
+10:53:35 [DEBUG] faker.factory: Looking for locale `en_US` in provider `faker.providers.passport`.
+10:53:35 [DEBUG] faker.factory: Provider `faker.providers.passport` has been localized to `en_US`.
+10:53:35 [DEBUG] faker.factory: Looking for locale `en_US` in provider `faker.providers.person`.
+10:53:35 [DEBUG] faker.factory: Provider `faker.providers.person` has been localized to `en_US`.
+10:53:35 [DEBUG] faker.factory: Looking for locale `en_US` in provider `faker.providers.phone_number`.
+10:53:35 [DEBUG] faker.factory: Provider `faker.providers.phone_number` has been localized to `en_US`.
+10:53:35 [DEBUG] faker.factory: Provider `faker.providers.profile` does not feature localization. Specified locale `en_US` is not utilized for this provider.
+10:53:35 [DEBUG] faker.factory: Provider `faker.providers.python` does not feature localization. Specified locale `en_US` is not utilized for this provider.
+10:53:35 [DEBUG] faker.factory: Provider `faker.providers.sbn` does not feature localization. Specified locale `en_US` is not utilized for this provider.
+10:53:35 [DEBUG] faker.factory: Looking for locale `en_US` in provider `faker.providers.ssn`.
+10:53:35 [DEBUG] faker.factory: Provider `faker.providers.ssn` has been localized to `en_US`.
+10:53:35 [DEBUG] faker.factory: Provider `faker.providers.user_agent` does not feature localization. Specified locale `en_US` is not utilized for this provider.
+10:53:35 [DEBUG] urllib3.connectionpool: Starting new HTTP connection (1): 127.0.0.1:7890
+10:53:35 [DEBUG] urllib3.connectionpool: http://127.0.0.1:7890 "POST http://192.168.0.107/dev-api/auth/login HTTP/1.1" 200 None
+10:53:35 [DEBUG] urllib3.connectionpool: Starting new HTTP connection (1): 127.0.0.1:7890
+10:53:35 [DEBUG] urllib3.connectionpool: http://127.0.0.1:7890 "POST http://192.168.0.107/dev-api/system/role HTTP/1.1" 200 None
+10:53:35 [DEBUG] urllib3.connectionpool: Starting new HTTP connection (1): 127.0.0.1:7890
+10:53:35 [DEBUG] urllib3.connectionpool: http://127.0.0.1:7890 "POST http://192.168.0.107/dev-api/system/post HTTP/1.1" 200 None
+10:53:35 [DEBUG] urllib3.connectionpool: Starting new HTTP connection (1): 127.0.0.1:7890
+10:53:35 [DEBUG] urllib3.connectionpool: http://127.0.0.1:7890 "POST http://192.168.0.107/dev-api/system/notice HTTP/1.1" 200 None
+10:53:35 [DEBUG] urllib3.connectionpool: Starting new HTTP connection (1): 127.0.0.1:7890
+10:53:35 [DEBUG] urllib3.connectionpool: http://127.0.0.1:7890 "POST http://192.168.0.107/dev-api/system/user HTTP/1.1" 200 None
+10:53:35 [DEBUG] urllib3.connectionpool: Resetting dropped connection: 127.0.0.1
+10:53:35 [DEBUG] urllib3.connectionpool: http://127.0.0.1:7890 "POST http://192.168.0.107/dev-api/system/role HTTP/1.1" 200 None
+10:53:35 [DEBUG] urllib3.connectionpool: Resetting dropped connection: 127.0.0.1
+10:53:35 [DEBUG] urllib3.connectionpool: http://127.0.0.1:7890 "POST http://192.168.0.107/dev-api/system/post HTTP/1.1" 200 None
+10:53:35 [DEBUG] urllib3.connectionpool: Resetting dropped connection: 127.0.0.1
+10:53:35 [DEBUG] urllib3.connectionpool: http://127.0.0.1:7890 "POST http://192.168.0.107/dev-api/system/notice HTTP/1.1" 200 None
+10:53:35 [DEBUG] urllib3.connectionpool: Resetting dropped connection: 127.0.0.1
+10:53:35 [DEBUG] urllib3.connectionpool: http://127.0.0.1:7890 "POST http://192.168.0.107/dev-api/system/user HTTP/1.1" 200 None
+10:53:36 [DEBUG] urllib3.connectionpool: Resetting dropped connection: 127.0.0.1
+10:53:36 [DEBUG] urllib3.connectionpool: http://127.0.0.1:7890 "POST http://192.168.0.107/dev-api/system/role HTTP/1.1" 200 None
+10:53:36 [DEBUG] urllib3.connectionpool: Resetting dropped connection: 127.0.0.1
+10:53:36 [DEBUG] urllib3.connectionpool: http://127.0.0.1:7890 "POST http://192.168.0.107/dev-api/system/post HTTP/1.1" 200 None
+10:53:36 [DEBUG] urllib3.connectionpool: Resetting dropped connection: 127.0.0.1
+10:53:36 [DEBUG] urllib3.connectionpool: http://127.0.0.1:7890 "POST http://192.168.0.107/dev-api/system/notice HTTP/1.1" 200 None
+10:53:36 [DEBUG] urllib3.connectionpool: Resetting dropped connection: 127.0.0.1
+10:53:36 [DEBUG] urllib3.connectionpool: http://127.0.0.1:7890 "POST http://192.168.0.107/dev-api/system/user HTTP/1.1" 200 None
+10:53:36 [DEBUG] urllib3.connectionpool: Resetting dropped connection: 127.0.0.1
+10:53:36 [DEBUG] urllib3.connectionpool: http://127.0.0.1:7890 "POST http://192.168.0.107/dev-api/system/role HTTP/1.1" 200 None
+10:53:36 [DEBUG] urllib3.connectionpool: Resetting dropped connection: 127.0.0.1
+10:53:36 [DEBUG] urllib3.connectionpool: http://127.0.0.1:7890 "POST http://192.168.0.107/dev-api/system/post HTTP/1.1" 200 None
+10:53:36 [DEBUG] urllib3.connectionpool: Resetting dropped connection: 127.0.0.1
+10:53:36 [DEBUG] urllib3.connectionpool: http://127.0.0.1:7890 "POST http://192.168.0.107/dev-api/system/notice HTTP/1.1" 200 None
+10:53:36 [DEBUG] urllib3.connectionpool: Resetting dropped connection: 127.0.0.1
+10:53:36 [DEBUG] urllib3.connectionpool: http://127.0.0.1:7890 "POST http://192.168.0.107/dev-api/system/user HTTP/1.1" 200 None
+10:53:36 [DEBUG] urllib3.connectionpool: Resetting dropped connection: 127.0.0.1
+10:53:36 [DEBUG] urllib3.connectionpool: http://127.0.0.1:7890 "POST http://192.168.0.107/dev-api/system/role HTTP/1.1" 200 None
+10:53:36 [DEBUG] urllib3.connectionpool: Resetting dropped connection: 127.0.0.1
+10:53:36 [DEBUG] urllib3.connectionpool: http://127.0.0.1:7890 "POST http://192.168.0.107/dev-api/system/post HTTP/1.1" 200 None
+10:53:36 [DEBUG] urllib3.connectionpool: Resetting dropped connection: 127.0.0.1
+10:53:36 [DEBUG] urllib3.connectionpool: http://127.0.0.1:7890 "POST http://192.168.0.107/dev-api/system/notice HTTP/1.1" 200 None
+10:53:36 [DEBUG] pymongo.serverSelection: {"message": "Server selection started", "selector": "<function writable_server_selector at 0x10599f2e0>", "operation": "insert", "operationId": 1141030319, "topologyDescription": "<TopologyDescription id: 69f5672f6ae847fd4f91074a, topology_type: Single, servers: [<ServerDescription ('192.168.0.107', 27018) server_type: Standalone, rtt: 0.048223666002741084>]>", "clientId": {"$oid": "69f5672f6ae847fd4f91074a"}}
+10:53:36 [DEBUG] pymongo.serverSelection: {"message": "Server selection succeeded", "selector": "<function writable_server_selector at 0x10599f2e0>", "operation": "insert", "operationId": 1141030319, "topologyDescription": "<TopologyDescription id: 69f5672f6ae847fd4f91074a, topology_type: Single, servers: [<ServerDescription ('192.168.0.107', 27018) server_type: Standalone, rtt: 0.048223666002741084>]>", "clientId": {"$oid": "69f5672f6ae847fd4f91074a"}, "serverHost": "192.168.0.107", "serverPort": 27018}
+10:53:36 [DEBUG] pymongo.connection: {"message": "Connection checkout started", "clientId": {"$oid": "69f5672f6ae847fd4f91074a"}, "serverHost": "192.168.0.107", "serverPort": 27018}
+10:53:36 [DEBUG] pymongo.connection: {"message": "Connection checked out", "clientId": {"$oid": "69f5672f6ae847fd4f91074a"}, "serverHost": "192.168.0.107", "serverPort": 27018, "driverConnectionId": 1, "durationMS": 0.0002985829924000427}
+10:53:36 [DEBUG] pymongo.command: {"message": "Command started", "clientId": {"$oid": "69f5672f6ae847fd4f91074a"}, "command": "{\"insert\": \"api_logs\", \"lsid\": {\"id\": {\"$binary\": {\"base64\": \"Uwpl6o83TYuVGMndOS5KYQ==\", \"subType\": \"04\"}}}, \"$db\": \"finance_auto_logs\", \"documents\": [{\"trace_id\": \"4049fa7b-8503-4c27-bc2b-4e69315e9f28\", \"test_run_id\": \"f24ddfef-87be-4400-bbd5-354252627349\", \"pytest_nodeid\": \"tests/test_system/test_batch_add_seed_data.py::TestBatchAddSeedData::test_batch_add_system_seed_data\", \"created_at\": {\"$date\": \"2026-05-02T02:53:35.235Z\"}, \"method\": \"POST\", \"url\": \"http://192.168.0.107/dev-api/auth/login\", \"request_headers\": {\"User-Agent\": \"python-requests/2.31.0\", \"Accept-Encoding\": \"gzip, deflate\", \"Accept\": \"application/json\", \"Connection\": \"keep-alive\", \"Content-Type\": \"application/json\", \"X-Trace-Id\": \"4049fa7b-8503-4c27-bc2b-4e69315e9f28\"}, \"request_body\": {\"username\": \"admin\", \"password\": \"***\"}, \"status_code\": 200, \"response_body\": {\"code\": 200, \"data\": {\"access_token\": \"eyJhbGciOiJIUzUxMiJ9.eyJ1c2VyX2lkIjoxLCJ1c2VyX2tleSI6ImYxMWRmNGIxLThjMzUtNDFkNS1iMjdkLTM4MWQxNGUzMmRhYiIsInVzZXJuYW1lIj...", "commandName": "insert", "databaseName": "finance_auto_logs", "requestId": 470211272, "operationId": 470211272, "driverConnectionId": 1, "serverConnectionId": 41, "serverHost": "192.168.0.107", "serverPort": 27018}
+10:53:36 [DEBUG] urllib3.connectionpool: Resetting dropped connection: 127.0.0.1
+10:53:36 [DEBUG] pymongo.command: {"message": "Command succeeded", "clientId": {"$oid": "69f5672f6ae847fd4f91074a"}, "durationMS": 13.348, "reply": "{\"n\": 20, \"ok\": 1.0}", "commandName": "insert", "databaseName": "finance_auto_logs", "requestId": 470211272, "operationId": 470211272, "driverConnectionId": 1, "serverConnectionId": 41, "serverHost": "192.168.0.107", "serverPort": 27018}
+10:53:36 [DEBUG] pymongo.connection: {"message": "Connection checked in", "clientId": {"$oid": "69f5672f6ae847fd4f91074a"}, "serverHost": "192.168.0.107", "serverPort": 27018, "driverConnectionId": 1}
+10:53:36 [DEBUG] urllib3.connectionpool: http://127.0.0.1:7890 "POST http://192.168.0.107/dev-api/system/user HTTP/1.1" 200 None
+10:53:36 [DEBUG] urllib3.connectionpool: Resetting dropped connection: 127.0.0.1
+10:53:36 [DEBUG] urllib3.connectionpool: http://127.0.0.1:7890 "POST http://192.168.0.107/dev-api/system/role HTTP/1.1" 200 None
+10:53:36 [DEBUG] urllib3.connectionpool: Resetting dropped connection: 127.0.0.1
+10:53:36 [DEBUG] urllib3.connectionpool: http://127.0.0.1:7890 "POST http://192.168.0.107/dev-api/system/post HTTP/1.1" 200 None
+10:53:36 [DEBUG] urllib3.connectionpool: Resetting dropped connection: 127.0.0.1
+10:53:36 [DEBUG] urllib3.connectionpool: http://127.0.0.1:7890 "POST http://192.168.0.107/dev-api/system/notice HTTP/1.1" 200 None
+10:53:36 [DEBUG] urllib3.connectionpool: Resetting dropped connection: 127.0.0.1
+10:53:36 [DEBUG] urllib3.connectionpool: http://127.0.0.1:7890 "POST http://192.168.0.107/dev-api/system/user HTTP/1.1" 200 None
+10:53:36 [DEBUG] urllib3.connectionpool: Resetting dropped connection: 127.0.0.1
+10:53:36 [DEBUG] urllib3.connectionpool: http://127.0.0.1:7890 "POST http://192.168.0.107/dev-api/system/role HTTP/1.1" 200 None
+10:53:36 [DEBUG] urllib3.connectionpool: Resetting dropped connection: 127.0.0.1
+10:53:36 [DEBUG] urllib3.connectionpool: http://127.0.0.1:7890 "POST http://192.168.0.107/dev-api/system/post HTTP/1.1" 200 None
+10:53:37 [DEBUG] urllib3.connectionpool: Resetting dropped connection: 127.0.0.1
+10:53:37 [DEBUG] urllib3.connectionpool: http://127.0.0.1:7890 "POST http://192.168.0.107/dev-api/system/notice HTTP/1.1" 200 None
+10:53:37 [DEBUG] urllib3.connectionpool: Resetting dropped connection: 127.0.0.1
+10:53:37 [DEBUG] urllib3.connectionpool: http://127.0.0.1:7890 "POST http://192.168.0.107/dev-api/system/user HTTP/1.1" 200 None
+10:53:37 [DEBUG] urllib3.connectionpool: Resetting dropped connection: 127.0.0.1
+10:53:37 [DEBUG] urllib3.connectionpool: http://127.0.0.1:7890 "POST http://192.168.0.107/dev-api/system/role HTTP/1.1" 200 None
+10:53:37 [DEBUG] urllib3.connectionpool: Resetting dropped connection: 127.0.0.1
+10:53:37 [DEBUG] urllib3.connectionpool: http://127.0.0.1:7890 "POST http://192.168.0.107/dev-api/system/post HTTP/1.1" 200 None
+10:53:37 [DEBUG] urllib3.connectionpool: Resetting dropped connection: 127.0.0.1
+10:53:37 [DEBUG] urllib3.connectionpool: http://127.0.0.1:7890 "POST http://192.168.0.107/dev-api/system/notice HTTP/1.1" 200 None
+10:53:37 [DEBUG] urllib3.connectionpool: Resetting dropped connection: 127.0.0.1
+10:53:37 [DEBUG] urllib3.connectionpool: http://127.0.0.1:7890 "POST http://192.168.0.107/dev-api/system/user HTTP/1.1" 200 None
+10:53:37 [DEBUG] urllib3.connectionpool: Resetting dropped connection: 127.0.0.1
+10:53:37 [DEBUG] urllib3.connectionpool: http://127.0.0.1:7890 "POST http://192.168.0.107/dev-api/system/role HTTP/1.1" 200 None
+10:53:37 [DEBUG] urllib3.connectionpool: Resetting dropped connection: 127.0.0.1
+10:53:37 [DEBUG] urllib3.connectionpool: http://127.0.0.1:7890 "POST http://192.168.0.107/dev-api/system/post HTTP/1.1" 200 None
+10:53:37 [DEBUG] urllib3.connectionpool: Resetting dropped connection: 127.0.0.1
+10:53:37 [DEBUG] urllib3.connectionpool: http://127.0.0.1:7890 "POST http://192.168.0.107/dev-api/system/notice HTTP/1.1" 200 None
+10:53:37 [DEBUG] urllib3.connectionpool: Resetting dropped connection: 127.0.0.1
+10:53:37 [DEBUG] urllib3.connectionpool: http://127.0.0.1:7890 "POST http://192.168.0.107/dev-api/system/user HTTP/1.1" 200 None
+10:53:37 [DEBUG] urllib3.connectionpool: Resetting dropped connection: 127.0.0.1
+10:53:37 [DEBUG] urllib3.connectionpool: http://127.0.0.1:7890 "POST http://192.168.0.107/dev-api/system/role HTTP/1.1" 200 None
+10:53:37 [DEBUG] urllib3.connectionpool: Resetting dropped connection: 127.0.0.1
+10:53:37 [DEBUG] urllib3.connectionpool: http://127.0.0.1:7890 "POST http://192.168.0.107/dev-api/system/post HTTP/1.1" 200 None
+10:53:37 [DEBUG] urllib3.connectionpool: Resetting dropped connection: 127.0.0.1
+10:53:37 [DEBUG] urllib3.connectionpool: http://127.0.0.1:7890 "POST http://192.168.0.107/dev-api/system/notice HTTP/1.1" 200 None
+10:53:37 [DEBUG] pymongo.serverSelection: {"message": "Server selection started", "selector": "<function writable_server_selector at 0x10599f2e0>", "operation": "insert", "operationId": 487176731, "topologyDescription": "<TopologyDescription id: 69f5672f6ae847fd4f91074a, topology_type: Single, servers: [<ServerDescription ('192.168.0.107', 27018) server_type: Standalone, rtt: 0.048223666002741084>]>", "clientId": {"$oid": "69f5672f6ae847fd4f91074a"}}
+10:53:37 [DEBUG] pymongo.serverSelection: {"message": "Server selection succeeded", "selector": "<function writable_server_selector at 0x10599f2e0>", "operation": "insert", "operationId": 487176731, "topologyDescription": "<TopologyDescription id: 69f5672f6ae847fd4f91074a, topology_type: Single, servers: [<ServerDescription ('192.168.0.107', 27018) server_type: Standalone, rtt: 0.048223666002741084>]>", "clientId": {"$oid": "69f5672f6ae847fd4f91074a"}, "serverHost": "192.168.0.107", "serverPort": 27018}
+10:53:37 [DEBUG] pymongo.connection: {"message": "Connection checkout started", "clientId": {"$oid": "69f5672f6ae847fd4f91074a"}, "serverHost": "192.168.0.107", "serverPort": 27018}
+10:53:37 [DEBUG] pymongo.connection: {"message": "Connection checked out", "clientId": {"$oid": "69f5672f6ae847fd4f91074a"}, "serverHost": "192.168.0.107", "serverPort": 27018, "driverConnectionId": 1, "durationMS": 0.00026979199901688844}
+10:53:37 [DEBUG] pymongo.command: {"message": "Command started", "clientId": {"$oid": "69f5672f6ae847fd4f91074a"}, "command": "{\"insert\": \"api_logs\", \"lsid\": {\"id\": {\"$binary\": {\"base64\": \"Uwpl6o83TYuVGMndOS5KYQ==\", \"subType\": \"04\"}}}, \"$db\": \"finance_auto_logs\", \"documents\": [{\"trace_id\": \"b532d05a-4da7-44ae-bd33-34faba36ac0a\", \"test_run_id\": \"f24ddfef-87be-4400-bbd5-354252627349\", \"pytest_nodeid\": \"tests/test_system/test_batch_add_seed_data.py::TestBatchAddSeedData::test_batch_add_system_seed_data\", \"created_at\": {\"$date\": \"2026-05-02T02:53:36.601Z\"}, \"method\": \"POST\", \"url\": \"http://192.168.0.107/dev-api/system/user\", \"request_headers\": {\"User-Agent\": \"python-requests/2.31.0\", \"Accept-Encoding\": \"gzip, deflate\", \"Accept\": \"application/json\", \"Connection\": \"keep-alive\", \"Content-Type\": \"application/json\", \"Authorization\": \"***\", \"X-Trace-Id\": \"b532d05a-4da7-44ae-bd33-34faba36ac0a\"}, \"request_body\": {\"userName\": \"test_451758b6\", \"nickName\": \"\u6279\u91cf\u7528\u62372434\", \"password\": \"***\", \"phonenumber\": \"13834947700\", \"email\": \"test_451758b6@test.com\", \"sex\": \"2\", \"status\": \"0\", \"deptId\": 104, \"roleIds\": [1...", "commandName": "insert", "databaseName": "finance_auto_logs", "requestId": 101027544, "operationId": 101027544, "driverConnectionId": 1, "serverConnectionId": 41, "serverHost": "192.168.0.107", "serverPort": 27018}
+10:53:37 [DEBUG] urllib3.connectionpool: Resetting dropped connection: 127.0.0.1
+10:53:37 [DEBUG] pymongo.command: {"message": "Command succeeded", "clientId": {"$oid": "69f5672f6ae847fd4f91074a"}, "durationMS": 11.268, "reply": "{\"n\": 20, \"ok\": 1.0}", "commandName": "insert", "databaseName": "finance_auto_logs", "requestId": 101027544, "operationId": 101027544, "driverConnectionId": 1, "serverConnectionId": 41, "serverHost": "192.168.0.107", "serverPort": 27018}
+10:53:37 [DEBUG] pymongo.connection: {"message": "Connection checked in", "clientId": {"$oid": "69f5672f6ae847fd4f91074a"}, "serverHost": "192.168.0.107", "serverPort": 27018, "driverConnectionId": 1}
+10:53:38 [DEBUG] urllib3.connectionpool: http://127.0.0.1:7890 "POST http://192.168.0.107/dev-api/system/user HTTP/1.1" 200 None
+10:53:38 [DEBUG] urllib3.connectionpool: Resetting dropped connection: 127.0.0.1
+10:53:38 [DEBUG] urllib3.connectionpool: http://127.0.0.1:7890 "POST http://192.168.0.107/dev-api/system/role HTTP/1.1" 200 None
+10:53:38 [DEBUG] urllib3.connectionpool: Resetting dropped connection: 127.0.0.1
+10:53:38 [DEBUG] urllib3.connectionpool: http://127.0.0.1:7890 "POST http://192.168.0.107/dev-api/system/post HTTP/1.1" 200 None
+10:53:38 [DEBUG] urllib3.connectionpool: Resetting dropped connection: 127.0.0.1
+10:53:38 [DEBUG] urllib3.connectionpool: http://127.0.0.1:7890 "POST http://192.168.0.107/dev-api/system/notice HTTP/1.1" 200 None
+10:53:38 [DEBUG] urllib3.connectionpool: Resetting dropped connection: 127.0.0.1
+10:53:38 [DEBUG] urllib3.connectionpool: http://127.0.0.1:7890 "POST http://192.168.0.107/dev-api/system/user HTTP/1.1" 200 None
+10:53:38 [DEBUG] urllib3.connectionpool: Resetting dropped connection: 127.0.0.1
+10:53:38 [DEBUG] urllib3.connectionpool: http://127.0.0.1:7890 "POST http://192.168.0.107/dev-api/system/role HTTP/1.1" 200 None
+10:53:38 [DEBUG] urllib3.connectionpool: Resetting dropped connection: 127.0.0.1
+10:53:38 [DEBUG] urllib3.connectionpool: http://127.0.0.1:7890 "POST http://192.168.0.107/dev-api/system/post HTTP/1.1" 200 None
+10:53:38 [DEBUG] urllib3.connectionpool: Resetting dropped connection: 127.0.0.1
+10:53:38 [DEBUG] urllib3.connectionpool: http://127.0.0.1:7890 "POST http://192.168.0.107/dev-api/system/notice HTTP/1.1" 200 None
+10:53:38 [DEBUG] urllib3.connectionpool: Resetting dropped connection: 127.0.0.1
+10:53:38 [DEBUG] urllib3.connectionpool: http://127.0.0.1:7890 "POST http://192.168.0.107/dev-api/system/user HTTP/1.1" 200 None
+10:53:38 [DEBUG] urllib3.connectionpool: Resetting dropped connection: 127.0.0.1
+10:53:38 [DEBUG] urllib3.connectionpool: http://127.0.0.1:7890 "POST http://192.168.0.107/dev-api/system/role HTTP/1.1" 200 None
+10:53:38 [DEBUG] urllib3.connectionpool: Resetting dropped connection: 127.0.0.1
+10:53:38 [DEBUG] urllib3.connectionpool: http://127.0.0.1:7890 "POST http://192.168.0.107/dev-api/system/post HTTP/1.1" 200 None
+10:53:38 [DEBUG] urllib3.connectionpool: Resetting dropped connection: 127.0.0.1
+10:53:38 [DEBUG] urllib3.connectionpool: http://127.0.0.1:7890 "POST http://192.168.0.107/dev-api/system/notice HTTP/1.1" 200 None
+10:53:38 [DEBUG] urllib3.connectionpool: Resetting dropped connection: 127.0.0.1
+10:53:38 [DEBUG] urllib3.connectionpool: http://127.0.0.1:7890 "POST http://192.168.0.107/dev-api/system/user HTTP/1.1" 200 None
+10:53:39 [DEBUG] urllib3.connectionpool: Resetting dropped connection: 127.0.0.1
+10:53:39 [DEBUG] urllib3.connectionpool: http://127.0.0.1:7890 "POST http://192.168.0.107/dev-api/system/role HTTP/1.1" 200 None
+10:53:39 [DEBUG] urllib3.connectionpool: Resetting dropped connection: 127.0.0.1
+10:53:39 [DEBUG] urllib3.connectionpool: http://127.0.0.1:7890 "POST http://192.168.0.107/dev-api/system/post HTTP/1.1" 200 None
+10:53:39 [DEBUG] urllib3.connectionpool: Resetting dropped connection: 127.0.0.1
+10:53:39 [DEBUG] urllib3.connectionpool: http://127.0.0.1:7890 "POST http://192.168.0.107/dev-api/system/notice HTTP/1.1" 200 None
+10:53:39 [DEBUG] urllib3.connectionpool: Resetting dropped connection: 127.0.0.1
+10:53:39 [DEBUG] urllib3.connectionpool: http://127.0.0.1:7890 "POST http://192.168.0.107/dev-api/system/user HTTP/1.1" 200 None
+10:53:39 [DEBUG] urllib3.connectionpool: Resetting dropped connection: 127.0.0.1
+10:53:39 [DEBUG] urllib3.connectionpool: http://127.0.0.1:7890 "POST http://192.168.0.107/dev-api/system/role HTTP/1.1" 200 None
+10:53:39 [DEBUG] urllib3.connectionpool: Resetting dropped connection: 127.0.0.1
+10:53:39 [DEBUG] urllib3.connectionpool: http://127.0.0.1:7890 "POST http://192.168.0.107/dev-api/system/post HTTP/1.1" 200 None
+10:53:39 [DEBUG] urllib3.connectionpool: Resetting dropped connection: 127.0.0.1
+10:53:39 [DEBUG] urllib3.connectionpool: http://127.0.0.1:7890 "POST http://192.168.0.107/dev-api/system/notice HTTP/1.1" 200 None
+10:53:39 [DEBUG] pymongo.serverSelection: {"message": "Server selection started", "selector": "<function writable_server_selector at 0x10599f2e0>", "operation": "insert", "operationId": 908175497, "topologyDescription": "<TopologyDescription id: 69f5672f6ae847fd4f91074a, topology_type: Single, servers: [<ServerDescription ('192.168.0.107', 27018) server_type: Standalone, rtt: 0.048223666002741084>]>", "clientId": {"$oid": "69f5672f6ae847fd4f91074a"}}
+10:53:39 [DEBUG] pymongo.serverSelection: {"message": "Server selection succeeded", "selector": "<function writable_server_selector at 0x10599f2e0>", "operation": "insert", "operationId": 908175497, "topologyDescription": "<TopologyDescription id: 69f5672f6ae847fd4f91074a, topology_type: Single, servers: [<ServerDescription ('192.168.0.107', 27018) server_type: Standalone, rtt: 0.048223666002741084>]>", "clientId": {"$oid": "69f5672f6ae847fd4f91074a"}, "serverHost": "192.168.0.107", "serverPort": 27018}
+10:53:39 [DEBUG] pymongo.connection: {"message": "Connection checkout started", "clientId": {"$oid": "69f5672f6ae847fd4f91074a"}, "serverHost": "192.168.0.107", "serverPort": 27018}
+10:53:39 [DEBUG] pymongo.connection: {"message": "Connection checked out", "clientId": {"$oid": "69f5672f6ae847fd4f91074a"}, "serverHost": "192.168.0.107", "serverPort": 27018, "driverConnectionId": 1, "durationMS": 0.0002890840114559978}
+10:53:39 [DEBUG] pymongo.command: {"message": "Command started", "clientId": {"$oid": "69f5672f6ae847fd4f91074a"}, "command": "{\"insert\": \"api_logs\", \"lsid\": {\"id\": {\"$binary\": {\"base64\": \"Uwpl6o83TYuVGMndOS5KYQ==\", \"subType\": \"04\"}}}, \"$db\": \"finance_auto_logs\", \"documents\": [{\"trace_id\": \"cf80cdf9-9aaa-40f8-8bfe-31896af32dcc\", \"test_run_id\": \"f24ddfef-87be-4400-bbd5-354252627349\", \"pytest_nodeid\": \"tests/test_system/test_batch_add_seed_data.py::TestBatchAddSeedData::test_batch_add_system_seed_data\", \"created_at\": {\"$date\": \"2026-05-02T02:53:37.907Z\"}, \"method\": \"POST\", \"url\": \"http://192.168.0.107/dev-api/system/user\", \"request_headers\": {\"User-Agent\": \"python-requests/2.31.0\", \"Accept-Encoding\": \"gzip, deflate\", \"Accept\": \"application/json\", \"Connection\": \"keep-alive\", \"Content-Type\": \"application/json\", \"Authorization\": \"***\", \"X-Trace-Id\": \"cf80cdf9-9aaa-40f8-8bfe-31896af32dcc\"}, \"request_body\": {\"userName\": \"test_426a5fa7\", \"nickName\": \"\u6279\u91cf\u7528\u62374467\", \"password\": \"***\", \"phonenumber\": \"13810776930\", \"email\": \"test_426a5fa7@test.com\", \"sex\": \"2\", \"status\": \"0\", \"deptId\": 104, \"roleIds\": [1...", "commandName": "insert", "databaseName": "finance_auto_logs", "requestId": 1457850878, "operationId": 1457850878, "driverConnectionId": 1, "serverConnectionId": 41, "serverHost": "192.168.0.107", "serverPort": 27018}
+10:53:39 [DEBUG] urllib3.connectionpool: Resetting dropped connection: 127.0.0.1
+10:53:39 [DEBUG] pymongo.command: {"message": "Command succeeded", "clientId": {"$oid": "69f5672f6ae847fd4f91074a"}, "durationMS": 8.113999999999999, "reply": "{\"n\": 20, \"ok\": 1.0}", "commandName": "insert", "databaseName": "finance_auto_logs", "requestId": 1457850878, "operationId": 1457850878, "driverConnectionId": 1, "serverConnectionId": 41, "serverHost": "192.168.0.107", "serverPort": 27018}
+10:53:39 [DEBUG] pymongo.connection: {"message": "Connection checked in", "clientId": {"$oid": "69f5672f6ae847fd4f91074a"}, "serverHost": "192.168.0.107", "serverPort": 27018, "driverConnectionId": 1}
+10:53:39 [DEBUG] urllib3.connectionpool: http://127.0.0.1:7890 "POST http://192.168.0.107/dev-api/system/user HTTP/1.1" 200 None
+10:53:39 [DEBUG] urllib3.connectionpool: Resetting dropped connection: 127.0.0.1
+10:53:39 [DEBUG] urllib3.connectionpool: http://127.0.0.1:7890 "POST http://192.168.0.107/dev-api/system/role HTTP/1.1" 200 None
+10:53:39 [DEBUG] urllib3.connectionpool: Resetting dropped connection: 127.0.0.1
+10:53:39 [DEBUG] urllib3.connectionpool: http://127.0.0.1:7890 "POST http://192.168.0.107/dev-api/system/post HTTP/1.1" 200 None
+10:53:39 [DEBUG] urllib3.connectionpool: Resetting dropped connection: 127.0.0.1
+10:53:39 [DEBUG] urllib3.connectionpool: http://127.0.0.1:7890 "POST http://192.168.0.107/dev-api/system/notice HTTP/1.1" 200 None
+10:53:39 [DEBUG] urllib3.connectionpool: Resetting dropped connection: 127.0.0.1
+10:53:39 [DEBUG] urllib3.connectionpool: http://127.0.0.1:7890 "POST http://192.168.0.107/dev-api/system/user HTTP/1.1" 200 None
+10:53:39 [DEBUG] urllib3.connectionpool: Resetting dropped connection: 127.0.0.1
+10:53:39 [DEBUG] urllib3.connectionpool: http://127.0.0.1:7890 "POST http://192.168.0.107/dev-api/system/role HTTP/1.1" 200 None
+10:53:39 [DEBUG] urllib3.connectionpool: Resetting dropped connection: 127.0.0.1
+10:53:39 [DEBUG] urllib3.connectionpool: http://127.0.0.1:7890 "POST http://192.168.0.107/dev-api/system/post HTTP/1.1" 200 None
+10:53:39 [DEBUG] urllib3.connectionpool: Resetting dropped connection: 127.0.0.1
+10:53:39 [DEBUG] urllib3.connectionpool: http://127.0.0.1:7890 "POST http://192.168.0.107/dev-api/system/notice HTTP/1.1" 200 None
+10:53:39 [DEBUG] urllib3.connectionpool: Resetting dropped connection: 127.0.0.1
+10:53:39 [DEBUG] urllib3.connectionpool: http://127.0.0.1:7890 "POST http://192.168.0.107/dev-api/system/user HTTP/1.1" 200 None
+10:53:39 [DEBUG] urllib3.connectionpool: Resetting dropped connection: 127.0.0.1
+10:53:39 [DEBUG] urllib3.connectionpool: http://127.0.0.1:7890 "POST http://192.168.0.107/dev-api/system/role HTTP/1.1" 200 None
+10:53:39 [DEBUG] urllib3.connectionpool: Resetting dropped connection: 127.0.0.1
+10:53:39 [DEBUG] urllib3.connectionpool: http://127.0.0.1:7890 "POST http://192.168.0.107/dev-api/system/post HTTP/1.1" 200 None
+10:53:39 [DEBUG] urllib3.connectionpool: Resetting dropped connection: 127.0.0.1
+10:53:40 [DEBUG] urllib3.connectionpool: http://127.0.0.1:7890 "POST http://192.168.0.107/dev-api/system/notice HTTP/1.1" 200 None
+10:53:40 [DEBUG] urllib3.connectionpool: Resetting dropped connection: 127.0.0.1
+10:53:40 [DEBUG] urllib3.connectionpool: http://127.0.0.1:7890 "POST http://192.168.0.107/dev-api/system/user HTTP/1.1" 200 None
+10:53:40 [DEBUG] urllib3.connectionpool: Resetting dropped connection: 127.0.0.1
+10:53:40 [DEBUG] urllib3.connectionpool: http://127.0.0.1:7890 "POST http://192.168.0.107/dev-api/system/role HTTP/1.1" 200 None
+10:53:40 [DEBUG] urllib3.connectionpool: Resetting dropped connection: 127.0.0.1
+10:53:40 [DEBUG] urllib3.connectionpool: http://127.0.0.1:7890 "POST http://192.168.0.107/dev-api/system/post HTTP/1.1" 200 None
+10:53:40 [DEBUG] urllib3.connectionpool: Resetting dropped connection: 127.0.0.1
+10:53:40 [DEBUG] urllib3.connectionpool: http://127.0.0.1:7890 "POST http://192.168.0.107/dev-api/system/notice HTTP/1.1" 200 None
+10:53:40 [DEBUG] urllib3.connectionpool: Resetting dropped connection: 127.0.0.1
+10:53:40 [DEBUG] urllib3.connectionpool: http://127.0.0.1:7890 "POST http://192.168.0.107/dev-api/system/user HTTP/1.1" 200 None
+10:53:40 [DEBUG] urllib3.connectionpool: Resetting dropped connection: 127.0.0.1
+10:53:40 [DEBUG] urllib3.connectionpool: http://127.0.0.1:7890 "POST http://192.168.0.107/dev-api/system/role HTTP/1.1" 200 None
+10:53:40 [DEBUG] urllib3.connectionpool: Resetting dropped connection: 127.0.0.1
+10:53:40 [DEBUG] urllib3.connectionpool: http://127.0.0.1:7890 "POST http://192.168.0.107/dev-api/system/post HTTP/1.1" 200 None
+10:53:40 [DEBUG] urllib3.connectionpool: Resetting dropped connection: 127.0.0.1
+10:53:40 [DEBUG] urllib3.connectionpool: http://127.0.0.1:7890 "POST http://192.168.0.107/dev-api/system/notice HTTP/1.1" 200 None
+10:53:40 [DEBUG] pymongo.serverSelection: {"message": "Server selection started", "selector": "<function writable_server_selector at 0x10599f2e0>", "operation": "insert", "operationId": -1667512989, "topologyDescription": "<TopologyDescription id: 69f5672f6ae847fd4f91074a, topology_type: Single, servers: [<ServerDescription ('192.168.0.107', 27018) server_type: Standalone, rtt: 0.048223666002741084>]>", "clientId": {"$oid": "69f5672f6ae847fd4f91074a"}}
+10:53:40 [DEBUG] pymongo.serverSelection: {"message": "Server selection succeeded", "selector": "<function writable_server_selector at 0x10599f2e0>", "operation": "insert", "operationId": -1667512989, "topologyDescription": "<TopologyDescription id: 69f5672f6ae847fd4f91074a, topology_type: Single, servers: [<ServerDescription ('192.168.0.107', 27018) server_type: Standalone, rtt: 0.048223666002741084>]>", "clientId": {"$oid": "69f5672f6ae847fd4f91074a"}, "serverHost": "192.168.0.107", "serverPort": 27018}
+10:53:40 [DEBUG] pymongo.connection: {"message": "Connection checkout started", "clientId": {"$oid": "69f5672f6ae847fd4f91074a"}, "serverHost": "192.168.0.107", "serverPort": 27018}
+10:53:40 [DEBUG] pymongo.connection: {"message": "Connection checked out", "clientId": {"$oid": "69f5672f6ae847fd4f91074a"}, "serverHost": "192.168.0.107", "serverPort": 27018, "driverConnectionId": 1, "durationMS": 0.0002733750006882474}
+10:53:40 [DEBUG] pymongo.command: {"message": "Command started", "clientId": {"$oid": "69f5672f6ae847fd4f91074a"}, "command": "{\"insert\": \"api_logs\", \"lsid\": {\"id\": {\"$binary\": {\"base64\": \"Uwpl6o83TYuVGMndOS5KYQ==\", \"subType\": \"04\"}}}, \"$db\": \"finance_auto_logs\", \"documents\": [{\"trace_id\": \"8ee9a1e6-6045-4fe4-a04c-a2000950ed20\", \"test_run_id\": \"f24ddfef-87be-4400-bbd5-354252627349\", \"pytest_nodeid\": \"tests/test_system/test_batch_add_seed_data.py::TestBatchAddSeedData::test_batch_add_system_seed_data\", \"created_at\": {\"$date\": \"2026-05-02T02:53:39.331Z\"}, \"method\": \"POST\", \"url\": \"http://192.168.0.107/dev-api/system/user\", \"request_headers\": {\"User-Agent\": \"python-requests/2.31.0\", \"Accept-Encoding\": \"gzip, deflate\", \"Accept\": \"application/json\", \"Connection\": \"keep-alive\", \"Content-Type\": \"application/json\", \"Authorization\": \"***\", \"X-Trace-Id\": \"8ee9a1e6-6045-4fe4-a04c-a2000950ed20\"}, \"request_body\": {\"userName\": \"test_a56e6c6a\", \"nickName\": \"\u6279\u91cf\u7528\u62373c47\", \"password\": \"***\", \"phonenumber\": \"13874640466\", \"email\": \"test_a56e6c6a@test.com\", \"sex\": \"2\", \"status\": \"0\", \"deptId\": 103, \"roleIds\": [1...", "commandName": "insert", "databaseName": "finance_auto_logs", "requestId": 1458777923, "operationId": 1458777923, "driverConnectionId": 1, "serverConnectionId": 41, "serverHost": "192.168.0.107", "serverPort": 27018}
+10:53:40 [DEBUG] urllib3.connectionpool: Resetting dropped connection: 127.0.0.1
+10:53:40 [DEBUG] pymongo.command: {"message": "Command succeeded", "clientId": {"$oid": "69f5672f6ae847fd4f91074a"}, "durationMS": 8.683, "reply": "{\"n\": 20, \"ok\": 1.0}", "commandName": "insert", "databaseName": "finance_auto_logs", "requestId": 1458777923, "operationId": 1458777923, "driverConnectionId": 1, "serverConnectionId": 41, "serverHost": "192.168.0.107", "serverPort": 27018}
+10:53:40 [DEBUG] pymongo.connection: {"message": "Connection checked in", "clientId": {"$oid": "69f5672f6ae847fd4f91074a"}, "serverHost": "192.168.0.107", "serverPort": 27018, "driverConnectionId": 1}
+10:53:41 [DEBUG] urllib3.connectionpool: http://127.0.0.1:7890 "POST http://192.168.0.107/dev-api/system/user HTTP/1.1" 200 None
+10:53:41 [DEBUG] urllib3.connectionpool: Resetting dropped connection: 127.0.0.1
+10:53:41 [DEBUG] urllib3.connectionpool: http://127.0.0.1:7890 "POST http://192.168.0.107/dev-api/system/role HTTP/1.1" 200 None
+10:53:41 [DEBUG] urllib3.connectionpool: Resetting dropped connection: 127.0.0.1
+10:53:41 [DEBUG] urllib3.connectionpool: http://127.0.0.1:7890 "POST http://192.168.0.107/dev-api/system/post HTTP/1.1" 200 None
+10:53:41 [DEBUG] urllib3.connectionpool: Resetting dropped connection: 127.0.0.1
+10:53:41 [DEBUG] urllib3.connectionpool: http://127.0.0.1:7890 "POST http://192.168.0.107/dev-api/system/notice HTTP/1.1" 200 None
+10:53:41 [DEBUG] urllib3.connectionpool: Resetting dropped connection: 127.0.0.1
+10:53:41 [DEBUG] urllib3.connectionpool: http://127.0.0.1:7890 "POST http://192.168.0.107/dev-api/system/user HTTP/1.1" 200 None
+10:53:41 [DEBUG] urllib3.connectionpool: Resetting dropped connection: 127.0.0.1
+10:53:41 [DEBUG] urllib3.connectionpool: http://127.0.0.1:7890 "POST http://192.168.0.107/dev-api/system/role HTTP/1.1" 200 None
+10:53:41 [DEBUG] urllib3.connectionpool: Resetting dropped connection: 127.0.0.1
+10:53:41 [DEBUG] urllib3.connectionpool: http://127.0.0.1:7890 "POST http://192.168.0.107/dev-api/system/post HTTP/1.1" 200 None
+10:53:41 [DEBUG] urllib3.connectionpool: Resetting dropped connection: 127.0.0.1
+10:53:42 [DEBUG] urllib3.connectionpool: http://127.0.0.1:7890 "POST http://192.168.0.107/dev-api/system/notice HTTP/1.1" 200 None
+10:53:42 [DEBUG] urllib3.connectionpool: Resetting dropped connection: 127.0.0.1
+10:53:42 [DEBUG] urllib3.connectionpool: http://127.0.0.1:7890 "POST http://192.168.0.107/dev-api/system/user HTTP/1.1" 200 None
+10:53:42 [DEBUG] urllib3.connectionpool: Resetting dropped connection: 127.0.0.1
+10:53:42 [DEBUG] urllib3.connectionpool: http://127.0.0.1:7890 "POST http://192.168.0.107/dev-api/system/role HTTP/1.1" 200 None
+10:53:42 [DEBUG] urllib3.connectionpool: Resetting dropped connection: 127.0.0.1
+10:53:42 [DEBUG] urllib3.connectionpool: http://127.0.0.1:7890 "POST http://192.168.0.107/dev-api/system/post HTTP/1.1" 200 None
+10:53:42 [DEBUG] urllib3.connectionpool: Resetting dropped connection: 127.0.0.1
+10:53:42 [DEBUG] urllib3.connectionpool: http://127.0.0.1:7890 "POST http://192.168.0.107/dev-api/system/notice HTTP/1.1" 200 None
+10:53:42 [DEBUG] urllib3.connectionpool: Resetting dropped connection: 127.0.0.1
+10:53:42 [DEBUG] urllib3.connectionpool: http://127.0.0.1:7890 "POST http://192.168.0.107/dev-api/system/user HTTP/1.1" 200 None
+10:53:42 [DEBUG] urllib3.connectionpool: Resetting dropped connection: 127.0.0.1
+10:53:42 [DEBUG] urllib3.connectionpool: http://127.0.0.1:7890 "POST http://192.168.0.107/dev-api/system/role HTTP/1.1" 200 None
+10:53:42 [DEBUG] urllib3.connectionpool: Resetting dropped connection: 127.0.0.1
+10:53:42 [DEBUG] urllib3.connectionpool: http://127.0.0.1:7890 "POST http://192.168.0.107/dev-api/system/post HTTP/1.1" 200 None
+10:53:42 [DEBUG] urllib3.connectionpool: Resetting dropped connection: 127.0.0.1
+10:53:42 [DEBUG] urllib3.connectionpool: http://127.0.0.1:7890 "POST http://192.168.0.107/dev-api/system/notice HTTP/1.1" 200 None
+10:53:42 [DEBUG] urllib3.connectionpool: Resetting dropped connection: 127.0.0.1
+10:53:42 [DEBUG] urllib3.connectionpool: http://127.0.0.1:7890 "POST http://192.168.0.107/dev-api/system/user HTTP/1.1" 200 None
+10:53:42 [DEBUG] urllib3.connectionpool: Resetting dropped connection: 127.0.0.1
+10:53:42 [DEBUG] urllib3.connectionpool: http://127.0.0.1:7890 "POST http://192.168.0.107/dev-api/system/role HTTP/1.1" 200 None
+10:53:42 [DEBUG] urllib3.connectionpool: Resetting dropped connection: 127.0.0.1
+10:53:42 [DEBUG] urllib3.connectionpool: http://127.0.0.1:7890 "POST http://192.168.0.107/dev-api/system/post HTTP/1.1" 200 None
+10:53:42 [DEBUG] urllib3.connectionpool: Resetting dropped connection: 127.0.0.1
+10:53:42 [DEBUG] urllib3.connectionpool: http://127.0.0.1:7890 "POST http://192.168.0.107/dev-api/system/notice HTTP/1.1" 200 None
+10:53:42 [DEBUG] pymongo.serverSelection: {"message": "Server selection started", "selector": "<function writable_server_selector at 0x10599f2e0>", "operation": "insert", "operationId": 1936453561, "topologyDescription": "<TopologyDescription id: 69f5672f6ae847fd4f91074a, topology_type: Single, servers: [<ServerDescription ('192.168.0.107', 27018) server_type: Standalone, rtt: 0.048223666002741084>]>", "clientId": {"$oid": "69f5672f6ae847fd4f91074a"}}
+10:53:42 [DEBUG] pymongo.serverSelection: {"message": "Server selection succeeded", "selector": "<function writable_server_selector at 0x10599f2e0>", "operation": "insert", "operationId": 1936453561, "topologyDescription": "<TopologyDescription id: 69f5672f6ae847fd4f91074a, topology_type: Single, servers: [<ServerDescription ('192.168.0.107', 27018) server_type: Standalone, rtt: 0.048223666002741084>]>", "clientId": {"$oid": "69f5672f6ae847fd4f91074a"}, "serverHost": "192.168.0.107", "serverPort": 27018}
+10:53:42 [DEBUG] pymongo.connection: {"message": "Connection checkout started", "clientId": {"$oid": "69f5672f6ae847fd4f91074a"}, "serverHost": "192.168.0.107", "serverPort": 27018}
+10:53:42 [DEBUG] pymongo.connection: {"message": "Connection checked out", "clientId": {"$oid": "69f5672f6ae847fd4f91074a"}, "serverHost": "192.168.0.107", "serverPort": 27018, "driverConnectionId": 1, "durationMS": 0.0002680000034160912}
+10:53:42 [DEBUG] pymongo.command: {"message": "Command started", "clientId": {"$oid": "69f5672f6ae847fd4f91074a"}, "command": "{\"insert\": \"api_logs\", \"lsid\": {\"id\": {\"$binary\": {\"base64\": \"Uwpl6o83TYuVGMndOS5KYQ==\", \"subType\": \"04\"}}}, \"$db\": \"finance_auto_logs\", \"documents\": [{\"trace_id\": \"5caa254c-28ff-4379-b5d4-0d8c8424d66c\", \"test_run_id\": \"f24ddfef-87be-4400-bbd5-354252627349\", \"pytest_nodeid\": \"tests/test_system/test_batch_add_seed_data.py::TestBatchAddSeedData::test_batch_add_system_seed_data\", \"created_at\": {\"$date\": \"2026-05-02T02:53:40.829Z\"}, \"method\": \"POST\", \"url\": \"http://192.168.0.107/dev-api/system/user\", \"request_headers\": {\"User-Agent\": \"python-requests/2.31.0\", \"Accept-Encoding\": \"gzip, deflate\", \"Accept\": \"application/json\", \"Connection\": \"keep-alive\", \"Content-Type\": \"application/json\", \"Authorization\": \"***\", \"X-Trace-Id\": \"5caa254c-28ff-4379-b5d4-0d8c8424d66c\"}, \"request_body\": {\"userName\": \"test_c4031f0b\", \"nickName\": \"\u6279\u91cf\u7528\u623735e4\", \"password\": \"***\", \"phonenumber\": \"13881659144\", \"email\": \"test_c4031f0b@test.com\", \"sex\": \"2\", \"status\": \"0\", \"deptId\": 107, \"roleIds\": [1...", "commandName": "insert", "databaseName": "finance_auto_logs", "requestId": 2007237709, "operationId": 2007237709, "driverConnectionId": 1, "serverConnectionId": 41, "serverHost": "192.168.0.107", "serverPort": 27018}
+10:53:42 [DEBUG] urllib3.connectionpool: Resetting dropped connection: 127.0.0.1
+10:53:42 [DEBUG] pymongo.command: {"message": "Command succeeded", "clientId": {"$oid": "69f5672f6ae847fd4f91074a"}, "durationMS": 8.103000000000002, "reply": "{\"n\": 20, \"ok\": 1.0}", "commandName": "insert", "databaseName": "finance_auto_logs", "requestId": 2007237709, "operationId": 2007237709, "driverConnectionId": 1, "serverConnectionId": 41, "serverHost": "192.168.0.107", "serverPort": 27018}
+10:53:42 [DEBUG] pymongo.connection: {"message": "Connection checked in", "clientId": {"$oid": "69f5672f6ae847fd4f91074a"}, "serverHost": "192.168.0.107", "serverPort": 27018, "driverConnectionId": 1}
+10:53:42 [DEBUG] urllib3.connectionpool: http://127.0.0.1:7890 "POST http://192.168.0.107/dev-api/system/user HTTP/1.1" 200 None
+10:53:42 [DEBUG] urllib3.connectionpool: Resetting dropped connection: 127.0.0.1
+10:53:42 [DEBUG] urllib3.connectionpool: http://127.0.0.1:7890 "POST http://192.168.0.107/dev-api/system/role HTTP/1.1" 200 None
+10:53:43 [DEBUG] urllib3.connectionpool: Resetting dropped connection: 127.0.0.1
+10:53:43 [DEBUG] urllib3.connectionpool: http://127.0.0.1:7890 "POST http://192.168.0.107/dev-api/system/post HTTP/1.1" 200 None
+10:53:43 [DEBUG] urllib3.connectionpool: Resetting dropped connection: 127.0.0.1
+10:53:43 [DEBUG] urllib3.connectionpool: http://127.0.0.1:7890 "POST http://192.168.0.107/dev-api/system/notice HTTP/1.1" 200 None
+10:53:43 [DEBUG] urllib3.connectionpool: Resetting dropped connection: 127.0.0.1
+10:53:43 [DEBUG] urllib3.connectionpool: http://127.0.0.1:7890 "POST http://192.168.0.107/dev-api/system/user HTTP/1.1" 200 None
+10:53:43 [DEBUG] urllib3.connectionpool: Resetting dropped connection: 127.0.0.1
+10:53:43 [DEBUG] urllib3.connectionpool: http://127.0.0.1:7890 "POST http://192.168.0.107/dev-api/system/role HTTP/1.1" 200 None
+10:53:43 [DEBUG] urllib3.connectionpool: Resetting dropped connection: 127.0.0.1
+10:53:43 [DEBUG] urllib3.connectionpool: http://127.0.0.1:7890 "POST http://192.168.0.107/dev-api/system/post HTTP/1.1" 200 None
+10:53:43 [DEBUG] urllib3.connectionpool: Resetting dropped connection: 127.0.0.1
+10:53:43 [DEBUG] urllib3.connectionpool: http://127.0.0.1:7890 "POST http://192.168.0.107/dev-api/system/notice HTTP/1.1" 200 None
+10:53:43 [DEBUG] urllib3.connectionpool: Resetting dropped connection: 127.0.0.1
+10:53:43 [DEBUG] urllib3.connectionpool: http://127.0.0.1:7890 "POST http://192.168.0.107/dev-api/system/user HTTP/1.1" 200 None
+10:53:43 [DEBUG] urllib3.connectionpool: Resetting dropped connection: 127.0.0.1
+10:53:43 [DEBUG] urllib3.connectionpool: http://127.0.0.1:7890 "POST http://192.168.0.107/dev-api/system/role HTTP/1.1" 200 None
+10:53:43 [DEBUG] urllib3.connectionpool: Resetting dropped connection: 127.0.0.1
+10:53:43 [DEBUG] urllib3.connectionpool: http://127.0.0.1:7890 "POST http://192.168.0.107/dev-api/system/post HTTP/1.1" 200 None
+10:53:43 [DEBUG] urllib3.connectionpool: Resetting dropped connection: 127.0.0.1
+10:53:43 [DEBUG] urllib3.connectionpool: http://127.0.0.1:7890 "POST http://192.168.0.107/dev-api/system/notice HTTP/1.1" 200 None
+10:53:43 [DEBUG] urllib3.connectionpool: Resetting dropped connection: 127.0.0.1
+10:53:43 [DEBUG] urllib3.connectionpool: http://127.0.0.1:7890 "POST http://192.168.0.107/dev-api/system/user HTTP/1.1" 200 None
+10:53:44 [DEBUG] urllib3.connectionpool: Resetting dropped connection: 127.0.0.1
+10:53:44 [DEBUG] urllib3.connectionpool: http://127.0.0.1:7890 "POST http://192.168.0.107/dev-api/system/role HTTP/1.1" 200 None
+10:53:44 [DEBUG] urllib3.connectionpool: Resetting dropped connection: 127.0.0.1
+10:53:44 [DEBUG] urllib3.connectionpool: http://127.0.0.1:7890 "POST http://192.168.0.107/dev-api/system/post HTTP/1.1" 200 None
+10:53:44 [DEBUG] urllib3.connectionpool: Resetting dropped connection: 127.0.0.1
+10:53:44 [DEBUG] urllib3.connectionpool: http://127.0.0.1:7890 "POST http://192.168.0.107/dev-api/system/notice HTTP/1.1" 200 None
+10:53:44 [DEBUG] urllib3.connectionpool: Resetting dropped connection: 127.0.0.1
+10:53:44 [DEBUG] urllib3.connectionpool: http://127.0.0.1:7890 "POST http://192.168.0.107/dev-api/system/user HTTP/1.1" 200 None
+10:53:44 [DEBUG] urllib3.connectionpool: Resetting dropped connection: 127.0.0.1
+10:53:44 [DEBUG] urllib3.connectionpool: http://127.0.0.1:7890 "POST http://192.168.0.107/dev-api/system/role HTTP/1.1" 200 None
+10:53:44 [DEBUG] urllib3.connectionpool: Resetting dropped connection: 127.0.0.1
+10:53:44 [DEBUG] urllib3.connectionpool: http://127.0.0.1:7890 "POST http://192.168.0.107/dev-api/system/post HTTP/1.1" 200 None
+10:53:44 [DEBUG] urllib3.connectionpool: Resetting dropped connection: 127.0.0.1
+10:53:44 [DEBUG] urllib3.connectionpool: http://127.0.0.1:7890 "POST http://192.168.0.107/dev-api/system/notice HTTP/1.1" 200 None
+10:53:44 [DEBUG] pymongo.serverSelection: {"message": "Server selection started", "selector": "<function writable_server_selector at 0x10599f2e0>", "operation": "insert", "operationId": 1097783045, "topologyDescription": "<TopologyDescription id: 69f5672f6ae847fd4f91074a, topology_type: Single, servers: [<ServerDescription ('192.168.0.107', 27018) server_type: Standalone, rtt: 0.048223666002741084>]>", "clientId": {"$oid": "69f5672f6ae847fd4f91074a"}}
+10:53:44 [DEBUG] pymongo.serverSelection: {"message": "Server selection succeeded", "selector": "<function writable_server_selector at 0x10599f2e0>", "operation": "insert", "operationId": 1097783045, "topologyDescription": "<TopologyDescription id: 69f5672f6ae847fd4f91074a, topology_type: Single, servers: [<ServerDescription ('192.168.0.107', 27018) server_type: Standalone, rtt: 0.048223666002741084>]>", "clientId": {"$oid": "69f5672f6ae847fd4f91074a"}, "serverHost": "192.168.0.107", "serverPort": 27018}
+10:53:44 [DEBUG] pymongo.connection: {"message": "Connection checkout started", "clientId": {"$oid": "69f5672f6ae847fd4f91074a"}, "serverHost": "192.168.0.107", "serverPort": 27018}
+10:53:44 [DEBUG] pymongo.connection: {"message": "Connection checked out", "clientId": {"$oid": "69f5672f6ae847fd4f91074a"}, "serverHost": "192.168.0.107", "serverPort": 27018, "driverConnectionId": 1, "durationMS": 0.0002399160002823919}
+10:53:44 [DEBUG] pymongo.command: {"message": "Command started", "clientId": {"$oid": "69f5672f6ae847fd4f91074a"}, "command": "{\"insert\": \"api_logs\", \"lsid\": {\"id\": {\"$binary\": {\"base64\": \"Uwpl6o83TYuVGMndOS5KYQ==\", \"subType\": \"04\"}}}, \"$db\": \"finance_auto_logs\", \"documents\": [{\"trace_id\": \"d03dd79d-50b8-456a-a147-eaf25efc5f19\", \"test_run_id\": \"f24ddfef-87be-4400-bbd5-354252627349\", \"pytest_nodeid\": \"tests/test_system/test_batch_add_seed_data.py::TestBatchAddSeedData::test_batch_add_system_seed_data\", \"created_at\": {\"$date\": \"2026-05-02T02:53:42.730Z\"}, \"method\": \"POST\", \"url\": \"http://192.168.0.107/dev-api/system/user\", \"request_headers\": {\"User-Agent\": \"python-requests/2.31.0\", \"Accept-Encoding\": \"gzip, deflate\", \"Accept\": \"application/json\", \"Connection\": \"keep-alive\", \"Content-Type\": \"application/json\", \"Authorization\": \"***\", \"X-Trace-Id\": \"d03dd79d-50b8-456a-a147-eaf25efc5f19\"}, \"request_body\": {\"userName\": \"test_029f6b48\", \"nickName\": \"\u6279\u91cf\u7528\u62373bb0\", \"password\": \"***\", \"phonenumber\": \"13824832532\", \"email\": \"test_029f6b48@test.com\", \"sex\": \"2\", \"status\": \"0\", \"deptId\": 107, \"roleIds\": [1...", "commandName": "insert", "databaseName": "finance_auto_logs", "requestId": 823564440, "operationId": 823564440, "driverConnectionId": 1, "serverConnectionId": 41, "serverHost": "192.168.0.107", "serverPort": 27018}
+10:53:44 [DEBUG] pymongo.command: {"message": "Command succeeded", "clientId": {"$oid": "69f5672f6ae847fd4f91074a"}, "durationMS": 12.388, "reply": "{\"n\": 20, \"ok\": 1.0}", "commandName": "insert", "databaseName": "finance_auto_logs", "requestId": 823564440, "operationId": 823564440, "driverConnectionId": 1, "serverConnectionId": 41, "serverHost": "192.168.0.107", "serverPort": 27018}
+10:53:44 [DEBUG] pymongo.connection: {"message": "Connection checked in", "clientId": {"$oid": "69f5672f6ae847fd4f91074a"}, "serverHost": "192.168.0.107", "serverPort": 27018, "driverConnectionId": 1}
+10:53:44 [DEBUG] urllib3.connectionpool: Resetting dropped connection: 127.0.0.1
+10:53:44 [DEBUG] urllib3.connectionpool: http://127.0.0.1:7890 "POST http://192.168.0.107/dev-api/system/user HTTP/1.1" 200 None
+10:53:44 [DEBUG] pymongo.serverSelection: {"message": "Server selection started", "selector": "<function writable_server_selector at 0x10599f2e0>", "operation": "insert", "operationId": -400917686, "topologyDescription": "<TopologyDescription id: 69f5672f6ae847fd4f91074a, topology_type: Single, servers: [<ServerDescription ('192.168.0.107', 27018) server_type: Standalone, rtt: 0.048223666002741084>]>", "clientId": {"$oid": "69f5672f6ae847fd4f91074a"}}
+10:53:44 [DEBUG] pymongo.serverSelection: {"message": "Server selection succeeded", "selector": "<function writable_server_selector at 0x10599f2e0>", "operation": "insert", "operationId": -400917686, "topologyDescription": "<TopologyDescription id: 69f5672f6ae847fd4f91074a, topology_type: Single, servers: [<ServerDescription ('192.168.0.107', 27018) server_type: Standalone, rtt: 0.048223666002741084>]>", "clientId": {"$oid": "69f5672f6ae847fd4f91074a"}, "serverHost": "192.168.0.107", "serverPort": 27018}
+10:53:44 [DEBUG] pymongo.connection: {"message": "Connection checkout started", "clientId": {"$oid": "69f5672f6ae847fd4f91074a"}, "serverHost": "192.168.0.107", "serverPort": 27018}
+10:53:44 [DEBUG] pymongo.connection: {"message": "Connection checked out", "clientId": {"$oid": "69f5672f6ae847fd4f91074a"}, "serverHost": "192.168.0.107", "serverPort": 27018, "driverConnectionId": 1, "durationMS": 0.00012058400898240507}
+10:53:44 [DEBUG] pymongo.command: {"message": "Command started", "clientId": {"$oid": "69f5672f6ae847fd4f91074a"}, "command": "{\"insert\": \"api_logs\", \"lsid\": {\"id\": {\"$binary\": {\"base64\": \"Uwpl6o83TYuVGMndOS5KYQ==\", \"subType\": \"04\"}}}, \"$db\": \"finance_auto_logs\", \"documents\": [{\"trace_id\": \"42fc62a7-710e-48e9-8058-6c2e5ede2d3c\", \"test_run_id\": \"f24ddfef-87be-4400-bbd5-354252627349\", \"pytest_nodeid\": \"tests/test_system/test_batch_add_seed_data.py::TestBatchAddSeedData::test_batch_add_system_seed_data\", \"created_at\": {\"$date\": \"2026-05-02T02:53:44.383Z\"}, \"method\": \"POST\", \"url\": \"http://192.168.0.107/dev-api/system/user\", \"request_headers\": {\"User-Agent\": \"python-requests/2.31.0\", \"Accept-Encoding\": \"gzip, deflate\", \"Accept\": \"application/json\", \"Connection\": \"keep-alive\", \"Content-Type\": \"application/json\", \"Authorization\": \"***\", \"X-Trace-Id\": \"42fc62a7-710e-48e9-8058-6c2e5ede2d3c\"}, \"request_body\": {\"userName\": \"test_64e0f785\", \"nickName\": \"\u6279\u91cf\u7528\u62374a70\", \"password\": \"***\", \"phonenumber\": \"13891365643\", \"email\": \"test_64e0f785@test.com\", \"sex\": \"2\", \"status\": \"0\", \"deptId\": 105, \"roleIds\": [1...", "commandName": "insert", "databaseName": "finance_auto_logs", "requestId": 1115438165, "operationId": 1115438165, "driverConnectionId": 1, "serverConnectionId": 41, "serverHost": "192.168.0.107", "serverPort": 27018}
+10:53:44 [DEBUG] pymongo.command: {"message": "Command succeeded", "clientId": {"$oid": "69f5672f6ae847fd4f91074a"}, "durationMS": 8.032, "reply": "{\"n\": 1, \"ok\": 1.0}", "commandName": "insert", "databaseName": "finance_auto_logs", "requestId": 1115438165, "operationId": 1115438165, "driverConnectionId": 1, "serverConnectionId": 41, "serverHost": "192.168.0.107", "serverPort": 27018}
+10:53:44 [DEBUG] pymongo.connection: {"message": "Connection checked in", "clientId": {"$oid": "69f5672f6ae847fd4f91074a"}, "serverHost": "192.168.0.107", "serverPort": 27018, "driverConnectionId": 1}
+10:53:44 [DEBUG] pymongo.serverSelection: {"message": "Server selection started", "selector": "PrimaryPreferred(tag_sets=None, max_staleness=-1, hedge=None)", "operation": "endSessions", "topologyDescription": "<TopologyDescription id: 69f5672f6ae847fd4f91074a, topology_type: Single, servers: [<ServerDescription ('192.168.0.107', 27018) server_type: Standalone, rtt: 0.048223666002741084>]>", "clientId": {"$oid": "69f5672f6ae847fd4f91074a"}}
+10:53:44 [DEBUG] pymongo.serverSelection: {"message": "Server selection succeeded", "selector": "PrimaryPreferred(tag_sets=None, max_staleness=-1, hedge=None)", "operation": "endSessions", "topologyDescription": "<TopologyDescription id: 69f5672f6ae847fd4f91074a, topology_type: Single, servers: [<ServerDescription ('192.168.0.107', 27018) server_type: Standalone, rtt: 0.048223666002741084>]>", "clientId": {"$oid": "69f5672f6ae847fd4f91074a"}, "serverHost": "192.168.0.107", "serverPort": 27018}
+10:53:44 [DEBUG] pymongo.connection: {"message": "Connection checkout started", "clientId": {"$oid": "69f5672f6ae847fd4f91074a"}, "serverHost": "192.168.0.107", "serverPort": 27018}
+10:53:44 [DEBUG] pymongo.connection: {"message": "Connection checked out", "clientId": {"$oid": "69f5672f6ae847fd4f91074a"}, "serverHost": "192.168.0.107", "serverPort": 27018, "driverConnectionId": 1, "durationMS": 8.166600309778005e-05}
+10:53:44 [DEBUG] pymongo.command: {"message": "Command started", "clientId": {"$oid": "69f5672f6ae847fd4f91074a"}, "command": "{\"endSessions\": [{\"id\": {\"$binary\": {\"base64\": \"Uwpl6o83TYuVGMndOS5KYQ==\", \"subType\": \"04\"}}}], \"$db\": \"admin\"}", "commandName": "endSessions", "databaseName": "admin", "requestId": 1784484492, "operationId": 1784484492, "driverConnectionId": 1, "serverConnectionId": 41, "serverHost": "192.168.0.107", "serverPort": 27018}
+10:53:44 [DEBUG] pymongo.command: {"message": "Command succeeded", "clientId": {"$oid": "69f5672f6ae847fd4f91074a"}, "durationMS": 5.881, "reply": "{\"ok\": 1.0}", "commandName": "endSessions", "databaseName": "admin", "requestId": 1784484492, "operationId": 1784484492, "driverConnectionId": 1, "serverConnectionId": 41, "serverHost": "192.168.0.107", "serverPort": 27018}
+10:53:44 [DEBUG] pymongo.connection: {"message": "Connection checked in", "clientId": {"$oid": "69f5672f6ae847fd4f91074a"}, "serverHost": "192.168.0.107", "serverPort": 27018, "driverConnectionId": 1}
+10:53:44 [DEBUG] pymongo.topology: {"message": "Stopped server monitoring", "topologyId": {"$oid": "69f5672f6ae847fd4f91074a"}, "serverHost": "192.168.0.107", "serverPort": 27018}
+10:53:44 [DEBUG] pymongo.connection: {"message": "Connection closed", "clientId": {"$oid": "69f5672f6ae847fd4f91074a"}, "serverHost": "192.168.0.107", "serverPort": 27018, "driverConnectionId": 1, "reason": "Connection pool was closed", "error": "poolClosed"}
+10:53:44 [DEBUG] pymongo.connection: {"message": "Connection pool closed", "clientId": {"$oid": "69f5672f6ae847fd4f91074a"}, "serverHost": "192.168.0.107", "serverPort": 27018}
+10:53:44 [DEBUG] pymongo.topology: {"message": "Topology description changed", "topologyId": {"$oid": "69f5672f6ae847fd4f91074a"}, "previousDescription": "<TopologyDescription id: 69f5672f6ae847fd4f91074a, topology_type: Single, servers: [<ServerDescription ('192.168.0.107', 27018) server_type: Standalone, rtt: 0.048223666002741084>]>", "newDescription": "<TopologyDescription id: 69f5672f6ae847fd4f91074a, topology_type: Single, servers: [<ServerDescription ('192.168.0.107', 27018) server_type: Unknown, rtt: None>]>"}
+10:53:44 [DEBUG] pymongo.topology: {"message": "Stopped topology monitoring", "topologyId": {"$oid": "69f5672f6ae847fd4f91074a"}}

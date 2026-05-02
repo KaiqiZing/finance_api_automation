@@ -53,3 +53,31 @@ poller:
 allure:
   epic: "金融系统接口自动化"
   env_name: "开发环境(DEV)"
+
+logging:
+  mongo:
+    enabled: true
+    uri: "mongodb://192.168.0.107:27018"
+    db_name: "finance_auto_logs"
+    collection_name: "api_logs"
+    batch_size: 20
+    flush_interval_sec: 2
+    queue_maxsize: 500
+    max_pool_size: 20
+  sensitive_keys:
+    - password
+    - passwd
+    - pwd
+    - token
+    - access_token
+    - refresh_token
+    - authorization
+    - secret
+    - private_key
+    - card_no
+    - id_card
+    - phone
+    - mobile
+    - id_number
+  ttl_days: 0        # 0 表示不启用 TTL 索引
+  fallback_dir: "outputs/api_logs"

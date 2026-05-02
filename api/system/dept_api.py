@@ -29,26 +29,13 @@ from __future__ import annotations
 
 from typing import Any
 
-from api.base_api import BaseAPI
-from config.settings import cfg
-from core.request_wrapper import RequestConfig, RequestWrapper
+from api.system.base_system_api import SystemBaseAPI
 
 
-class SystemDeptAPI(BaseAPI):
+class SystemDeptAPI(SystemBaseAPI):
     """系统部门接口，需先注入 Token 才能请求。"""
 
     _MODULE = "system"
-
-    def __init__(self) -> None:
-        sys_cfg = cfg.get("system_api", {})
-        wrapper = RequestWrapper(
-            base_url=sys_cfg.get("base_url", "http://localhost:1024/dev-api"),
-            config=RequestConfig(
-                timeout=sys_cfg.get("timeout", 15),
-                verify_ssl=sys_cfg.get("verify_ssl", False),
-            ),
-        )
-        super().__init__(wrapper=wrapper)
 
     # ------------------------------------------------------------------
     # 4.1 获取部门列表
@@ -76,7 +63,10 @@ class SystemDeptAPI(BaseAPI):
             params["deptName"] = dept_name
         if status is not None:
             params["status"] = status
-        return self._wrapper.get("/system/dept/list", params=params or None)
+        return self._wrapper.get(
+            "/system/dept/list", params=params or None,
+            _module="system", _api_name="list_depts", _business_type="system:dept:list", _service="ruoyi",
+        )
 
     # ------------------------------------------------------------------
     # 4.2 新增部门
@@ -130,7 +120,10 @@ class SystemDeptAPI(BaseAPI):
             overrides["payload.ancestors"] = ancestors
 
         payload = self._build_payload(self._MODULE, "add_dept", overrides or None)
-        return self._wrapper.post("/system/dept", json=payload)
+        return self._wrapper.post(
+            "/system/dept", json=payload,
+            _module="system", _api_name="add_dept", _business_type="system:dept:add", _service="ruoyi",
+        )
 
     # ------------------------------------------------------------------
     # 4.3 修改部门
@@ -185,7 +178,10 @@ class SystemDeptAPI(BaseAPI):
             overrides["payload.ancestors"] = ancestors
 
         payload = self._build_payload(self._MODULE, "update_dept", overrides)
-        return self._wrapper.put("/system/dept", json=payload)
+        return self._wrapper.put(
+            "/system/dept", json=payload,
+            _module="system", _api_name="update_dept", _business_type="system:dept:edit", _service="ruoyi",
+        )
 
     # ------------------------------------------------------------------
     # 4.4 获取部门详情
@@ -203,7 +199,10 @@ class SystemDeptAPI(BaseAPI):
         Returns:
             响应 body，包含部门完整信息。
         """
-        return self._wrapper.get(f"/system/dept/{dept_id}")
+        return self._wrapper.get(
+            f"/system/dept/{dept_id}",
+            _module="system", _api_name="get_dept", _business_type="system:dept:query", _service="ruoyi",
+        )
 
     # ------------------------------------------------------------------
     # 4.5 删除部门
@@ -222,4 +221,7 @@ class SystemDeptAPI(BaseAPI):
         Returns:
             响应 body，成功时 ``code=200``，失败时 ``code=500`` 且 ``msg`` 含原因。
         """
-        return self._wrapper.delete(f"/system/dept/{dept_id}")
+        return self._wrapper.delete(
+            f"/system/dept/{dept_id}",
+            _module="system", _api_name="delete_dept", _business_type="system:dept:remove", _service="ruoyi",
+        )

@@ -15,13 +15,11 @@
 """
 from __future__ import annotations
 
-import uuid
-
 import allure
 import pytest
 
-from api.system.login_api import SystemLoginAPI
 from api.system.user_api import SystemUserAPI
+from tests.test_system.conftest import _login_and_get_token, gen_username
 from utils.db_client import DBClient
 from utils.logger import logger
 
@@ -29,17 +27,6 @@ from utils.logger import logger
 # ==============================================================================
 # 辅助函数
 # ==============================================================================
-
-def _gen_username() -> str:
-    return "test_" + uuid.uuid4().hex[:8]
-
-
-def _login_and_get_token() -> str:
-    login_api = SystemLoginAPI()
-    resp = login_api.login(username="admin", password="admin123")
-    assert resp.get("code") == 200, f"登录失败，无法获取 token: {resp}"
-    return resp["data"]["access_token"]
-
 
 def _get_user_id_by_name(username: str) -> int | None:
     """从 sys_user 表按用户名查询 user_id。"""
@@ -79,7 +66,7 @@ class TestDeleteUser:
         user_api = SystemUserAPI()
         user_api.set_token(token)
 
-        username = _gen_username()
+        username = gen_username()
 
         with allure.step(f"新增测试用户: userName={username}"):
             logger.info("[DEL-001] 前置步骤：新增测试用户 userName={}", username)

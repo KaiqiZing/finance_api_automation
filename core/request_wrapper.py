@@ -2,16 +2,22 @@
 RequestWrapper：统一 HTTP 请求封装，处理加解密、鉴权、自定义状态码拦截。
 
 金融系统自定义状态码映射:
-    98880  - 权限缺失 (PermissionError)
+    98880  - 权限缺失 (APIPermissionError)
     98881  - Token 失效 (AuthError)
     98882  - 业务互斥 (BusinessConflictError)
     98883  - 频控拦截 (RateLimitError)
     500    - 内部错误，标记为 Bug
     502/503- 环境异常，触发重试
+
+日志采集:
+    每次请求自动生成 trace_id（UUID4），通过 X-Trace-Id 请求头传递给服务端。
+    请求/响应/异常均写入 ApiLogger（Mongo 主存储 + JSONL 降级），
+    trace_id 同时写入 GlobalContext，供 conftest 失败时附加到 Allure 报告。
 """
 from __future__ import annotations
 
 import time
+import uuid
 from dataclasses import dataclass, field
 from typing import Any
 
@@ -20,6 +26,8 @@ from requests import Response, Session
 from requests.adapters import HTTPAdapter
 from urllib3.util.retry import Retry
 
+from core.context import GlobalContext
+from utils.api_logger import ApiLogRecord, ApiLogger
 from utils.logger import logger
 
 
@@ -31,7 +39,7 @@ class FinanceAPIError(Exception):
         self.response = response
 
 
-class PermissionError(FinanceAPIError):
+class APIPermissionError(FinanceAPIError):
     """98880: 权限缺失。"""
 
 
@@ -56,7 +64,7 @@ class BugError(Exception):
 
 
 _BIZ_CODE_MAP: dict[int, type[FinanceAPIError]] = {
-    98880: PermissionError,
+    98880: APIPermissionError,
     98881: AuthError,
     98882: BusinessConflictError,
     98883: RateLimitError,
@@ -107,41 +115,155 @@ class RequestWrapper:
     # ------------------------------------------------------------------
 
     def _request(self, method: str, path: str, **kwargs) -> dict[str, Any]:
+        # 摘取日志元数据（不透传给 requests）
+        _module: str = kwargs.pop("_module", "")
+        _api_name: str = kwargs.pop("_api_name", "")
+        _business_type: str = kwargs.pop("_business_type", "")
+        _service: str = kwargs.pop("_service", "")
+
         url = f"{self.base_url}/{path.lstrip('/')}"
         kwargs.setdefault("timeout", self.cfg.timeout)
         kwargs.setdefault("verify", self.cfg.verify_ssl)
 
+        # 生成 trace_id 并注入请求头
+        trace_id = str(uuid.uuid4())
+        per_req_headers: dict[str, str] = kwargs.pop("headers", {})
+        per_req_headers["X-Trace-Id"] = trace_id
+        kwargs["headers"] = per_req_headers
+
+        # 采集请求体（json= 或 data=，不含 params）
+        req_body: Any = kwargs.get("json") or kwargs.get("data")
+
+        # 合并 session 全局头 + 本次请求头（用于日志记录）
+        merged_headers: dict = {**dict(self._session.headers), **per_req_headers}
+
+        # 构建日志记录（响应/异常后补全剩余字段）
+        record = ApiLogRecord(
+            trace_id=trace_id,
+            method=method,
+            url=url,
+            request_headers=merged_headers,
+            request_body=req_body,
+            module=_module,
+            api_name=_api_name,
+            business_type=_business_type,
+            service=_service,
+        )
+
         start = time.monotonic()
         try:
             resp = self._session.request(method, url, **kwargs)
-        except requests.exceptions.Timeout as e:
-            raise EnvError(f"[RequestWrapper] 请求超时: {url}") from e
-        except requests.exceptions.ConnectionError as e:
-            raise EnvError(f"[RequestWrapper] 网络连接异常: {url}") from e
+        except requests.exceptions.Timeout as exc:
+            record.elapsed_ms = (time.monotonic() - start) * 1000
+            record.result = "error"
+            record.error_type = "Timeout"
+            record.error_message = str(exc)[:500]
+            self._write_log(record)
+            raise EnvError(f"[RequestWrapper] 请求超时: {url}") from exc
+        except requests.exceptions.ConnectionError as exc:
+            record.elapsed_ms = (time.monotonic() - start) * 1000
+            record.result = "error"
+            record.error_type = "ConnectionError"
+            record.error_message = str(exc)[:500]
+            self._write_log(record)
+            raise EnvError(f"[RequestWrapper] 网络连接异常: {url}") from exc
 
         elapsed = (time.monotonic() - start) * 1000
+        record.elapsed_ms = elapsed
+        record.status_code = resp.status_code
         logger.debug(f"[HTTP] {method} {url} -> {resp.status_code} ({elapsed:.0f}ms)")
 
-        return self._handle_response(resp)
+        try:
+            result_body = self._handle_response(resp)
+            record.response_body = result_body
+            record.result = "success"
+            self._write_log(record)
+            return result_body
+        except FinanceAPIError as exc:
+            record.result = "fail"
+            record.error_type = type(exc).__name__
+            record.error_message = str(exc)[:500]
+            record.response_body = self._safe_json(resp)
+            self._write_log(record)
+            raise
+        except (EnvError, BugError) as exc:
+            record.result = "error"
+            record.error_type = type(exc).__name__
+            record.error_message = str(exc)[:500]
+            record.response_body = self._safe_json(resp)
+            self._write_log(record)
+            raise
 
     def _handle_response(self, resp: Response) -> dict[str, Any]:
         if resp.status_code in (502, 503):
             raise EnvError(f"[RequestWrapper] 环境异常 HTTP {resp.status_code}: {resp.text[:200]}")
+
+        # 尝试解析响应体（HTTP 500 也可能携带业务错误 JSON，如 RuoYi 的 code=500）
+        body: dict[str, Any] | None = None
+        try:
+            parsed = resp.json()
+            if isinstance(parsed, dict):
+                body = parsed
+        except Exception:
+            pass
+
         if resp.status_code == 500:
+            # 若响应体包含合法业务错误码，降级为业务响应（code=500 交给用例层判断）
+            if body is not None and (
+                isinstance(body.get("code"), int) or isinstance(body.get("biz_code"), int)
+            ):
+                body["_status_code"] = resp.status_code
+                return body
             raise BugError(f"[RequestWrapper] 服务端内部错误 HTTP 500: {resp.text[:200]}")
 
-        try:
-            body: dict[str, Any] = resp.json()
-        except Exception as e:
-            raise BugError(f"[RequestWrapper] 响应 JSON 解析失败: {resp.text[:200]}") from e
+        if body is None:
+            raise BugError(f"[RequestWrapper] 响应 JSON 解析失败: {resp.text[:200]}")
+
+        body["_status_code"] = resp.status_code
 
         # 拦截金融系统自定义业务状态码
         biz_code = body.get("code") or body.get("biz_code")
         if isinstance(biz_code, int) and biz_code in _BIZ_CODE_MAP:
             exc_cls = _BIZ_CODE_MAP[biz_code]
-            raise exc_cls(biz_code, body.get("message", ""), resp)
+            message = body.get("msg") or body.get("message") or ""
+            raise exc_cls(biz_code, message, resp)
 
         return body
+
+    def _write_log(self, record: ApiLogRecord) -> None:
+        """写 ApiLogger + 更新 GlobalContext 链路快照（任何异常均静默处理）。"""
+        try:
+            api_logger = ApiLogger.instance()
+            if api_logger:
+                api_logger.log(record)
+        except Exception as exc:
+            logger.warning(f"[RequestWrapper] ApiLogger 写入失败: {exc}")
+
+        try:
+            ctx = GlobalContext.instance()
+            ctx.set("_last_trace_id", record.trace_id)
+            recent: list[dict] = ctx.get("_recent_api_logs") or []
+            recent.append({
+                "trace_id": record.trace_id,
+                "method": record.method,
+                "url": record.url,
+                "status_code": record.status_code,
+                "elapsed_ms": round(record.elapsed_ms, 1),
+                "result": record.result,
+                "error_type": record.error_type,
+                "error_message": record.error_message[:200] if record.error_message else "",
+            })
+            ctx.set("_recent_api_logs", recent[-5:])
+        except Exception as exc:
+            logger.warning(f"[RequestWrapper] GlobalContext 更新失败: {exc}")
+
+    @staticmethod
+    def _safe_json(resp: Response) -> Any:
+        """尝试解析响应 JSON，失败则返回截断文本。"""
+        try:
+            return resp.json()
+        except Exception:
+            return resp.text[:500]
 
     def _build_session(self) -> Session:
         session = Session()

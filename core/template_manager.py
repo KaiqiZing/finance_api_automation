@@ -10,6 +10,7 @@ from __future__ import annotations
 
 import copy
 import os
+import threading
 from pathlib import Path
 from typing import Any
 
@@ -23,6 +24,7 @@ class TemplateManager:
     """单例 YAML 模板加载器。"""
 
     _instance: "TemplateManager | None" = None
+    _lock: threading.Lock = threading.Lock()
     _MAX_CACHE_SIZE = 256
 
     def __init__(self) -> None:
@@ -31,7 +33,9 @@ class TemplateManager:
     @classmethod
     def instance(cls) -> "TemplateManager":
         if cls._instance is None:
-            cls._instance = cls()
+            with cls._lock:
+                if cls._instance is None:
+                    cls._instance = cls()
         return cls._instance
 
     def load(self, module: str, name: str) -> dict[str, Any]:

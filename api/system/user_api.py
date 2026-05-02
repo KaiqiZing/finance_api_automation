@@ -3,6 +3,7 @@ SystemUserAPI：系统用户相关接口（RuoYi 后端）。
 
 接口列表:
     GET    /dev-api/system/user/getInfo  查询当前登录用户信息
+    GET    /dev-api/system/user/list     查询用户列表
     POST   /dev-api/system/user          新增系统用户
     PUT    /dev-api/system/user          修改系统用户
     DELETE /dev-api/system/user/{id}     删除系统用户（支持批量，逗号分隔）
@@ -44,27 +45,14 @@ from __future__ import annotations
 
 from typing import Any
 
-from api.base_api import BaseAPI
-from config.settings import cfg
-from core.request_wrapper import RequestConfig, RequestWrapper
+from api.system.base_system_api import SystemBaseAPI
 
 
-class SystemUserAPI(BaseAPI):
+class SystemUserAPI(SystemBaseAPI):
     """系统用户接口，需先注入 Token 才能请求。"""
 
     _MODULE = "system"
     _TEMPLATE = "get_info"
-
-    def __init__(self) -> None:
-        sys_cfg = cfg.get("system_api", {})
-        wrapper = RequestWrapper(
-            base_url=sys_cfg.get("base_url", "http://localhost:1024/dev-api"),
-            config=RequestConfig(
-                timeout=sys_cfg.get("timeout", 15),
-                verify_ssl=sys_cfg.get("verify_ssl", False),
-            ),
-        )
-        super().__init__(wrapper=wrapper)
 
     def get_info(self) -> dict[str, Any]:
         """
@@ -75,7 +63,36 @@ class SystemUserAPI(BaseAPI):
         Returns:
             响应 body，包含 ``user``、``roles``、``permissions`` 字段。
         """
-        return self._wrapper.get("/system/user/getInfo")
+        return self._wrapper.get(
+            "/system/user/getInfo",
+            _module="system", _api_name="get_info", _business_type="system:user:query", _service="ruoyi",
+        )
+
+    def list_users(
+        self,
+        user_name: str | None = None,
+        status: str | None = None,
+        page_num: int | None = None,
+        page_size: int | None = None,
+    ) -> dict[str, Any]:
+        """
+        查询用户列表（用于验证 RBAC 权限拦截）。
+
+        前置条件: 已通过 ``set_token(token)`` 注入 Bearer Token。
+        """
+        params: dict[str, Any] = {}
+        if user_name is not None:
+            params["userName"] = user_name
+        if status is not None:
+            params["status"] = status
+        if page_num is not None:
+            params["pageNum"] = page_num
+        if page_size is not None:
+            params["pageSize"] = page_size
+        return self._wrapper.get(
+            "/system/user/list", params=params or None,
+            _module="system", _api_name="list_users", _business_type="system:user:list", _service="ruoyi",
+        )
 
     def add_user(
         self,
@@ -138,7 +155,10 @@ class SystemUserAPI(BaseAPI):
             overrides["payload.remark"] = remark
 
         payload = self._build_payload(self._MODULE, "add_user", overrides or None)
-        return self._wrapper.post("/system/user", json=payload)
+        return self._wrapper.post(
+            "/system/user", json=payload,
+            _module="system", _api_name="add_user", _business_type="system:user:add", _service="ruoyi",
+        )
 
     def update_user(
         self,
@@ -201,7 +221,10 @@ class SystemUserAPI(BaseAPI):
             overrides["payload.remark"] = remark
 
         payload = self._build_payload(self._MODULE, "update_user", overrides)
-        return self._wrapper.put("/system/user", json=payload)
+        return self._wrapper.put(
+            "/system/user", json=payload,
+            _module="system", _api_name="update_user", _business_type="system:user:edit", _service="ruoyi",
+        )
 
     def delete_user(self, user_id: int) -> dict[str, Any]:
         """
@@ -216,4 +239,7 @@ class SystemUserAPI(BaseAPI):
         Returns:
             响应 body，成功时 ``code=200``，失败时 ``code=500`` 且 ``msg`` 含原因。
         """
-        return self._wrapper.delete(f"/system/user/{user_id}")
+        return self._wrapper.delete(
+            f"/system/user/{user_id}",
+            _module="system", _api_name="delete_user", _business_type="system:user:remove", _service="ruoyi",
+        )

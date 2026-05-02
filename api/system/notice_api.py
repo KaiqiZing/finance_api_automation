@@ -22,26 +22,13 @@ from __future__ import annotations
 
 from typing import Any
 
-from api.base_api import BaseAPI
-from config.settings import cfg
-from core.request_wrapper import RequestConfig, RequestWrapper
+from api.system.base_system_api import SystemBaseAPI
 
 
-class SystemNoticeAPI(BaseAPI):
+class SystemNoticeAPI(SystemBaseAPI):
     """系统通知公告接口，需先注入 Token 才能请求。"""
 
     _MODULE = "system"
-
-    def __init__(self) -> None:
-        sys_cfg = cfg.get("system_api", {})
-        wrapper = RequestWrapper(
-            base_url=sys_cfg.get("base_url", "http://localhost:1024/dev-api"),
-            config=RequestConfig(
-                timeout=sys_cfg.get("timeout", 15),
-                verify_ssl=sys_cfg.get("verify_ssl", False),
-            ),
-        )
-        super().__init__(wrapper=wrapper)
 
     def list_notices(
         self,
@@ -63,7 +50,10 @@ class SystemNoticeAPI(BaseAPI):
             params["pageNum"] = page_num
         if page_size is not None:
             params["pageSize"] = page_size
-        return self._wrapper.get("/system/notice/list", params=params or None)
+        return self._wrapper.get(
+            "/system/notice/list", params=params or None,
+            _module="system", _api_name="list_notices", _business_type="system:notice:list", _service="ruoyi",
+        )
 
     def add_notice(
         self,
@@ -87,7 +77,10 @@ class SystemNoticeAPI(BaseAPI):
             overrides["payload.remark"] = remark
 
         payload = self._build_payload(self._MODULE, "add_notice", overrides or None)
-        return self._wrapper.post("/system/notice", json=payload)
+        return self._wrapper.post(
+            "/system/notice", json=payload,
+            _module="system", _api_name="add_notice", _business_type="system:notice:add", _service="ruoyi",
+        )
 
     def update_notice(
         self,
@@ -112,13 +105,22 @@ class SystemNoticeAPI(BaseAPI):
             overrides["payload.remark"] = remark
 
         payload = self._build_payload(self._MODULE, "update_notice", overrides)
-        return self._wrapper.put("/system/notice", json=payload)
+        return self._wrapper.put(
+            "/system/notice", json=payload,
+            _module="system", _api_name="update_notice", _business_type="system:notice:edit", _service="ruoyi",
+        )
 
     def get_notice(self, notice_id: int) -> dict[str, Any]:
         """获取公告详情。"""
-        return self._wrapper.get(f"/system/notice/{notice_id}")
+        return self._wrapper.get(
+            f"/system/notice/{notice_id}",
+            _module="system", _api_name="get_notice", _business_type="system:notice:query", _service="ruoyi",
+        )
 
     def delete_notices(self, notice_ids: list[int]) -> dict[str, Any]:
         """删除公告（支持批量，路径参数逗号分隔）。"""
         ids_str = ",".join(str(nid) for nid in notice_ids)
-        return self._wrapper.delete(f"/system/notice/{ids_str}")
+        return self._wrapper.delete(
+            f"/system/notice/{ids_str}",
+            _module="system", _api_name="delete_notices", _business_type="system:notice:remove", _service="ruoyi",
+        )

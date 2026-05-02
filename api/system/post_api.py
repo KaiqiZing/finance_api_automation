@@ -31,26 +31,13 @@ from __future__ import annotations
 
 from typing import Any
 
-from api.base_api import BaseAPI
-from config.settings import cfg
-from core.request_wrapper import RequestConfig, RequestWrapper
+from api.system.base_system_api import SystemBaseAPI
 
 
-class SystemPostAPI(BaseAPI):
+class SystemPostAPI(SystemBaseAPI):
     """系统岗位接口，需先注入 Token 才能请求。"""
 
     _MODULE = "system"
-
-    def __init__(self) -> None:
-        sys_cfg = cfg.get("system_api", {})
-        wrapper = RequestWrapper(
-            base_url=sys_cfg.get("base_url", "http://localhost:1024/dev-api"),
-            config=RequestConfig(
-                timeout=sys_cfg.get("timeout", 15),
-                verify_ssl=sys_cfg.get("verify_ssl", False),
-            ),
-        )
-        super().__init__(wrapper=wrapper)
 
     # ------------------------------------------------------------------
     # 6.1 获取岗位列表
@@ -90,7 +77,10 @@ class SystemPostAPI(BaseAPI):
             params["pageNum"] = page_num
         if page_size is not None:
             params["pageSize"] = page_size
-        return self._wrapper.get("/system/post/list", params=params or None)
+        return self._wrapper.get(
+            "/system/post/list", params=params or None,
+            _module="system", _api_name="list_posts", _business_type="system:post:list", _service="ruoyi",
+        )
 
     # ------------------------------------------------------------------
     # 6.2 新增岗位
@@ -132,7 +122,10 @@ class SystemPostAPI(BaseAPI):
             overrides["payload.remark"] = remark
 
         payload = self._build_payload(self._MODULE, "add_post", overrides or None)
-        return self._wrapper.post("/system/post", json=payload)
+        return self._wrapper.post(
+            "/system/post", json=payload,
+            _module="system", _api_name="add_post", _business_type="system:post:add", _service="ruoyi",
+        )
 
     # ------------------------------------------------------------------
     # 6.3 修改岗位
@@ -176,7 +169,10 @@ class SystemPostAPI(BaseAPI):
             overrides["payload.remark"] = remark
 
         payload = self._build_payload(self._MODULE, "update_post", overrides)
-        return self._wrapper.put("/system/post", json=payload)
+        return self._wrapper.put(
+            "/system/post", json=payload,
+            _module="system", _api_name="update_post", _business_type="system:post:edit", _service="ruoyi",
+        )
 
     # ------------------------------------------------------------------
     # 6.4 获取岗位详情
@@ -194,7 +190,10 @@ class SystemPostAPI(BaseAPI):
         Returns:
             响应 body，包含岗位完整信息。
         """
-        return self._wrapper.get(f"/system/post/{post_id}")
+        return self._wrapper.get(
+            f"/system/post/{post_id}",
+            _module="system", _api_name="get_post", _business_type="system:post:query", _service="ruoyi",
+        )
 
     # ------------------------------------------------------------------
     # 6.5 删除岗位
@@ -213,7 +212,10 @@ class SystemPostAPI(BaseAPI):
             响应 body，成功时 ``code=200``，失败时 ``code=500`` 且 ``msg`` 含原因。
         """
         ids_str = ",".join(str(pid) for pid in post_ids)
-        return self._wrapper.delete(f"/system/post/{ids_str}")
+        return self._wrapper.delete(
+            f"/system/post/{ids_str}",
+            _module="system", _api_name="delete_posts", _business_type="system:post:remove", _service="ruoyi",
+        )
 
     # ------------------------------------------------------------------
     # 6.6 获取岗位选择框
@@ -228,4 +230,7 @@ class SystemPostAPI(BaseAPI):
         Returns:
             响应 body，包含可选岗位列表（``data`` 字段）。
         """
-        return self._wrapper.get("/system/post/optionselect")
+        return self._wrapper.get(
+            "/system/post/optionselect",
+            _module="system", _api_name="option_select", _business_type="system:post:query", _service="ruoyi",
+        )

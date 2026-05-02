@@ -1,127 +1,166 @@
-11:01:25 [DEBUG] faker.factory: Looking for locale `en_US` in provider `faker.providers.address`.
-11:01:25 [DEBUG] faker.factory: Provider `faker.providers.address` has been localized to `en_US`.
-11:01:25 [DEBUG] faker.factory: Looking for locale `en_US` in provider `faker.providers.automotive`.
-11:01:25 [DEBUG] faker.factory: Provider `faker.providers.automotive` has been localized to `en_US`.
-11:01:25 [DEBUG] faker.factory: Looking for locale `en_US` in provider `faker.providers.bank`.
-11:01:25 [DEBUG] faker.factory: Specified locale `en_US` is not available for provider `faker.providers.bank`. Locale reset to `en_GB` for this provider.
-11:01:25 [DEBUG] faker.factory: Looking for locale `en_US` in provider `faker.providers.barcode`.
-11:01:25 [DEBUG] faker.factory: Provider `faker.providers.barcode` has been localized to `en_US`.
-11:01:25 [DEBUG] faker.factory: Looking for locale `en_US` in provider `faker.providers.color`.
-11:01:25 [DEBUG] faker.factory: Provider `faker.providers.color` has been localized to `en_US`.
-11:01:25 [DEBUG] faker.factory: Looking for locale `en_US` in provider `faker.providers.company`.
-11:01:25 [DEBUG] faker.factory: Provider `faker.providers.company` has been localized to `en_US`.
-11:01:25 [DEBUG] faker.factory: Looking for locale `en_US` in provider `faker.providers.credit_card`.
-11:01:25 [DEBUG] faker.factory: Provider `faker.providers.credit_card` has been localized to `en_US`.
-11:01:25 [DEBUG] faker.factory: Looking for locale `en_US` in provider `faker.providers.currency`.
-11:01:25 [DEBUG] faker.factory: Provider `faker.providers.currency` has been localized to `en_US`.
-11:01:25 [DEBUG] faker.factory: Looking for locale `en_US` in provider `faker.providers.date_time`.
-11:01:25 [DEBUG] faker.factory: Provider `faker.providers.date_time` has been localized to `en_US`.
-11:01:25 [DEBUG] faker.factory: Provider `faker.providers.emoji` does not feature localization. Specified locale `en_US` is not utilized for this provider.
-11:01:25 [DEBUG] faker.factory: Provider `faker.providers.file` does not feature localization. Specified locale `en_US` is not utilized for this provider.
-11:01:25 [DEBUG] faker.factory: Looking for locale `en_US` in provider `faker.providers.geo`.
-11:01:25 [DEBUG] faker.factory: Provider `faker.providers.geo` has been localized to `en_US`.
-11:01:25 [DEBUG] faker.factory: Looking for locale `en_US` in provider `faker.providers.internet`.
-11:01:25 [DEBUG] faker.factory: Provider `faker.providers.internet` has been localized to `en_US`.
-11:01:25 [DEBUG] faker.factory: Provider `faker.providers.isbn` does not feature localization. Specified locale `en_US` is not utilized for this provider.
-11:01:25 [DEBUG] faker.factory: Looking for locale `en_US` in provider `faker.providers.job`.
-11:01:25 [DEBUG] faker.factory: Provider `faker.providers.job` has been localized to `en_US`.
-11:01:25 [DEBUG] faker.factory: Looking for locale `en_US` in provider `faker.providers.lorem`.
-11:01:25 [DEBUG] faker.factory: Provider `faker.providers.lorem` has been localized to `en_US`.
-11:01:25 [DEBUG] faker.factory: Looking for locale `en_US` in provider `faker.providers.misc`.
-11:01:25 [DEBUG] faker.factory: Provider `faker.providers.misc` has been localized to `en_US`.
-11:01:25 [DEBUG] faker.factory: Looking for locale `en_US` in provider `faker.providers.passport`.
-11:01:25 [DEBUG] faker.factory: Provider `faker.providers.passport` has been localized to `en_US`.
-11:01:25 [DEBUG] faker.factory: Looking for locale `en_US` in provider `faker.providers.person`.
-11:01:25 [DEBUG] faker.factory: Provider `faker.providers.person` has been localized to `en_US`.
-11:01:25 [DEBUG] faker.factory: Looking for locale `en_US` in provider `faker.providers.phone_number`.
-11:01:25 [DEBUG] faker.factory: Provider `faker.providers.phone_number` has been localized to `en_US`.
-11:01:25 [DEBUG] faker.factory: Provider `faker.providers.profile` does not feature localization. Specified locale `en_US` is not utilized for this provider.
-11:01:25 [DEBUG] faker.factory: Provider `faker.providers.python` does not feature localization. Specified locale `en_US` is not utilized for this provider.
-11:01:25 [DEBUG] faker.factory: Provider `faker.providers.sbn` does not feature localization. Specified locale `en_US` is not utilized for this provider.
-11:01:25 [DEBUG] faker.factory: Looking for locale `en_US` in provider `faker.providers.ssn`.
-11:01:25 [DEBUG] faker.factory: Provider `faker.providers.ssn` has been localized to `en_US`.
-11:01:25 [DEBUG] faker.factory: Provider `faker.providers.user_agent` does not feature localization. Specified locale `en_US` is not utilized for this provider.
-11:01:25 [DEBUG] urllib3.connectionpool: Starting new HTTP connection (1): 192.168.0.107:80
-11:01:25 [DEBUG] urllib3.connectionpool: http://192.168.0.107:80 "POST /dev-api/auth/login HTTP/1.1" 200 None
-11:01:25 [DEBUG] urllib3.connectionpool: Starting new HTTP connection (1): 192.168.0.107:80
-11:01:25 [DEBUG] urllib3.connectionpool: http://192.168.0.107:80 "GET /dev-api/system/notice/list HTTP/1.1" 200 None
-11:01:25 [DEBUG] urllib3.connectionpool: Starting new HTTP connection (1): 192.168.0.107:80
-11:01:26 [DEBUG] urllib3.connectionpool: http://192.168.0.107:80 "POST /dev-api/auth/login HTTP/1.1" 200 None
-11:01:26 [DEBUG] urllib3.connectionpool: Starting new HTTP connection (1): 192.168.0.107:80
-11:01:26 [DEBUG] urllib3.connectionpool: http://192.168.0.107:80 "GET /dev-api/system/notice/list?noticeTitle=%E6%B8%A9%E9%A6%A8 HTTP/1.1" 200 None
-11:01:26 [DEBUG] urllib3.connectionpool: Starting new HTTP connection (1): 192.168.0.107:80
-11:01:26 [DEBUG] urllib3.connectionpool: http://192.168.0.107:80 "POST /dev-api/auth/login HTTP/1.1" 200 None
-11:01:26 [DEBUG] urllib3.connectionpool: Starting new HTTP connection (1): 192.168.0.107:80
-11:01:26 [DEBUG] urllib3.connectionpool: http://192.168.0.107:80 "GET /dev-api/system/notice/list?noticeType=1 HTTP/1.1" 200 None
-11:01:26 [DEBUG] urllib3.connectionpool: Starting new HTTP connection (1): 192.168.0.107:80
-11:01:26 [DEBUG] urllib3.connectionpool: http://192.168.0.107:80 "POST /dev-api/auth/login HTTP/1.1" 200 None
-11:01:26 [DEBUG] urllib3.connectionpool: Starting new HTTP connection (1): 192.168.0.107:80
-11:01:26 [DEBUG] urllib3.connectionpool: http://192.168.0.107:80 "GET /dev-api/system/notice/list?pageNum=1&pageSize=2 HTTP/1.1" 200 None
-11:01:26 [DEBUG] urllib3.connectionpool: Starting new HTTP connection (1): 192.168.0.107:80
-11:01:26 [DEBUG] urllib3.connectionpool: http://192.168.0.107:80 "POST /dev-api/auth/login HTTP/1.1" 200 None
-11:01:26 [DEBUG] urllib3.connectionpool: Starting new HTTP connection (1): 192.168.0.107:80
-11:01:26 [DEBUG] urllib3.connectionpool: http://192.168.0.107:80 "GET /dev-api/system/notice/list?status=0 HTTP/1.1" 200 None
-11:01:26 [DEBUG] urllib3.connectionpool: Starting new HTTP connection (1): 192.168.0.107:80
-11:01:26 [DEBUG] urllib3.connectionpool: http://192.168.0.107:80 "GET /dev-api/system/notice/list HTTP/1.1" 200 39
-11:01:26 [DEBUG] urllib3.connectionpool: Starting new HTTP connection (1): 192.168.0.107:80
-11:01:26 [DEBUG] urllib3.connectionpool: http://192.168.0.107:80 "POST /dev-api/auth/login HTTP/1.1" 200 None
-11:01:26 [DEBUG] urllib3.connectionpool: Starting new HTTP connection (1): 192.168.0.107:80
-11:01:27 [DEBUG] urllib3.connectionpool: http://192.168.0.107:80 "POST /dev-api/system/notice HTTP/1.1" 200 None
-11:01:27 [DEBUG] urllib3.connectionpool: Resetting dropped connection: 192.168.0.107
-11:01:27 [DEBUG] urllib3.connectionpool: http://192.168.0.107:80 "GET /dev-api/system/notice/list?noticeTitle=%E5%88%97%E8%A1%A8%E6%A3%80%E7%B4%A2%E4%B8%93%E7%94%A8_6d1b6ff5ae HTTP/1.1" 200 None
-11:01:27 [DEBUG] urllib3.connectionpool: Resetting dropped connection: 192.168.0.107
-11:01:27 [DEBUG] urllib3.connectionpool: http://192.168.0.107:80 "DELETE /dev-api/system/notice/10 HTTP/1.1" 200 None
-11:01:27 [DEBUG] urllib3.connectionpool: Starting new HTTP connection (1): 192.168.0.107:80
-11:01:27 [DEBUG] urllib3.connectionpool: http://192.168.0.107:80 "POST /dev-api/auth/login HTTP/1.1" 200 None
-11:01:27 [DEBUG] urllib3.connectionpool: Starting new HTTP connection (1): 192.168.0.107:80
-11:01:27 [DEBUG] urllib3.connectionpool: http://192.168.0.107:80 "POST /dev-api/system/notice HTTP/1.1" 200 None
-11:01:27 [DEBUG] urllib3.connectionpool: Resetting dropped connection: 192.168.0.107
-11:01:27 [DEBUG] urllib3.connectionpool: http://192.168.0.107:80 "DELETE /dev-api/system/notice/11 HTTP/1.1" 200 None
-11:01:27 [DEBUG] urllib3.connectionpool: Starting new HTTP connection (1): 192.168.0.107:80
-11:01:27 [DEBUG] urllib3.connectionpool: http://192.168.0.107:80 "POST /dev-api/auth/login HTTP/1.1" 200 None
-11:01:27 [DEBUG] urllib3.connectionpool: Starting new HTTP connection (1): 192.168.0.107:80
-11:01:27 [DEBUG] urllib3.connectionpool: http://192.168.0.107:80 "POST /dev-api/system/notice HTTP/1.1" 200 None
-11:01:27 [DEBUG] urllib3.connectionpool: Resetting dropped connection: 192.168.0.107
-11:01:27 [DEBUG] urllib3.connectionpool: http://192.168.0.107:80 "DELETE /dev-api/system/notice/12 HTTP/1.1" 200 None
-11:01:27 [DEBUG] urllib3.connectionpool: Starting new HTTP connection (1): 192.168.0.107:80
-11:01:27 [DEBUG] urllib3.connectionpool: http://192.168.0.107:80 "POST /dev-api/system/notice HTTP/1.1" 200 39
-11:01:27 [DEBUG] urllib3.connectionpool: Starting new HTTP connection (1): 192.168.0.107:80
-11:01:27 [DEBUG] urllib3.connectionpool: http://192.168.0.107:80 "POST /dev-api/auth/login HTTP/1.1" 200 None
-11:01:27 [DEBUG] urllib3.connectionpool: Starting new HTTP connection (1): 192.168.0.107:80
-11:01:27 [DEBUG] urllib3.connectionpool: http://192.168.0.107:80 "POST /dev-api/system/notice HTTP/1.1" 200 None
-11:01:27 [DEBUG] urllib3.connectionpool: Resetting dropped connection: 192.168.0.107
-11:01:27 [DEBUG] urllib3.connectionpool: http://192.168.0.107:80 "GET /dev-api/system/notice/13 HTTP/1.1" 200 None
-11:01:27 [DEBUG] urllib3.connectionpool: Resetting dropped connection: 192.168.0.107
-11:01:27 [DEBUG] urllib3.connectionpool: http://192.168.0.107:80 "DELETE /dev-api/system/notice/13 HTTP/1.1" 200 None
-11:01:27 [DEBUG] urllib3.connectionpool: Starting new HTTP connection (1): 192.168.0.107:80
-11:01:28 [DEBUG] urllib3.connectionpool: http://192.168.0.107:80 "POST /dev-api/auth/login HTTP/1.1" 200 None
-11:01:28 [DEBUG] urllib3.connectionpool: Starting new HTTP connection (1): 192.168.0.107:80
-11:01:28 [DEBUG] urllib3.connectionpool: http://192.168.0.107:80 "POST /dev-api/system/notice HTTP/1.1" 200 None
-11:01:28 [DEBUG] urllib3.connectionpool: Resetting dropped connection: 192.168.0.107
-11:01:28 [DEBUG] urllib3.connectionpool: http://192.168.0.107:80 "PUT /dev-api/system/notice HTTP/1.1" 200 None
-11:01:28 [DEBUG] urllib3.connectionpool: Resetting dropped connection: 192.168.0.107
-11:01:28 [DEBUG] urllib3.connectionpool: http://192.168.0.107:80 "GET /dev-api/system/notice/14 HTTP/1.1" 200 None
-11:01:28 [DEBUG] urllib3.connectionpool: Resetting dropped connection: 192.168.0.107
-11:01:28 [DEBUG] urllib3.connectionpool: http://192.168.0.107:80 "DELETE /dev-api/system/notice/14 HTTP/1.1" 200 None
-11:01:28 [DEBUG] urllib3.connectionpool: Starting new HTTP connection (1): 192.168.0.107:80
-11:01:28 [DEBUG] urllib3.connectionpool: http://192.168.0.107:80 "POST /dev-api/auth/login HTTP/1.1" 200 None
-11:01:28 [DEBUG] urllib3.connectionpool: Starting new HTTP connection (1): 192.168.0.107:80
-11:01:28 [DEBUG] urllib3.connectionpool: http://192.168.0.107:80 "POST /dev-api/system/notice HTTP/1.1" 200 None
-11:01:28 [DEBUG] urllib3.connectionpool: Resetting dropped connection: 192.168.0.107
-11:01:28 [DEBUG] urllib3.connectionpool: http://192.168.0.107:80 "DELETE /dev-api/system/notice/15 HTTP/1.1" 200 None
-11:01:28 [DEBUG] urllib3.connectionpool: Starting new HTTP connection (1): 192.168.0.107:80
-11:01:28 [DEBUG] urllib3.connectionpool: http://192.168.0.107:80 "POST /dev-api/auth/login HTTP/1.1" 200 None
-11:01:28 [DEBUG] urllib3.connectionpool: Starting new HTTP connection (1): 192.168.0.107:80
-11:01:28 [DEBUG] urllib3.connectionpool: http://192.168.0.107:80 "POST /dev-api/system/notice HTTP/1.1" 200 None
-11:01:28 [DEBUG] urllib3.connectionpool: Resetting dropped connection: 192.168.0.107
-11:01:28 [DEBUG] urllib3.connectionpool: http://192.168.0.107:80 "POST /dev-api/system/notice HTTP/1.1" 200 None
-11:01:28 [DEBUG] urllib3.connectionpool: Resetting dropped connection: 192.168.0.107
-11:01:28 [DEBUG] urllib3.connectionpool: http://192.168.0.107:80 "DELETE /dev-api/system/notice/16,17 HTTP/1.1" 200 None
-11:01:28 [DEBUG] urllib3.connectionpool: Starting new HTTP connection (1): 192.168.0.107:80
-11:01:29 [DEBUG] urllib3.connectionpool: http://192.168.0.107:80 "POST /dev-api/auth/login HTTP/1.1" 200 None
-11:01:29 [DEBUG] urllib3.connectionpool: Starting new HTTP connection (1): 192.168.0.107:80
-11:01:29 [DEBUG] urllib3.connectionpool: http://192.168.0.107:80 "DELETE /dev-api/system/notice/99999999 HTTP/1.1" 200 None
-11:01:29 [DEBUG] urllib3.connectionpool: Starting new HTTP connection (1): 192.168.0.107:80
-11:01:29 [DEBUG] urllib3.connectionpool: http://192.168.0.107:80 "POST /dev-api/auth/login HTTP/1.1" 200 None
-11:01:29 [DEBUG] urllib3.connectionpool: Starting new HTTP connection (1): 192.168.0.107:80
-11:01:29 [DEBUG] urllib3.connectionpool: http://192.168.0.107:80 "GET /dev-api/system/notice/99999999 HTTP/1.1" 200 None
+14:08:58 [DEBUG] pymongo.topology: {"message": "Starting topology monitoring", "topologyId": {"$oid": "69f594fa912191abcc787235"}}
+14:08:58 [DEBUG] pymongo.topology: {"message": "Topology description changed", "topologyId": {"$oid": "69f594fa912191abcc787235"}, "previousDescription": "<TopologyDescription id: 69f594fa912191abcc787235, topology_type: Unknown, servers: []>", "newDescription": "<TopologyDescription id: 69f594fa912191abcc787235, topology_type: Unknown, servers: [<ServerDescription ('192.168.0.107', 27018) server_type: Unknown, rtt: None>]>"}
+14:08:58 [DEBUG] pymongo.topology: {"message": "Starting server monitoring", "topologyId": {"$oid": "69f594fa912191abcc787235"}, "serverHost": "192.168.0.107", "serverPort": 27018}
+14:08:58 [DEBUG] pymongo.connection: {"message": "Connection pool created", "clientId": {"$oid": "69f594fa912191abcc787235"}, "serverHost": "192.168.0.107", "serverPort": 27018, "maxPoolSize": 20}
+14:08:58 [DEBUG] pymongo.serverSelection: {"message": "Server selection started", "selector": "Primary()", "operation": "buildinfo", "topologyDescription": "<TopologyDescription id: 69f594fa912191abcc787235, topology_type: Unknown, servers: [<ServerDescription ('192.168.0.107', 27018) server_type: Unknown, rtt: None>]>", "clientId": {"$oid": "69f594fa912191abcc787235"}}
+14:08:58 [DEBUG] pymongo.serverSelection: {"message": "Waiting for suitable server to become available", "selector": "Primary()", "operation": "buildinfo", "topologyDescription": "<TopologyDescription id: 69f594fa912191abcc787235, topology_type: Unknown, servers: [<ServerDescription ('192.168.0.107', 27018) server_type: Unknown, rtt: None>]>", "clientId": {"$oid": "69f594fa912191abcc787235"}, "remainingTimeMS": 2999}
+14:08:58 [DEBUG] pymongo.topology: {"message": "Server heartbeat started", "topologyId": {"$oid": "69f594fa912191abcc787235"}, "driverConnectionId": 1, "serverHost": "192.168.0.107", "serverPort": 27018, "awaited": false}
+14:08:58 [DEBUG] pymongo.topology: {"message": "Server heartbeat succeeded", "topologyId": {"$oid": "69f594fa912191abcc787235"}, "driverConnectionId": 1, "serverConnectionId": 49, "serverHost": "192.168.0.107", "serverPort": 27018, "awaited": false, "durationMS": 40.322000000742264, "reply": "{\"helloOk\": true, \"ismaster\": true, \"topologyVersion\": {\"processId\": {\"$oid\": \"69f5619d50dab230c2adbd86\"}}, \"maxBsonObjectSize\": 16777216, \"maxMessageSizeBytes\": 48000000, \"maxWriteBatchSize\": 100000, \"localTime\": {\"$date\": \"2026-05-02T06:08:57.722Z\"}, \"logicalSessionTimeoutMinutes\": 30, \"connectionId\": 49, \"maxWireVersion\": 27, \"ok\": 1.0}"}
+14:08:58 [DEBUG] pymongo.connection: {"message": "Connection pool ready", "clientId": {"$oid": "69f594fa912191abcc787235"}, "serverHost": "192.168.0.107", "serverPort": 27018}
+14:08:58 [DEBUG] pymongo.topology: {"message": "Topology description changed", "topologyId": {"$oid": "69f594fa912191abcc787235"}, "previousDescription": "<TopologyDescription id: 69f594fa912191abcc787235, topology_type: Unknown, servers: [<ServerDescription ('192.168.0.107', 27018) server_type: Unknown, rtt: None>]>", "newDescription": "<TopologyDescription id: 69f594fa912191abcc787235, topology_type: Single, servers: [<ServerDescription ('192.168.0.107', 27018) server_type: Standalone, rtt: 0.040322000000742264>]>"}
+14:08:58 [DEBUG] pymongo.serverSelection: {"message": "Server selection succeeded", "selector": "Primary()", "operation": "buildinfo", "topologyDescription": "<TopologyDescription id: 69f594fa912191abcc787235, topology_type: Single, servers: [<ServerDescription ('192.168.0.107', 27018) server_type: Standalone, rtt: 0.040322000000742264>]>", "clientId": {"$oid": "69f594fa912191abcc787235"}, "serverHost": "192.168.0.107", "serverPort": 27018}
+14:08:58 [DEBUG] pymongo.connection: {"message": "Connection checkout started", "clientId": {"$oid": "69f594fa912191abcc787235"}, "serverHost": "192.168.0.107", "serverPort": 27018}
+14:08:58 [DEBUG] pymongo.connection: {"message": "Connection created", "clientId": {"$oid": "69f594fa912191abcc787235"}, "serverHost": "192.168.0.107", "serverPort": 27018, "driverConnectionId": 1}
+14:08:58 [DEBUG] pymongo.topology: {"message": "Server heartbeat started", "topologyId": {"$oid": "69f594fa912191abcc787235"}, "driverConnectionId": 1, "serverConnectionId": 49, "serverHost": "192.168.0.107", "serverPort": 27018, "awaited": true}
+14:08:58 [DEBUG] pymongo.connection: {"message": "Connection ready", "clientId": {"$oid": "69f594fa912191abcc787235"}, "serverHost": "192.168.0.107", "serverPort": 27018, "driverConnectionId": 1, "durationMS": 0.01046991600014735}
+14:08:58 [DEBUG] pymongo.connection: {"message": "Connection checked out", "clientId": {"$oid": "69f594fa912191abcc787235"}, "serverHost": "192.168.0.107", "serverPort": 27018, "driverConnectionId": 1, "durationMS": 0.01793158300279174}
+14:08:58 [DEBUG] pymongo.command: {"message": "Command started", "clientId": {"$oid": "69f594fa912191abcc787235"}, "command": "{\"buildinfo\": 1, \"lsid\": {\"id\": {\"$binary\": {\"base64\": \"fMR6nC+sT6acKGf0im4ZlQ==\", \"subType\": \"04\"}}}, \"$db\": \"admin\"}", "commandName": "buildinfo", "databaseName": "admin", "requestId": 1144108930, "operationId": 1144108930, "driverConnectionId": 1, "serverConnectionId": 51, "serverHost": "192.168.0.107", "serverPort": 27018}
+14:08:58 [DEBUG] pymongo.command: {"message": "Command succeeded", "clientId": {"$oid": "69f594fa912191abcc787235"}, "durationMS": 5.0569999999999995, "reply": "{\"version\": \"8.2.7\", \"versionArray\": [8, 2, 7], \"gitVersion\": \"8f6785264a643d2eeb5e4046f7876a23e40e1a09\", \"allocator\": \"tcmalloc-google\", \"javascriptEngine\": \"mozjs\", \"sysinfo\": \"deprecated\", \"openssl\": {\"running\": \"OpenSSL 3.0.13 30 Jan 2024\", \"compiled\": \"OpenSSL 3.0.13 30 Jan 2024\"}, \"buildEnvironment\": {\"distmod\": \"ubuntu2404\", \"distarch\": \"x86_64\", \"cc\": \"external/mongo_toolchain_v5/v5/bin/gcc: gcc (GCC) 14.2.0\nCopyright (C) 2024 Free Software Foundation, Inc.\nThis is free software; see the source for copying conditions.  There is NO\nwarranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.\n\n\", \"ccflags\": \"-U_FORTIFY_SOURCE -std=c++20 -nostdinc++ -Wall -Wsign-compare -Winvalid-pch -Wno-missing-braces -Wno-psabi -Bexternal/mongo_toolchain_v5/v5/bin -Bexternal/mongo_toolchain_v5/stow/gcc-v5/libexec/gcc/x86_64-mongodb-linux/14.2.0 -Bexternal/mongo_toolchain_v5/stow/gcc-v5/lib/gcc/x86_64-mongodb-linux/14.2.0 -Bexternal/mongo_toolchain_v5/stow/llvm-v5/bin -fPIE -...", "commandName": "buildinfo", "databaseName": "admin", "requestId": 1144108930, "operationId": 1144108930, "driverConnectionId": 1, "serverConnectionId": 51, "serverHost": "192.168.0.107", "serverPort": 27018}
+14:08:58 [DEBUG] pymongo.connection: {"message": "Connection checked in", "clientId": {"$oid": "69f594fa912191abcc787235"}, "serverHost": "192.168.0.107", "serverPort": 27018, "driverConnectionId": 1}
+14:08:58 [DEBUG] faker.factory: Looking for locale `en_US` in provider `faker.providers.address`.
+14:08:58 [DEBUG] faker.factory: Provider `faker.providers.address` has been localized to `en_US`.
+14:08:58 [DEBUG] faker.factory: Looking for locale `en_US` in provider `faker.providers.automotive`.
+14:08:58 [DEBUG] faker.factory: Provider `faker.providers.automotive` has been localized to `en_US`.
+14:08:58 [DEBUG] faker.factory: Looking for locale `en_US` in provider `faker.providers.bank`.
+14:08:58 [DEBUG] faker.factory: Specified locale `en_US` is not available for provider `faker.providers.bank`. Locale reset to `en_GB` for this provider.
+14:08:58 [DEBUG] faker.factory: Looking for locale `en_US` in provider `faker.providers.barcode`.
+14:08:58 [DEBUG] faker.factory: Provider `faker.providers.barcode` has been localized to `en_US`.
+14:08:58 [DEBUG] faker.factory: Looking for locale `en_US` in provider `faker.providers.color`.
+14:08:58 [DEBUG] faker.factory: Provider `faker.providers.color` has been localized to `en_US`.
+14:08:58 [DEBUG] faker.factory: Looking for locale `en_US` in provider `faker.providers.company`.
+14:08:58 [DEBUG] faker.factory: Provider `faker.providers.company` has been localized to `en_US`.
+14:08:58 [DEBUG] faker.factory: Looking for locale `en_US` in provider `faker.providers.credit_card`.
+14:08:58 [DEBUG] faker.factory: Provider `faker.providers.credit_card` has been localized to `en_US`.
+14:08:58 [DEBUG] faker.factory: Looking for locale `en_US` in provider `faker.providers.currency`.
+14:08:58 [DEBUG] faker.factory: Provider `faker.providers.currency` has been localized to `en_US`.
+14:08:58 [DEBUG] faker.factory: Looking for locale `en_US` in provider `faker.providers.date_time`.
+14:08:58 [DEBUG] faker.factory: Provider `faker.providers.date_time` has been localized to `en_US`.
+14:08:58 [DEBUG] faker.factory: Provider `faker.providers.emoji` does not feature localization. Specified locale `en_US` is not utilized for this provider.
+14:08:58 [DEBUG] faker.factory: Provider `faker.providers.file` does not feature localization. Specified locale `en_US` is not utilized for this provider.
+14:08:58 [DEBUG] faker.factory: Looking for locale `en_US` in provider `faker.providers.geo`.
+14:08:58 [DEBUG] faker.factory: Provider `faker.providers.geo` has been localized to `en_US`.
+14:08:58 [DEBUG] faker.factory: Looking for locale `en_US` in provider `faker.providers.internet`.
+14:08:58 [DEBUG] faker.factory: Provider `faker.providers.internet` has been localized to `en_US`.
+14:08:58 [DEBUG] faker.factory: Provider `faker.providers.isbn` does not feature localization. Specified locale `en_US` is not utilized for this provider.
+14:08:58 [DEBUG] faker.factory: Looking for locale `en_US` in provider `faker.providers.job`.
+14:08:58 [DEBUG] faker.factory: Provider `faker.providers.job` has been localized to `en_US`.
+14:08:58 [DEBUG] faker.factory: Looking for locale `en_US` in provider `faker.providers.lorem`.
+14:08:58 [DEBUG] faker.factory: Provider `faker.providers.lorem` has been localized to `en_US`.
+14:08:58 [DEBUG] faker.factory: Looking for locale `en_US` in provider `faker.providers.misc`.
+14:08:58 [DEBUG] faker.factory: Provider `faker.providers.misc` has been localized to `en_US`.
+14:08:58 [DEBUG] faker.factory: Looking for locale `en_US` in provider `faker.providers.passport`.
+14:08:58 [DEBUG] faker.factory: Provider `faker.providers.passport` has been localized to `en_US`.
+14:08:58 [DEBUG] faker.factory: Looking for locale `en_US` in provider `faker.providers.person`.
+14:08:58 [DEBUG] faker.factory: Provider `faker.providers.person` has been localized to `en_US`.
+14:08:58 [DEBUG] faker.factory: Looking for locale `en_US` in provider `faker.providers.phone_number`.
+14:08:58 [DEBUG] faker.factory: Provider `faker.providers.phone_number` has been localized to `en_US`.
+14:08:58 [DEBUG] faker.factory: Provider `faker.providers.profile` does not feature localization. Specified locale `en_US` is not utilized for this provider.
+14:08:58 [DEBUG] faker.factory: Provider `faker.providers.python` does not feature localization. Specified locale `en_US` is not utilized for this provider.
+14:08:58 [DEBUG] faker.factory: Provider `faker.providers.sbn` does not feature localization. Specified locale `en_US` is not utilized for this provider.
+14:08:58 [DEBUG] faker.factory: Looking for locale `en_US` in provider `faker.providers.ssn`.
+14:08:58 [DEBUG] faker.factory: Provider `faker.providers.ssn` has been localized to `en_US`.
+14:08:58 [DEBUG] faker.factory: Provider `faker.providers.user_agent` does not feature localization. Specified locale `en_US` is not utilized for this provider.
+14:08:58 [DEBUG] urllib3.connectionpool: Starting new HTTP connection (1): 127.0.0.1:7890
+14:08:58 [DEBUG] urllib3.connectionpool: http://127.0.0.1:7890 "POST http://192.168.0.107/dev-api/auth/login HTTP/1.1" 200 None
+14:08:58 [DEBUG] urllib3.connectionpool: Starting new HTTP connection (1): 127.0.0.1:7890
+14:08:59 [DEBUG] urllib3.connectionpool: http://127.0.0.1:7890 "POST http://192.168.0.107/dev-api/system/user HTTP/1.1" 200 None
+14:08:59 [DEBUG] urllib3.connectionpool: Starting new HTTP connection (1): 127.0.0.1:7890
+14:08:59 [DEBUG] urllib3.connectionpool: http://127.0.0.1:7890 "POST http://192.168.0.107/dev-api/auth/login HTTP/1.1" 200 None
+14:08:59 [DEBUG] urllib3.connectionpool: Starting new HTTP connection (1): 127.0.0.1:7890
+14:08:59 [DEBUG] urllib3.connectionpool: http://127.0.0.1:7890 "POST http://192.168.0.107/dev-api/system/user HTTP/1.1" 200 None
+14:08:59 [DEBUG] urllib3.connectionpool: Starting new HTTP connection (1): 127.0.0.1:7890
+14:08:59 [DEBUG] urllib3.connectionpool: http://127.0.0.1:7890 "POST http://192.168.0.107/dev-api/auth/login HTTP/1.1" 200 None
+14:08:59 [DEBUG] urllib3.connectionpool: Starting new HTTP connection (1): 127.0.0.1:7890
+14:08:59 [DEBUG] urllib3.connectionpool: http://127.0.0.1:7890 "POST http://192.168.0.107/dev-api/system/user HTTP/1.1" 200 None
+14:08:59 [DEBUG] urllib3.connectionpool: Starting new HTTP connection (1): 127.0.0.1:7890
+14:08:59 [DEBUG] urllib3.connectionpool: http://127.0.0.1:7890 "POST http://192.168.0.107/dev-api/auth/login HTTP/1.1" 200 None
+14:08:59 [DEBUG] urllib3.connectionpool: Starting new HTTP connection (1): 127.0.0.1:7890
+14:08:59 [DEBUG] urllib3.connectionpool: http://127.0.0.1:7890 "POST http://192.168.0.107/dev-api/system/role HTTP/1.1" 200 None
+14:08:59 [DEBUG] urllib3.connectionpool: Starting new HTTP connection (1): 127.0.0.1:7890
+14:09:00 [DEBUG] urllib3.connectionpool: http://127.0.0.1:7890 "POST http://192.168.0.107/dev-api/auth/login HTTP/1.1" 200 None
+14:09:00 [DEBUG] urllib3.connectionpool: Starting new HTTP connection (1): 127.0.0.1:7890
+14:09:00 [DEBUG] urllib3.connectionpool: http://127.0.0.1:7890 "POST http://192.168.0.107/dev-api/system/role HTTP/1.1" 200 None
+14:09:00 [DEBUG] urllib3.connectionpool: Starting new HTTP connection (1): 127.0.0.1:7890
+14:09:00 [DEBUG] urllib3.connectionpool: http://127.0.0.1:7890 "POST http://192.168.0.107/dev-api/auth/login HTTP/1.1" 200 None
+14:09:00 [DEBUG] urllib3.connectionpool: Starting new HTTP connection (1): 127.0.0.1:7890
+14:09:00 [DEBUG] urllib3.connectionpool: http://127.0.0.1:7890 "POST http://192.168.0.107/dev-api/system/role HTTP/1.1" 200 None
+14:09:00 [DEBUG] urllib3.connectionpool: Starting new HTTP connection (1): 127.0.0.1:7890
+14:09:00 [DEBUG] urllib3.connectionpool: http://127.0.0.1:7890 "POST http://192.168.0.107/dev-api/auth/login HTTP/1.1" 200 None
+14:09:00 [DEBUG] urllib3.connectionpool: Starting new HTTP connection (1): 127.0.0.1:7890
+14:09:00 [DEBUG] urllib3.connectionpool: http://127.0.0.1:7890 "POST http://192.168.0.107/dev-api/system/post HTTP/1.1" 200 None
+14:09:00 [DEBUG] urllib3.connectionpool: Starting new HTTP connection (1): 127.0.0.1:7890
+14:09:00 [DEBUG] urllib3.connectionpool: http://127.0.0.1:7890 "POST http://192.168.0.107/dev-api/auth/login HTTP/1.1" 200 None
+14:09:00 [DEBUG] urllib3.connectionpool: Starting new HTTP connection (1): 127.0.0.1:7890
+14:09:00 [DEBUG] urllib3.connectionpool: http://127.0.0.1:7890 "POST http://192.168.0.107/dev-api/system/post HTTP/1.1" 200 None
+14:09:00 [DEBUG] urllib3.connectionpool: Starting new HTTP connection (1): 127.0.0.1:7890
+14:09:00 [DEBUG] urllib3.connectionpool: http://127.0.0.1:7890 "POST http://192.168.0.107/dev-api/auth/login HTTP/1.1" 200 None
+14:09:00 [DEBUG] urllib3.connectionpool: Starting new HTTP connection (1): 127.0.0.1:7890
+14:09:00 [DEBUG] urllib3.connectionpool: http://127.0.0.1:7890 "POST http://192.168.0.107/dev-api/system/post HTTP/1.1" 200 None
+14:09:00 [DEBUG] urllib3.connectionpool: Starting new HTTP connection (1): 127.0.0.1:7890
+14:09:00 [DEBUG] urllib3.connectionpool: http://127.0.0.1:7890 "POST http://192.168.0.107/dev-api/auth/login HTTP/1.1" 200 None
+14:09:00 [DEBUG] pymongo.serverSelection: {"message": "Server selection started", "selector": "<function writable_server_selector at 0x105616840>", "operation": "insert", "operationId": 524015684, "topologyDescription": "<TopologyDescription id: 69f594fa912191abcc787235, topology_type: Single, servers: [<ServerDescription ('192.168.0.107', 27018) server_type: Standalone, rtt: 0.040322000000742264>]>", "clientId": {"$oid": "69f594fa912191abcc787235"}}
+14:09:00 [DEBUG] pymongo.serverSelection: {"message": "Server selection succeeded", "selector": "<function writable_server_selector at 0x105616840>", "operation": "insert", "operationId": 524015684, "topologyDescription": "<TopologyDescription id: 69f594fa912191abcc787235, topology_type: Single, servers: [<ServerDescription ('192.168.0.107', 27018) server_type: Standalone, rtt: 0.040322000000742264>]>", "clientId": {"$oid": "69f594fa912191abcc787235"}, "serverHost": "192.168.0.107", "serverPort": 27018}
+14:09:00 [DEBUG] pymongo.connection: {"message": "Connection checkout started", "clientId": {"$oid": "69f594fa912191abcc787235"}, "serverHost": "192.168.0.107", "serverPort": 27018}
+14:09:00 [DEBUG] pymongo.connection: {"message": "Connection checked out", "clientId": {"$oid": "69f594fa912191abcc787235"}, "serverHost": "192.168.0.107", "serverPort": 27018, "driverConnectionId": 1, "durationMS": 0.00019354101095814258}
+14:09:00 [DEBUG] pymongo.command: {"message": "Command started", "clientId": {"$oid": "69f594fa912191abcc787235"}, "command": "{\"insert\": \"api_logs\", \"lsid\": {\"id\": {\"$binary\": {\"base64\": \"fMR6nC+sT6acKGf0im4ZlQ==\", \"subType\": \"04\"}}}, \"$db\": \"finance_auto_logs\", \"documents\": [{\"trace_id\": \"1eb166f2-7456-4ab8-ba5f-dacaee586396\", \"test_run_id\": \"98c0d4b5-0319-4da0-8765-830bdef0747b\", \"pytest_nodeid\": \"tests/test_system/test_batch_add_data.py::TestBatchAddData::test_add_user[0]\", \"created_at\": {\"$date\": \"2026-05-02T06:08:58.747Z\"}, \"method\": \"POST\", \"url\": \"http://192.168.0.107/dev-api/auth/login\", \"request_headers\": {\"User-Agent\": \"python-requests/2.31.0\", \"Accept-Encoding\": \"gzip, deflate\", \"Accept\": \"application/json\", \"Connection\": \"keep-alive\", \"Content-Type\": \"application/json\", \"X-Trace-Id\": \"1eb166f2-7456-4ab8-ba5f-dacaee586396\"}, \"request_body\": {\"username\": \"admin\", \"password\": \"***\"}, \"status_code\": 200, \"response_body\": {\"code\": 200, \"data\": {\"access_token\": \"eyJhbGciOiJIUzUxMiJ9.eyJ1c2VyX2lkIjoxLCJ1c2VyX2tleSI6IjViZWRlYTg4LTc2ZmUtNGJkZC1iOTg1LTdhZjJjMWNkMGE0YSIsInVzZXJuYW1lIjoiYWRtaW4ifQ.i7cNirwKwhf...", "commandName": "insert", "databaseName": "finance_auto_logs", "requestId": 470211272, "operationId": 470211272, "driverConnectionId": 1, "serverConnectionId": 51, "serverHost": "192.168.0.107", "serverPort": 27018}
+14:09:00 [DEBUG] urllib3.connectionpool: Starting new HTTP connection (1): 127.0.0.1:7890
+14:09:00 [DEBUG] pymongo.command: {"message": "Command succeeded", "clientId": {"$oid": "69f594fa912191abcc787235"}, "durationMS": 13.350000000000001, "reply": "{\"n\": 19, \"ok\": 1.0}", "commandName": "insert", "databaseName": "finance_auto_logs", "requestId": 470211272, "operationId": 470211272, "driverConnectionId": 1, "serverConnectionId": 51, "serverHost": "192.168.0.107", "serverPort": 27018}
+14:09:00 [DEBUG] pymongo.connection: {"message": "Connection checked in", "clientId": {"$oid": "69f594fa912191abcc787235"}, "serverHost": "192.168.0.107", "serverPort": 27018, "driverConnectionId": 1}
+14:09:00 [DEBUG] urllib3.connectionpool: http://127.0.0.1:7890 "POST http://192.168.0.107/dev-api/system/notice HTTP/1.1" 200 None
+14:09:00 [DEBUG] urllib3.connectionpool: Starting new HTTP connection (1): 127.0.0.1:7890
+14:09:00 [DEBUG] urllib3.connectionpool: http://127.0.0.1:7890 "POST http://192.168.0.107/dev-api/auth/login HTTP/1.1" 200 None
+14:09:00 [DEBUG] urllib3.connectionpool: Starting new HTTP connection (1): 127.0.0.1:7890
+14:09:00 [DEBUG] urllib3.connectionpool: http://127.0.0.1:7890 "POST http://192.168.0.107/dev-api/system/notice HTTP/1.1" 200 None
+14:09:00 [DEBUG] urllib3.connectionpool: Starting new HTTP connection (1): 127.0.0.1:7890
+14:09:01 [DEBUG] urllib3.connectionpool: http://127.0.0.1:7890 "POST http://192.168.0.107/dev-api/auth/login HTTP/1.1" 200 None
+14:09:01 [DEBUG] urllib3.connectionpool: Starting new HTTP connection (1): 127.0.0.1:7890
+14:09:01 [DEBUG] urllib3.connectionpool: http://127.0.0.1:7890 "POST http://192.168.0.107/dev-api/system/notice HTTP/1.1" 200 None
+14:09:01 [DEBUG] urllib3.connectionpool: Starting new HTTP connection (1): 127.0.0.1:7890
+14:09:01 [DEBUG] urllib3.connectionpool: http://127.0.0.1:7890 "POST http://192.168.0.107/dev-api/auth/login HTTP/1.1" 200 None
+14:09:01 [DEBUG] urllib3.connectionpool: Starting new HTTP connection (1): 127.0.0.1:7890
+14:09:01 [DEBUG] urllib3.connectionpool: http://127.0.0.1:7890 "POST http://192.168.0.107/dev-api/system/user HTTP/1.1" 200 None
+14:09:01 [DEBUG] urllib3.connectionpool: Starting new HTTP connection (1): 127.0.0.1:7890
+14:09:01 [DEBUG] urllib3.connectionpool: http://127.0.0.1:7890 "POST http://192.168.0.107/dev-api/system/role HTTP/1.1" 200 None
+14:09:01 [DEBUG] urllib3.connectionpool: Starting new HTTP connection (1): 127.0.0.1:7890
+14:09:01 [DEBUG] urllib3.connectionpool: http://127.0.0.1:7890 "POST http://192.168.0.107/dev-api/system/post HTTP/1.1" 200 None
+14:09:01 [DEBUG] urllib3.connectionpool: Starting new HTTP connection (1): 127.0.0.1:7890
+14:09:01 [DEBUG] urllib3.connectionpool: http://127.0.0.1:7890 "POST http://192.168.0.107/dev-api/system/notice HTTP/1.1" 200 None
+14:09:01 [DEBUG] urllib3.connectionpool: Starting new HTTP connection (1): 127.0.0.1:7890
+14:09:01 [DEBUG] urllib3.connectionpool: http://127.0.0.1:7890 "POST http://192.168.0.107/dev-api/auth/login HTTP/1.1" 200 None
+14:09:01 [DEBUG] urllib3.connectionpool: Starting new HTTP connection (1): 127.0.0.1:7890
+14:09:01 [DEBUG] urllib3.connectionpool: http://127.0.0.1:7890 "POST http://192.168.0.107/dev-api/system/user HTTP/1.1" 200 None
+14:09:01 [DEBUG] urllib3.connectionpool: Starting new HTTP connection (1): 127.0.0.1:7890
+14:09:01 [DEBUG] urllib3.connectionpool: http://127.0.0.1:7890 "POST http://192.168.0.107/dev-api/system/role HTTP/1.1" 200 None
+14:09:01 [DEBUG] urllib3.connectionpool: Starting new HTTP connection (1): 127.0.0.1:7890
+14:09:01 [DEBUG] urllib3.connectionpool: http://127.0.0.1:7890 "POST http://192.168.0.107/dev-api/system/post HTTP/1.1" 200 None
+14:09:01 [DEBUG] urllib3.connectionpool: Starting new HTTP connection (1): 127.0.0.1:7890
+14:09:01 [DEBUG] urllib3.connectionpool: http://127.0.0.1:7890 "POST http://192.168.0.107/dev-api/system/notice HTTP/1.1" 200 None
+14:09:01 [DEBUG] urllib3.connectionpool: Starting new HTTP connection (1): 127.0.0.1:7890
+14:09:01 [DEBUG] urllib3.connectionpool: http://127.0.0.1:7890 "POST http://192.168.0.107/dev-api/auth/login HTTP/1.1" 200 None
+14:09:01 [DEBUG] urllib3.connectionpool: Starting new HTTP connection (1): 127.0.0.1:7890
+14:09:01 [DEBUG] urllib3.connectionpool: http://127.0.0.1:7890 "POST http://192.168.0.107/dev-api/system/user HTTP/1.1" 200 None
+14:09:01 [DEBUG] urllib3.connectionpool: Starting new HTTP connection (1): 127.0.0.1:7890
+14:09:01 [DEBUG] urllib3.connectionpool: http://127.0.0.1:7890 "POST http://192.168.0.107/dev-api/system/role HTTP/1.1" 200 None
+14:09:01 [DEBUG] urllib3.connectionpool: Starting new HTTP connection (1): 127.0.0.1:7890
+14:09:02 [DEBUG] urllib3.connectionpool: http://127.0.0.1:7890 "POST http://192.168.0.107/dev-api/system/post HTTP/1.1" 200 None
+14:09:02 [DEBUG] urllib3.connectionpool: Starting new HTTP connection (1): 127.0.0.1:7890
+14:09:02 [DEBUG] urllib3.connectionpool: http://127.0.0.1:7890 "POST http://192.168.0.107/dev-api/system/notice HTTP/1.1" 200 None
+14:09:02 [DEBUG] pymongo.serverSelection: {"message": "Server selection started", "selector": "<function writable_server_selector at 0x105616840>", "operation": "insert", "operationId": -1749885119, "topologyDescription": "<TopologyDescription id: 69f594fa912191abcc787235, topology_type: Single, servers: [<ServerDescription ('192.168.0.107', 27018) server_type: Standalone, rtt: 0.040322000000742264>]>", "clientId": {"$oid": "69f594fa912191abcc787235"}}
+14:09:02 [DEBUG] pymongo.serverSelection: {"message": "Server selection succeeded", "selector": "<function writable_server_selector at 0x105616840>", "operation": "insert", "operationId": -1749885119, "topologyDescription": "<TopologyDescription id: 69f594fa912191abcc787235, topology_type: Single, servers: [<ServerDescription ('192.168.0.107', 27018) server_type: Standalone, rtt: 0.040322000000742264>]>", "clientId": {"$oid": "69f594fa912191abcc787235"}, "serverHost": "192.168.0.107", "serverPort": 27018}
+14:09:02 [DEBUG] pymongo.connection: {"message": "Connection checkout started", "clientId": {"$oid": "69f594fa912191abcc787235"}, "serverHost": "192.168.0.107", "serverPort": 27018}
+14:09:02 [DEBUG] pymongo.connection: {"message": "Connection checked out", "clientId": {"$oid": "69f594fa912191abcc787235"}, "serverHost": "192.168.0.107", "serverPort": 27018, "driverConnectionId": 1, "durationMS": 0.0002279170003021136}
+14:09:02 [DEBUG] pymongo.command: {"message": "Command started", "clientId": {"$oid": "69f594fa912191abcc787235"}, "command": "{\"insert\": \"api_logs\", \"lsid\": {\"id\": {\"$binary\": {\"base64\": \"fMR6nC+sT6acKGf0im4ZlQ==\", \"subType\": \"04\"}}}, \"$db\": \"finance_auto_logs\", \"documents\": [{\"trace_id\": \"98dd901e-d7dc-4d06-b18a-4f0a766a3bb1\", \"test_run_id\": \"98c0d4b5-0319-4da0-8765-830bdef0747b\", \"pytest_nodeid\": \"tests/test_system/test_batch_add_data.py::TestBatchAddData::test_add_notice[0]\", \"created_at\": {\"$date\": \"2026-05-02T06:09:00.776Z\"}, \"method\": \"POST\", \"url\": \"http://192.168.0.107/dev-api/system/notice\", \"request_headers\": {\"User-Agent\": \"python-requests/2.31.0\", \"Accept-Encoding\": \"gzip, deflate\", \"Accept\": \"application/json\", \"Connection\": \"keep-alive\", \"Content-Type\": \"application/json\", \"Authorization\": \"***\", \"X-Trace-Id\": \"98dd901e-d7dc-4d06-b18a-4f0a766a3bb1\"}, \"request_body\": {\"noticeTitle\": \"\u6279\u91cf\u516c\u544a_685642ee\", \"noticeType\": \"1\", \"noticeContent\": \"\u7b2c1\u8f6e\u6279\u91cf\u65b0\u589e\u516c\u544a\u6b63\u6587\uff0c\u6570\u636e\u4fdd\u7559\u4e0d\u5220\u9664\", \"status\": \"0\", \"remark\": \"...", "commandName": "insert", "databaseName": "finance_auto_logs", "requestId": 101027544, "operationId": 101027544, "driverConnectionId": 1, "serverConnectionId": 51, "serverHost": "192.168.0.107", "serverPort": 27018}
+14:09:02 [DEBUG] pymongo.command: {"message": "Command succeeded", "clientId": {"$oid": "69f594fa912191abcc787235"}, "durationMS": 8.055, "reply": "{\"n\": 20, \"ok\": 1.0}", "commandName": "insert", "databaseName": "finance_auto_logs", "requestId": 101027544, "operationId": 101027544, "driverConnectionId": 1, "serverConnectionId": 51, "serverHost": "192.168.0.107", "serverPort": 27018}
+14:09:02 [DEBUG] pymongo.connection: {"message": "Connection checked in", "clientId": {"$oid": "69f594fa912191abcc787235"}, "serverHost": "192.168.0.107", "serverPort": 27018, "driverConnectionId": 1}
+14:09:02 [DEBUG] pymongo.serverSelection: {"message": "Server selection started", "selector": "PrimaryPreferred(tag_sets=None, max_staleness=-1, hedge=None)", "operation": "endSessions", "topologyDescription": "<TopologyDescription id: 69f594fa912191abcc787235, topology_type: Single, servers: [<ServerDescription ('192.168.0.107', 27018) server_type: Standalone, rtt: 0.040322000000742264>]>", "clientId": {"$oid": "69f594fa912191abcc787235"}}
+14:09:02 [DEBUG] pymongo.serverSelection: {"message": "Server selection succeeded", "selector": "PrimaryPreferred(tag_sets=None, max_staleness=-1, hedge=None)", "operation": "endSessions", "topologyDescription": "<TopologyDescription id: 69f594fa912191abcc787235, topology_type: Single, servers: [<ServerDescription ('192.168.0.107', 27018) server_type: Standalone, rtt: 0.040322000000742264>]>", "clientId": {"$oid": "69f594fa912191abcc787235"}, "serverHost": "192.168.0.107", "serverPort": 27018}
+14:09:02 [DEBUG] pymongo.connection: {"message": "Connection checkout started", "clientId": {"$oid": "69f594fa912191abcc787235"}, "serverHost": "192.168.0.107", "serverPort": 27018}
+14:09:02 [DEBUG] pymongo.connection: {"message": "Connection checked out", "clientId": {"$oid": "69f594fa912191abcc787235"}, "serverHost": "192.168.0.107", "serverPort": 27018, "driverConnectionId": 1, "durationMS": 5.020799289923161e-05}
+14:09:02 [DEBUG] pymongo.command: {"message": "Command started", "clientId": {"$oid": "69f594fa912191abcc787235"}, "command": "{\"endSessions\": [{\"id\": {\"$binary\": {\"base64\": \"fMR6nC+sT6acKGf0im4ZlQ==\", \"subType\": \"04\"}}}], \"$db\": \"admin\"}", "commandName": "endSessions", "databaseName": "admin", "requestId": 1457850878, "operationId": 1457850878, "driverConnectionId": 1, "serverConnectionId": 51, "serverHost": "192.168.0.107", "serverPort": 27018}
+14:09:02 [DEBUG] pymongo.command: {"message": "Command succeeded", "clientId": {"$oid": "69f594fa912191abcc787235"}, "durationMS": 4.471, "reply": "{\"ok\": 1.0}", "commandName": "endSessions", "databaseName": "admin", "requestId": 1457850878, "operationId": 1457850878, "driverConnectionId": 1, "serverConnectionId": 51, "serverHost": "192.168.0.107", "serverPort": 27018}
+14:09:02 [DEBUG] pymongo.connection: {"message": "Connection checked in", "clientId": {"$oid": "69f594fa912191abcc787235"}, "serverHost": "192.168.0.107", "serverPort": 27018, "driverConnectionId": 1}
+14:09:02 [DEBUG] pymongo.topology: {"message": "Stopped server monitoring", "topologyId": {"$oid": "69f594fa912191abcc787235"}, "serverHost": "192.168.0.107", "serverPort": 27018}
+14:09:02 [DEBUG] pymongo.connection: {"message": "Connection closed", "clientId": {"$oid": "69f594fa912191abcc787235"}, "serverHost": "192.168.0.107", "serverPort": 27018, "driverConnectionId": 1, "reason": "Connection pool was closed", "error": "poolClosed"}
+14:09:02 [DEBUG] pymongo.connection: {"message": "Connection pool closed", "clientId": {"$oid": "69f594fa912191abcc787235"}, "serverHost": "192.168.0.107", "serverPort": 27018}
+14:09:02 [DEBUG] pymongo.topology: {"message": "Topology description changed", "topologyId": {"$oid": "69f594fa912191abcc787235"}, "previousDescription": "<TopologyDescription id: 69f594fa912191abcc787235, topology_type: Single, servers: [<ServerDescription ('192.168.0.107', 27018) server_type: Standalone, rtt: 0.040322000000742264>]>", "newDescription": "<TopologyDescription id: 69f594fa912191abcc787235, topology_type: Single, servers: [<ServerDescription ('192.168.0.107', 27018) server_type: Unknown, rtt: None>]>"}
+14:09:02 [DEBUG] pymongo.topology: {"message": "Stopped topology monitoring", "topologyId": {"$oid": "69f594fa912191abcc787235"}}

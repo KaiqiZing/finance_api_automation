@@ -12,6 +12,7 @@ SCHEMAS_DIR: Path = DATA_DIR / "schemas"
 OUTPUTS_DIR: Path = BASE_DIR / "outputs"
 LOGS_DIR: Path = OUTPUTS_DIR / "logs"
 ALLURE_RESULTS_DIR: Path = OUTPUTS_DIR / "allure_results"
+API_LOGS_DIR: Path = OUTPUTS_DIR / "api_logs"
 
-for _d in (LOGS_DIR, ALLURE_RESULTS_DIR, OUTPUTS_DIR / "screenshots"):
+for _d in (LOGS_DIR, ALLURE_RESULTS_DIR, OUTPUTS_DIR / "screenshots", API_LOGS_DIR):
     _d.mkdir(parents=True, exist_ok=True)

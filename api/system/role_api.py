@@ -37,26 +37,13 @@ from __future__ import annotations
 
 from typing import Any
 
-from api.base_api import BaseAPI
-from config.settings import cfg
-from core.request_wrapper import RequestConfig, RequestWrapper
+from api.system.base_system_api import SystemBaseAPI
 
 
-class SystemRoleAPI(BaseAPI):
+class SystemRoleAPI(SystemBaseAPI):
     """系统角色接口，需先注入 Token 才能请求。"""
 
     _MODULE = "system"
-
-    def __init__(self) -> None:
-        sys_cfg = cfg.get("system_api", {})
-        wrapper = RequestWrapper(
-            base_url=sys_cfg.get("base_url", "http://localhost:1024/dev-api"),
-            config=RequestConfig(
-                timeout=sys_cfg.get("timeout", 15),
-                verify_ssl=sys_cfg.get("verify_ssl", False),
-            ),
-        )
-        super().__init__(wrapper=wrapper)
 
     # ------------------------------------------------------------------
     # 3.1 获取角色列表
@@ -92,7 +79,10 @@ class SystemRoleAPI(BaseAPI):
             params["pageNum"] = page_num
         if page_size is not None:
             params["pageSize"] = page_size
-        return self._wrapper.get("/system/role/list", params=params or None)
+        return self._wrapper.get(
+            "/system/role/list", params=params or None,
+            _module="system", _api_name="list_roles", _business_type="system:role:list", _service="ruoyi",
+        )
 
     # ------------------------------------------------------------------
     # 3.2 新增角色
@@ -150,7 +140,10 @@ class SystemRoleAPI(BaseAPI):
             overrides["payload.remark"] = remark
 
         payload = self._build_payload(self._MODULE, "add_role", overrides or None)
-        return self._wrapper.post("/system/role", json=payload)
+        return self._wrapper.post(
+            "/system/role", json=payload,
+            _module="system", _api_name="add_role", _business_type="system:role:add", _service="ruoyi",
+        )
 
     # ------------------------------------------------------------------
     # 3.3 修改角色
@@ -209,7 +202,10 @@ class SystemRoleAPI(BaseAPI):
             overrides["payload.remark"] = remark
 
         payload = self._build_payload(self._MODULE, "update_role", overrides)
-        return self._wrapper.put("/system/role", json=payload)
+        return self._wrapper.put(
+            "/system/role", json=payload,
+            _module="system", _api_name="update_role", _business_type="system:role:edit", _service="ruoyi",
+        )
 
     # ------------------------------------------------------------------
     # 3.4 获取角色详情
@@ -227,7 +223,10 @@ class SystemRoleAPI(BaseAPI):
         Returns:
             响应 body，包含角色完整信息。
         """
-        return self._wrapper.get(f"/system/role/{role_id}")
+        return self._wrapper.get(
+            f"/system/role/{role_id}",
+            _module="system", _api_name="get_role", _business_type="system:role:query", _service="ruoyi",
+        )
 
     # ------------------------------------------------------------------
     # 3.5 删除角色
@@ -246,7 +245,10 @@ class SystemRoleAPI(BaseAPI):
             响应 body，成功时 ``code=200``，失败时 ``code=500`` 且 ``msg`` 含原因。
         """
         ids_str = ",".join(str(rid) for rid in role_ids)
-        return self._wrapper.delete(f"/system/role/{ids_str}")
+        return self._wrapper.delete(
+            f"/system/role/{ids_str}",
+            _module="system", _api_name="delete_roles", _business_type="system:role:remove", _service="ruoyi",
+        )
 
     # ------------------------------------------------------------------
     # 3.6 修改数据权限
@@ -280,7 +282,10 @@ class SystemRoleAPI(BaseAPI):
             overrides["payload.deptIds"] = dept_ids
 
         payload = self._build_payload(self._MODULE, "update_role_data_scope", overrides)
-        return self._wrapper.put("/system/role/dataScope", json=payload)
+        return self._wrapper.put(
+            "/system/role/dataScope", json=payload,
+            _module="system", _api_name="update_data_scope", _business_type="system:role:edit", _service="ruoyi",
+        )
 
     # ------------------------------------------------------------------
     # 3.7 角色状态修改
@@ -304,7 +309,10 @@ class SystemRoleAPI(BaseAPI):
             "payload.status": status,
         }
         payload = self._build_payload(self._MODULE, "change_role_status", overrides)
-        return self._wrapper.put("/system/role/changeStatus", json=payload)
+        return self._wrapper.put(
+            "/system/role/changeStatus", json=payload,
+            _module="system", _api_name="change_status", _business_type="system:role:edit", _service="ruoyi",
+        )
 
     # ------------------------------------------------------------------
     # 3.8 获取角色选择框
@@ -319,7 +327,10 @@ class SystemRoleAPI(BaseAPI):
         Returns:
             响应 body，包含可选角色列表。
         """
-        return self._wrapper.get("/system/role/optionselect")
+        return self._wrapper.get(
+            "/system/role/optionselect",
+            _module="system", _api_name="option_select", _business_type="system:role:query", _service="ruoyi",
+        )
 
     # ------------------------------------------------------------------
     # 3.9 已分配用户列表
@@ -355,7 +366,10 @@ class SystemRoleAPI(BaseAPI):
             params["pageNum"] = page_num
         if page_size is not None:
             params["pageSize"] = page_size
-        return self._wrapper.get("/system/role/authUser/allocatedList", params=params or None)
+        return self._wrapper.get(
+            "/system/role/authUser/allocatedList", params=params or None,
+            _module="system", _api_name="allocated_user_list", _business_type="system:role:list", _service="ruoyi",
+        )
 
     # ------------------------------------------------------------------
     # 3.10 未分配用户列表
@@ -391,4 +405,7 @@ class SystemRoleAPI(BaseAPI):
             params["pageNum"] = page_num
         if page_size is not None:
             params["pageSize"] = page_size
-        return self._wrapper.get("/system/role/authUser/unallocatedList", params=params or None)
+        return self._wrapper.get(
+            "/system/role/authUser/unallocatedList", params=params or None,
+            _module="system", _api_name="unallocated_user_list", _business_type="system:role:list", _service="ruoyi",
+        )
