@@ -8,7 +8,7 @@ system 模块只依赖 ry_cloud 数据库（sys_user 表），
 公共工具:
     gen_username()     — 生成唯一测试用户名（test_ 前缀）
     gen_phone()        — 生成唯一 11 位手机号（138 开头）
-    _login_and_get_token() — 用 admin 账号登录并返回 access_token
+    _login_and_get_token() — 从 cfg.system_api 读取凭据登录并返回 access_token
     system_token       — session 级 fixture，共享同一个 admin token
 """
 from __future__ import annotations
@@ -38,9 +38,13 @@ def gen_phone() -> str:
 
 
 def _login_and_get_token() -> str:
-    """用 admin 账号登录，返回 access_token。"""
+    """用配置文件中的默认账号登录，返回 access_token。
+
+    用户名/密码从 system_api.default_user / system_api.default_password 读取，
+    不在代码中硬编码，切换账号只需修改对应环境的 config/env_*.yaml。
+    """
     login_api = SystemLoginAPI()
-    resp = login_api.login(username="admin", password="admin123")
+    resp = login_api.login()  # 不传参，由 login_api 从 cfg.system_api 读取凭据
     assert resp.get("code") == 200, f"[conftest:system] 登录失败，无法获取 token: {resp}"
     return resp["data"]["access_token"]
 

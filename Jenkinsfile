@@ -26,8 +26,8 @@ pipeline {
         )
         choice(
             name: 'TEST_MARK',
-            choices: ['smoke', 'regression', 'account', 'payment', 'scenario', 'all'],
-            description: '执行的测试标签；all 表示不过滤'
+            choices: ['smoke', 'regression', 'system', 'scenario', 'all'],
+            description: '执行的测试标签；all 表示不过滤（data_seed 建议单独流水线执行）'
         )
         string(
             name: 'WORKERS',
