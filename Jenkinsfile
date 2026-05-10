@@ -7,6 +7,7 @@
  *   - 测试标签过滤（smoke / regression / 全量）
  *   - pytest-xdist 并发执行
  *   - Allure 报告发布
+ *   - ExtentReports HTML 报告生成与发布（pytest-html）
  *   - Coverage HTML 归档
  *   - 构建结果钉钉 / 邮件通知（按需开启）
  */
@@ -46,6 +47,7 @@ pipeline {
         VENV_DIR      = "${WORKSPACE}/.venv"
         ALLURE_RESULTS = "${WORKSPACE}/outputs/allure_results"
         ALLURE_REPORT  = "${WORKSPACE}/outputs/allure_report"
+        EXTENT_REPORT  = "${WORKSPACE}/outputs/extent_report"
         COVERAGE_HTML  = "${WORKSPACE}/outputs/coverage_html"
         LOG_DIR        = "${WORKSPACE}/outputs/logs"
         // 邮件通知收件人（多个地址用英文逗号分隔）
@@ -93,6 +95,9 @@ pipeline {
 
                     echo "=== 安装依赖 ==="
                     ${VENV_DIR}/bin/pip install -r requirements.txt --quiet
+
+                    echo "=== 安装 pytest-html（ExtentReports）==="
+                    ${VENV_DIR}/bin/pip install pytest-html --quiet
                 """
             }
         }
@@ -103,6 +108,7 @@ pipeline {
                 sh """
                     mkdir -p ${ALLURE_RESULTS}
                     mkdir -p ${ALLURE_REPORT}
+                    mkdir -p ${EXTENT_REPORT}
                     mkdir -p ${COVERAGE_HTML}
                     mkdir -p ${LOG_DIR}
                 """
@@ -118,11 +124,15 @@ pipeline {
                     def workerOpt = (params.WORKERS.toInteger() > 1) ? "-n ${params.WORKERS}" : ''
                     def failOpt   = params.FAILFAST ? '-x' : ''
 
+                    // ExtentReports: pytest-html 生成独立 HTML 报告
+                    def extentOpt = "--html=${env.EXTENT_REPORT}/report.html --self-contained-html"
+
                     def cmd = [
                         "${VENV_DIR}/bin/pytest",
                         markOpt,
                         workerOpt,
-                        failOpt
+                        failOpt,
+                        extentOpt
                     ].findAll { it }.join(' ')
 
                     echo ">>> 执行命令: ${cmd}"
@@ -178,12 +188,40 @@ pipeline {
             }
         }
 
-        // ── 7. 归档产物 ───────────────────────────────────────
+        // ── 7. 发布 ExtentReport（需 Jenkins HTML Publisher 插件）────
+        stage('Publish ExtentReport') {
+            steps {
+                script {
+                    def reportFile = "${env.EXTENT_REPORT}/report.html"
+                    def reportExists = sh(
+                        script: "test -f '${reportFile}' && echo yes || echo no",
+                        returnStdout: true
+                    ).trim()
+
+                    if (reportExists == 'yes') {
+                        publishHTML(target: [
+                            allowMissing         : false,
+                            alwaysLinkToLastBuild: true,
+                            keepAll              : true,
+                            reportDir            : 'outputs/extent_report',
+                            reportFiles          : 'report.html',
+                            reportName           : 'ExtentReport',
+                            reportTitles         : 'Finance API Test Report'
+                        ])
+                        echo "✅ ExtentReport 已发布: ${env.BUILD_URL}ExtentReport/"
+                    } else {
+                        echo "⚠️  outputs/extent_report/report.html 不存在，跳过 ExtentReport 发布"
+                    }
+                }
+            }
+        }
+
+        // ── 8. 归档产物 ───────────────────────────────────────
         stage('Archive Artifacts') {
             steps {
-                // 归档日志与覆盖率报告
+                // 归档日志、覆盖率报告与 ExtentReport
                 archiveArtifacts(
-                    artifacts       : 'outputs/logs/**,outputs/coverage_html/**',
+                    artifacts       : 'outputs/logs/**,outputs/coverage_html/**,outputs/extent_report/**',
                     allowEmptyArchive: true,
                     fingerprint      : true
                 )
@@ -249,6 +287,7 @@ def _notify(String status) {
 触发人    : ${env.BUILD_USER ?: 'Scheduler'}
 构建地址  : ${env.BUILD_URL}
 Allure   : ${env.BUILD_URL}allure/
+Extent   : ${env.BUILD_URL}ExtentReport/
 """.stripIndent()
 
     // ── 邮件通知（需 Email Extension 插件） ──────────────────
