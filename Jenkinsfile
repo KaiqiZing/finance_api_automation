@@ -94,7 +94,7 @@ pipeline {
                     ${VENV_DIR}/bin/pip install --upgrade pip --quiet
 
                     echo "=== 安装依赖 ==="
-                    ${VENV_DIR}/bin/pip install -r requirements.txt --quiet
+                    ${VENV_DIR}/bin/pip install -r requirements.txt --quiet -i https://mirrors.aliyun.com/pypi/simple/ --trusted-host mirrors.aliyun.com
                 """
             }
         }
