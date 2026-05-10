@@ -95,9 +95,6 @@ pipeline {
 
                     echo "=== 安装依赖 ==="
                     ${VENV_DIR}/bin/pip install -r requirements.txt --quiet
-
-                    echo "=== 安装 pytest-html（ExtentReports）==="
-                    ${VENV_DIR}/bin/pip install pytest-html --quiet
                 """
             }
         }
