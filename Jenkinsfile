@@ -254,7 +254,7 @@ Allure   : ${env.BUILD_URL}allure/
     // ── 邮件通知（需 Email Extension 插件） ──────────────────
     try {
         emailext(
-            to          : env.NOTIFY_EMAIL,
+            to: "zhangkaiqi0612@163.com", // 直接写邮箱
             subject     : subject,
             body        : body,
             mimeType    : 'text/plain'
